@@ -4,7 +4,7 @@ Accessible Alpaca map app with search, React.js UI using Next.js
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Purpose 💖
+## Purpose 😊
 
 Migrate from previous alpaca map app that was using [Create React App](https://github.com/facebook/create-react-app) and handcoded CSS to using [Next.js](https://nextjs.org/) and [tailwind css](https://tailwindcss.com/)
 
