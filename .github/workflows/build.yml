@@ -3,10 +3,6 @@
 
 name: Alpaca app 🦙 Build
 
-defaults:
-  run:
-    working-directory: .
-
 on:
   push:
     branches: ["main"]
