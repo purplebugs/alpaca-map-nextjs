@@ -3,7 +3,7 @@
 ## Application 🦙 🗺️
 
 1. Repo is cloned and installed `npm install`
-1. Create `.env.local` file and add values
+1. Create `.env.local` file and add sensitive values - make sure this is never checked in to github
 
 ```
 ELASTIC_CLOUD_ID="Add_me"
