@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 
 export const fileReader = (fileIn) => {
   try {
-    const myFile = readFileSync(`./data/${fileIn}`, "UTF-8");
+    const myFile = readFileSync(`@/data/${fileIn}`, "UTF-8");
     return JSON.parse(myFile);
   } catch (error) {
     console.error(error);
