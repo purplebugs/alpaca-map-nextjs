@@ -1,9 +1,10 @@
-import { readFileSync } from "fs";
+// import { readFileSync } from "fs";
 
 export const fileReader = (fileIn) => {
   try {
-    const myFile = readFileSync(`@/data/${fileIn}`, "UTF-8");
-    return JSON.parse(myFile);
+    // const myFile = readFileSync(`@/data/${fileIn}`, "UTF-8");
+    // return JSON.parse(myFile);
+    return { name: "my data" };
   } catch (error) {
     console.error(error);
     return new Error("🧨 fileReader: Could not read from file");
