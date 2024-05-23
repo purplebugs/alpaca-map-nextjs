@@ -15,6 +15,10 @@ export async function GET(req, context) {
     const fetcher = new CompanyFetcher(client, id);
     const result = await fetcher.fetch();
 
+    if (!result || result.length === 0) {
+      return Response.json({ message: "😅 Not found" }, { status: 404 });
+    }
+
     return Response.json(result, { status: 200 });
   } catch (error) {
     console.error(error);
