@@ -1,5 +1,4 @@
-import { client } from "@/functions/utils.js";
-import CompanyFetcher from "@/app/functions/companyFetcher.js";
+import { db } from "@/functions/db.js";
 
 export async function GET(req, context) {
   // api/company/:id
@@ -12,8 +11,7 @@ export async function GET(req, context) {
       return Response.json({ message: "🙄 Id is not a number" }, { status: 400 });
     }
 
-    const fetcher = new CompanyFetcher(client, id);
-    const result = await fetcher.fetch();
+    const result = await db.getCompany(id);
 
     if (!result || result.length === 0) {
       return Response.json({ message: "😅 Not found" }, { status: 404 });
