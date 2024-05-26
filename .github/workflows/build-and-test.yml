@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Build and Test
 
     runs-on: ubuntu-latest
 
@@ -28,3 +28,5 @@ jobs:
         env:
           ELASTIC_CLOUD_ID: ${{ secrets.ELASTIC_CLOUD_ID }}
           ELASTIC_API_KEY: ${{ secrets.ELASTIC_API_KEY }}
+      - name: Run tests
+        run: npm run test
