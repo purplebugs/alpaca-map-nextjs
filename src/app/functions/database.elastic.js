@@ -1,5 +1,5 @@
 import { Client } from "@elastic/elasticsearch";
-import CompanyFetcher from "@/app/functions/companyFetcher.js";
+import CompanyFetcher from "../../app/functions/companyFetcher.js";
 
 export default class Database {
   constructor() {
