@@ -93,7 +93,7 @@ describe("GET /api/company/[id]", () => {
     const response = await GET(NextRequest, { params: { id: "1234567890" } });
     const actual = response.status;
     const expected = 404;
-    const message = "😅 Not found X";
+    const message = "😅 Not found";
     const data = await response.json();
 
     assert.equal(actual, expected, `Response status: ${actual} should be: ${expected}`);
