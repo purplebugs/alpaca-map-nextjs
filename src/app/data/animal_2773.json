@@ -1,0 +1,81 @@
+[
+  {
+    "alpacaId": 2773,
+    "alpacaRegisteredName": "ALPAKKAHAGEN SØRUMS TRYGVE",
+    "alpacaShortName": "TRYGVE",
+    "gender": "SEX_MALE",
+    "DOB": {
+      "pretty": "15 July 2018",
+      "original": "2018-07-15T22:00:00.000Z"
+    },
+    "DOD": null,
+    "breed": "BREED_HUACAYA",
+    "status": "STATUS_ACTIVE",
+    "tagId": "1012",
+    "tagColor": "TAGCOLOR_ORIGIN",
+    "microchipNumber": null,
+    "microchipLOC": null,
+    "descriptionAlpaca": null,
+    "keeper": 61,
+    "companyId": 61,
+    "keeperName": "Alpakkahagen",
+    "street": "Bingenveien 35",
+    "zip": "1923",
+    "city": "Sørum",
+    "country": "NO",
+    "webpage": "www.alpakkahagen.no",
+    "descriptionCompany": null,
+    "email": "post@alpakkahagen.no",
+    "phone": "930 60 512",
+    "public": true,
+    "private": false,
+    "color": {
+      "color1": {
+        "pretty": "Bay black",
+        "original": "COLOR_BAY_BLACK"
+      },
+      "color2": {
+        "pretty": null,
+        "original": null
+      },
+      "color3": {
+        "pretty": null,
+        "original": null
+      },
+      "colorSolid": {
+        "pretty": "White",
+        "original": "COLOR_WHITE"
+      }
+    },
+    "url": {
+      "original": "www.alpakkahagen.no",
+      "domain": "www.alpakkahagen.no",
+      "full": "http://www.alpakkahagen.no",
+      "path": "/",
+      "pretty": "www.alpakkahagen.no",
+      "scheme": "http"
+    },
+    "location": {
+      "type": "Point",
+      "coordinates": [11.2229125, 60.0075085],
+      "google": {
+        "formatted_address": "Bingenveien 35, 1923 Sørum, Norway",
+        "place_id": "ChIJn_8GjgHWQ0YRZcYaf8f3180",
+        "directions_url_href": "https://www.google.com/maps/dir/?api=1&origin=&destination=Bingenveien%2035,%201923%20S%C3%B8rum,%20Norway",
+        "administrative_area_level_1": "Viken",
+        "administrative_area_level_2": "Lillestrøm"
+      },
+      "original": {
+        "keeper": 61,
+        "keeperName": "Alpakkahagen",
+        "street": "Bingenveien 35",
+        "city": "Sørum",
+        "zip": "1923",
+        "country_code_original": "NO",
+        "country_code": "NO",
+        "country_name": "Norway"
+      }
+    },
+    "type": "alpaca"
+  }
+]

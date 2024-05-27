@@ -1,5 +1,6 @@
 import { Client } from "@elastic/elasticsearch";
 import CompanyFetcher from "@/functions/companyFetcher.js";
+import AnimalFetcher from "./animalFetcher";
 
 export default class Database {
   constructor() {
@@ -11,6 +12,10 @@ export default class Database {
         apiKey: process.env.ELASTIC_API_KEY,
       },
     });
+  }
+  async getAnimal(id) {
+    const fetcher = new AnimalFetcher(this.elastic, id);
+    return await fetcher.fetch();
   }
 
   async getCompany(id) {
