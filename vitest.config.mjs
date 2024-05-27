@@ -7,6 +7,7 @@ export default defineConfig({
     environment: "jsdom",
     alias: {
       // Ref: https://vitest.dev/guide/common-errors#cannot-find-module-relative-path
+      "@/api/": new URL("./src/app/api/", import.meta.url).pathname,
       "@/functions/": new URL("./src/app/functions/", import.meta.url).pathname,
     },
   },
