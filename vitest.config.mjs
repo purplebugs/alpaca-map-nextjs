@@ -5,5 +5,9 @@ export default defineConfig({
   plugins: [react()],
   test: {
     environment: "jsdom",
+    alias: {
+      // Ref: https://vitest.dev/guide/common-errors#cannot-find-module-relative-path
+      "@/functions/": new URL("./src/app/functions/", import.meta.url).pathname,
+    },
   },
 });
