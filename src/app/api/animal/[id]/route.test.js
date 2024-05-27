@@ -1,5 +1,5 @@
 import { describe, test, assert } from "vitest";
-import { GET } from "./route.js";
+import { GET } from "@/api/animal/[id]/route.js";
 import { NextRequest } from "next/server";
 
 describe("GET /api/animal/[id]", () => {
