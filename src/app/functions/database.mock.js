@@ -13,10 +13,14 @@ export const fileReader = (fileIn) => {
 
 export default class MockDatabase {
   async getAnimal(id) {
-    return id == 2773 ? fileReader("animal_2773.json") : [];
+    return id == 2773 ? await fileReader("animal_2773.json") : [];
   }
 
   async getCompany(id) {
-    return id === "61" ? fileReader("company_61.json") : [];
+    return id === "61" ? await fileReader("company_61.json") : [];
+  }
+
+  async getFarms() {
+    return await fileReader("farms_mock.json");
   }
 }
