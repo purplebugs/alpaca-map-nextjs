@@ -1,8 +1,6 @@
 import { db } from "@/functions/db.js";
 
 export async function GET(req, context) {
-  // api/company/:id
-
   const { id } = await context?.params;
 
   try {
