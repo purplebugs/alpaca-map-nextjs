@@ -22,7 +22,7 @@ describe("GET /api/company/[id]", () => {
     assert.equal(actual, expected, `Farm id returned: ${actual} - should be ${expected}`);
   });
 
-  test("GET /api/company/61 should contain correct number of alpacas in list", async () => {
+  test("GET /api/company/61 should contain more than one alpaca in list", async () => {
     const response = await GET(NextRequest, { params: { id: "61" } });
     const data = await response.json();
 
