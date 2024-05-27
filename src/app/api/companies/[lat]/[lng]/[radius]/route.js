@@ -1,8 +1,8 @@
 import { db } from "@/functions/db.js";
 
 export async function GET(req, context) {
-  let { lat, lng, radius } = await context?.params;
   const searchParams = new URLSearchParams(req.url);
+  let { lat, lng, radius } = await context?.params;
 
   lat = parseFloat(lat);
   lng = parseFloat(lng);

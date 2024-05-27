@@ -12,14 +12,21 @@ describe("GET /api/companies/:lat/:lng/:radius", () => {
     assert.equal(actual, expected, `Response status: ${actual} should be: ${expected}`);
   });
 
-  // TODO GET /api/companies/:lat/:lng/:radius?public=true&private=false - HTTP 200
+  test("GET /api/companies/:lat/:lng/:radius?public=true&private=false - HTTP 200", async () => {
+    const request = new NextRequest("http://www.only-here-for-the-query-params.com/?public=true&private=true");
+
+    const response = await GET(request, { params: { lat: "63.292781", lng: "9.0826007", radius: "500000" } });
+
+    const actual = response.status;
+    const expected = 200;
+
+    assert.equal(actual, expected, `Response status: ${actual} should be: ${expected}`);
+  });
 
   // TODO GET /api/companies/:lat/:lng/:radius?public=false&private=true - HTTP 200
 
   test("GET /api/companies/:lat/:lng/:radius - HTTP 400 Lat is not a floating point number", async () => {
     const response = await GET(NextRequest, { params: { lat: "not-a-latitude", lng: "9.0826007", radius: "500000" } });
-
-    console.log("response.status", response.status);
 
     const actual = response.status;
     const expected = 400;
@@ -33,8 +40,6 @@ describe("GET /api/companies/:lat/:lng/:radius", () => {
   test("GET /api/companies/:lat/:lng/:radius - HTTP 400 Lng is not a floating point number", async () => {
     const response = await GET(NextRequest, { params: { lat: "63.292781", lng: "not-a-longitude", radius: "500000" } });
 
-    console.log("response.status", response.status);
-
     const actual = response.status;
     const expected = 400;
     const message = "🙄 Lng is not a floating point number";
@@ -46,8 +51,6 @@ describe("GET /api/companies/:lat/:lng/:radius", () => {
 
   test("GET /api/companies/:lat/:lng/:radius - HTTP 400 Radius is not a number", async () => {
     const response = await GET(NextRequest, { params: { lat: "63.292781", lng: "9.0826007", radius: "not-a-radius" } });
-
-    console.log("response.status", response.status);
 
     const actual = response.status;
     const expected = 400;
