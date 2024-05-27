@@ -1,0 +1,201 @@
+[
+  {
+    "id": 1,
+    "count": {
+      "alpacas": {
+        "status": {
+          "active": 108,
+          "dead": 2,
+          "export": 0
+        },
+        "total": 110
+      }
+    },
+    "city": "Oslo",
+    "lat": 59.9139,
+    "lng": 10.7522,
+    "location": {
+      "type": "Point",
+      "coordinates": [10.7522, 59.9139],
+      "google": {
+        "formatted_address": "My Oslo street 4321, 0123 Oslo, Norway",
+        "place_id": "something_1",
+        "directions_url_href": "https://www.google.com/maps/dir/?api=1&origin=&destination=My%20Oslo%20Street%204321,%200123%20Oslo,%20Norway"
+      }
+    },
+    "name": "Oslo Imaginary Farm",
+    "public": true,
+    "private": false,
+    "url": {
+      "original": "http://www.oslofarm.no/",
+      "domain": "www.oslofarm.no",
+      "full": "http://www.oslofarm.no",
+      "path": "/",
+      "pretty": "www.oslofarm.no",
+      "scheme": "http"
+    },
+    "webpage": "http://www.oslofarm.no/"
+  },
+  {
+    "id": 2,
+    "count": {
+      "alpacas": {
+        "status": {
+          "active": 8,
+          "dead": 1,
+          "export": 0
+        },
+        "total": 9
+      }
+    },
+    "city": "Trondheim",
+    "lat": 63.4305,
+    "lng": 10.3951,
+    "location": {
+      "type": "Point",
+      "coordinates": [10.3951, 63.4305],
+      "google": {
+        "formatted_address": "My Trondheim street 4321, 0123 Trondheim, Norway",
+        "place_id": "something_2"
+      }
+    },
+    "name": "Trondheim Imaginary Farm",
+    "public": true,
+    "private": false
+  },
+  {
+    "id": 3,
+    "count": {
+      "alpacas": {
+        "status": {
+          "active": 20,
+          "dead": 2,
+          "export": 0
+        },
+        "total": 22
+      }
+    },
+    "city": "Tromsø",
+    "lat": 69.6492,
+    "lng": 18.9553,
+    "location": {
+      "type": "Point",
+      "coordinates": [18.9553, 69.6492],
+      "google": {
+        "formatted_address": "My Tromsø street 4321, 0123 Tromsø, Norway",
+        "place_id": "something_3"
+      }
+    },
+    "name": "Tromsø Imaginary Farm",
+    "public": true,
+    "private": false
+  },
+  {
+    "id": 4,
+    "count": {
+      "alpacas": {
+        "status": {
+          "active": 13,
+          "dead": 1,
+          "export": 0
+        },
+        "total": 14
+      }
+    },
+    "city": "Stavanger",
+    "lat": 58.97,
+    "lng": 5.7331,
+    "location": {
+      "type": "Point",
+      "coordinates": [5.7331, 58.97],
+      "google": {
+        "formatted_address": "My Stavanger street 4321, 0123 Stavanger, Norway",
+        "place_id": "something_4"
+      }
+    },
+    "name": "Stavanger Imaginary Farm",
+    "public": true,
+    "private": false
+  },
+  {
+    "id": 5,
+    "count": {
+      "alpacas": {
+        "status": {
+          "active": 29,
+          "dead": 2,
+          "export": 2
+        },
+        "total": 33
+      }
+    },
+    "city": "Skarsvåg",
+    "lat": 71.1132,
+    "lng": 25.827,
+    "location": {
+      "type": "Point",
+      "coordinates": [25.827, 71.1132],
+      "google": {
+        "formatted_address": "My Skarsvåg street 4321, 0123 Skarsvåg, Norway",
+        "place_id": "something_5"
+      }
+    },
+    "name": "Skarsvåg Imaginary Farm",
+    "public": false,
+    "private": true
+  },
+  {
+    "id": 6,
+    "count": {
+      "alpacas": {
+        "status": {
+          "active": 42,
+          "dead": 9,
+          "export": 1
+        },
+        "total": 52
+      }
+    },
+    "city": "Kristiansand",
+    "lat": 58.152951,
+    "lng": 7.9490892,
+    "location": {
+      "type": "Point",
+      "coordinates": [7.9490892, 58.152951],
+      "google": {
+        "formatted_address": "My Kristiansand street 4321, 0123 Kristiansand, Norway",
+        "place_id": "something_6"
+      }
+    },
+    "name": "Kristiansand Imaginary Farm",
+    "public": false,
+    "private": true
+  },
+  {
+    "id": 120,
+    "city": "KYRKSÆTERØRA",
+    "count": {
+      "alpacas": {
+        "status": {
+          "active": 20,
+          "dead": 0,
+          "export": 0
+        },
+        "total": 20
+      }
+    },
+    "lat": 63.3687244,
+    "lng": 9.145974400000002,
+    "location": {
+      "type": "Point",
+      "coordinates": [9.145974400000002, 63.3687244],
+      "google": {
+        "formatted_address": "My Kyrksæterøra street 4321, 0123 Kyrksæterøra, Norway",
+        "place_id": "something_6"
+      }
+    },
+    "public": true,
+    "private": false,
+    "name": "Oddan Alpakka"
+  }
+]
