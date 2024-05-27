@@ -19,7 +19,7 @@ describe("GET /api/company/[id]", () => {
     const actual = data[0].id;
     const expected = 61;
 
-    assert.equal(actual, expected, `Farm id returned: ${actual} - should be ${expected}`);
+    assert.strictEqual(actual, expected, `Farm id returned: ${actual} - should be ${expected}`);
   });
 
   test("GET /api/company/61 should contain more than one alpaca in list", async () => {
