@@ -1,0 +1,110 @@
+[
+  {
+    "id": 120,
+    "city": "KYRKSÆTERØRA",
+    "count": {
+      "alpacas": {
+        "status": {
+          "active": 18,
+          "dead": 2,
+          "export": 0
+        },
+        "total": 20
+      }
+    },
+    "lat": 63.3687244,
+    "lng": 9.145974400000002,
+    "location": {
+      "type": "Point",
+      "coordinates": [9.145974400000002, 63.3687244],
+      "google": {
+        "formatted_address": "Lernesstranda 912, 7200 Kyrksæterøra, Norway",
+        "place_id": "ChIJTU-B4LL8EkYRyJYVNTgbWYI"
+      }
+    },
+    "public": true,
+    "private": false,
+    "name": "Oddan Alpakka"
+  },
+  {
+    "id": 151,
+    "city": "HELLANDSJØEN",
+    "count": {
+      "alpacas": {
+        "status": {
+          "active": 12,
+          "dead": 0,
+          "export": 0
+        },
+        "total": 12
+      }
+    },
+    "lat": 63.4177812,
+    "lng": 8.966676999999999,
+    "location": {
+      "type": "Point",
+      "coordinates": [8.966676999999999, 63.4177812],
+      "google": {
+        "formatted_address": "7206 Hellandsjøen, Norway",
+        "place_id": "ChIJ62gZecr-EkYRkU-pGniFooc"
+      }
+    },
+    "public": false,
+    "private": true,
+    "name": "Kyst Alpakka"
+  },
+  {
+    "id": 129,
+    "city": "VALSØYBOTN",
+    "count": {
+      "alpacas": {
+        "status": {
+          "active": 2,
+          "dead": 0,
+          "export": 0
+        },
+        "total": 2
+      }
+    },
+    "lat": 63.0984032,
+    "lng": 8.6050267,
+    "location": {
+      "type": "Point",
+      "coordinates": [8.6050267, 63.0984032],
+      "google": {
+        "formatted_address": "Valsøyfjordvegen 950, 6686 Valsøybotnen, Norway",
+        "place_id": "ChIJW0MPI8SnE0YR0ySg0_uQ0fs"
+      }
+    },
+    "public": false,
+    "private": true,
+    "name": "Pestua Valsøybotn"
+  },
+  {
+    "id": 215,
+    "city": "HAMARVIK",
+    "count": {
+      "alpacas": {
+        "status": {
+          "active": 2,
+          "dead": 1,
+          "export": 0
+        },
+        "total": 3
+      }
+    },
+    "lat": 63.68596089999999,
+    "lng": 8.6714577,
+    "location": {
+      "type": "Point",
+      "coordinates": [8.6714577, 63.68596089999999],
+      "google": {
+        "formatted_address": "7263 Hamarvik, Norway",
+        "place_id": "ChIJWVm9_jtoEkYRPiDSOTnpSAM"
+      }
+    },
+    "public": false,
+    "private": true,
+    "name": "Alpakka Frøya"
+  }
+]

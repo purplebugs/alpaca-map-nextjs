@@ -1,7 +1,8 @@
 import { Client } from "@elastic/elasticsearch";
 import AnimalFetcher from "@/functions/animalFetcher.js";
 import CompanyFetcher from "@/functions/companyFetcher.js";
-import FarmsFetcher from "@/functions/farmsFetcher";
+import FarmsFetcher from "@/functions/farmsFetcher.js";
+import GeoDistanceRadiusFetcher from "@/functions/geoDistanceRadiusFetcher.js";
 
 export default class Database {
   constructor() {
@@ -27,6 +28,12 @@ export default class Database {
 
   async getFarms() {
     const fetcher = new FarmsFetcher(this.elastic);
+
+    return await fetcher.fetch();
+  }
+
+  async getGeoDistanceRadius(lat, lng, radius, publicFarms, privateFarms) {
+    const fetcher = new GeoDistanceRadiusFetcher(this.elastic, lat, lng, radius, publicFarms, privateFarms);
 
     return await fetcher.fetch();
   }
