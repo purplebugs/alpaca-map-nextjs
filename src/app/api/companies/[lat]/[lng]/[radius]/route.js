@@ -1,6 +1,7 @@
 import { db } from "@/functions/db.js";
 
 export async function GET(req, context) {
+  // TODO Ref: https://nextjs.org/docs/app/building-your-application/routing/route-handlers#url-query-parameters
   const searchParams = new URLSearchParams(req.url);
   let { lat, lng, radius } = await context?.params;
 
