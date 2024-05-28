@@ -20,6 +20,10 @@ export default class MockDatabase {
     return id === "61" ? await fileReader("company_61.json") : [];
   }
 
+  async getCompanies(query) {
+    return query == "lund" ? fileReader("companies_lund.json") : [];
+  }
+
   async getFarms() {
     return await fileReader("farms_mock.json");
   }

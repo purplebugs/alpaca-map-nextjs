@@ -1,6 +1,7 @@
 import { Client } from "@elastic/elasticsearch";
 import AnimalFetcher from "@/functions/animalFetcher.js";
 import CompanyFetcher from "@/functions/companyFetcher.js";
+import CompaniesFetcher from "@/functions/companiesFetcher.js";
 import FarmsFetcher from "@/functions/farmsFetcher.js";
 import GeoDistanceRadiusFetcher from "@/functions/geoDistanceRadiusFetcher.js";
 import LocationsFetcher from "@/functions/locationsFetcher.js";
@@ -24,6 +25,12 @@ export default class Database {
 
   async getCompany(id) {
     const fetcher = new CompanyFetcher(this.elastic, id);
+    return await fetcher.fetch();
+  }
+
+  async getCompanies(query) {
+    const fetcher = new CompaniesFetcher(this.elastic, query);
+
     return await fetcher.fetch();
   }
 
