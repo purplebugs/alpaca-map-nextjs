@@ -12,19 +12,27 @@ Migrate from previous alpaca map app that was using [Create React App](https://g
 
 See [First time setup](src/app/docs/README.init.md)
 
-## Getting Started 🌱
+## Develop app 💻
 
-First, run the development server:
+Run the development server for auto-updates while editing
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Start the app
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+View at [http://localhost:3000](http://localhost:3000)
+
+## Test app 🧪
+
+```bash
+npm run test
+```
 
 ## Deploy app 🤖
 
