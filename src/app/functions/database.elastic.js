@@ -3,6 +3,7 @@ import AnimalFetcher from "@/functions/animalFetcher.js";
 import CompanyFetcher from "@/functions/companyFetcher.js";
 import FarmsFetcher from "@/functions/farmsFetcher.js";
 import GeoDistanceRadiusFetcher from "@/functions/geoDistanceRadiusFetcher.js";
+import LocationsFetcher from "@/functions/locationsFetcher.js";
 
 export default class Database {
   constructor() {
@@ -28,6 +29,12 @@ export default class Database {
 
   async getFarms() {
     const fetcher = new FarmsFetcher(this.elastic);
+
+    return await fetcher.fetch();
+  }
+
+  async getLocations(query) {
+    const fetcher = new LocationsFetcher(this.elastic, query);
 
     return await fetcher.fetch();
   }

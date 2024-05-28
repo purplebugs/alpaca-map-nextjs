@@ -31,4 +31,8 @@ export default class MockDatabase {
 
     return fileReader("api_farms_radius_respose_Kyrksæterøra.json");
   }
+
+  async getLocations(query) {
+    return query == "lund" ? fileReader("locations_lund.json") : [];
+  }
 }

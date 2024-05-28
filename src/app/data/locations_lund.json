@@ -1,0 +1,13 @@
+[
+  {
+    "id": 209,
+    "location": {
+      "google": {
+        "administrative_area_level_1": "Rogaland",
+        "administrative_area_level_2": "Lund"
+      }
+    },
+    "name": "The Happy Alpaca Farm in Lund",
+    "location.google.administrative_area_level_2": ["<em>Lund</em>"]
+  }
+]
