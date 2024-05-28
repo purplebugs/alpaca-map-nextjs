@@ -1,0 +1,38 @@
+[
+  {
+    "alpacaId": 2277,
+    "alpacaRegisteredName": ["<em>LUNA</em>"],
+    "alpacaShortName": ["<em>LUNA</em>"],
+    "companyId": 39
+  },
+  {
+    "alpacaId": 3881,
+    "alpacaRegisteredName": ["KYSTALPAKKA <em>LUNA</em>"],
+    "alpacaShortName": ["<em>LUNA</em>"],
+    "companyId": 151
+  },
+  {
+    "alpacaId": 4238,
+    "alpacaRegisteredName": ["SØRFLAENS <em>LUNA</em>"],
+    "alpacaShortName": ["<em>LUNA</em>"],
+    "companyId": 76
+  },
+  {
+    "alpacaId": 2523,
+    "alpacaRegisteredName": ["TIKOS <em>LUNA</em>"],
+    "alpacaShortName": ["TIKOS <em>LUNA</em>"],
+    "companyId": 88
+  },
+  {
+    "alpacaId": 2618,
+    "alpacaRegisteredName": ["BR.S <em>LUNA</em>"],
+    "alpacaShortName": ["BR.S <em>LUNA</em>"],
+    "companyId": 134
+  },
+  {
+    "alpacaId": 2520,
+    "alpacaRegisteredName": ["ALPACAJOY LA <em>LUNA</em>"],
+    "alpacaShortName": ["LA <em>LUNA</em>"],
+    "companyId": 40
+  }
+]

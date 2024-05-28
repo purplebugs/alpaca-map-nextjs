@@ -15,6 +15,19 @@ export default class MockDatabase {
   async getAnimal(id) {
     return id == 2773 ? await fileReader("animal_2773.json") : [];
   }
+  async getAnimals(query) {
+    const result = [];
+
+    if (query == "lund") {
+      return fileReader("animals_lund.json");
+    }
+
+    if (query == "trygv") {
+      return fileReader("animals_trygv.json");
+    }
+
+    return result;
+  }
 
   async getCompany(id) {
     return id === "61" ? await fileReader("company_61.json") : [];
