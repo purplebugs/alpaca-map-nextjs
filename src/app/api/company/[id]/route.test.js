@@ -1,41 +1,38 @@
-import { describe, test, assert } from "vitest";
+import { assert, beforeAll, describe, test } from "vitest";
 import { GET } from "@/api/company/[id]/route.js";
 import { NextRequest } from "next/server";
 
-describe("GET /api/company/[id]", () => {
-  test("GET /api/company/61 - HTTP 200", async () => {
-    const response = await GET(NextRequest, { params: { id: "61" } });
+describe("GET /api/company/61", () => {
+  let response;
+  let data;
 
+  beforeAll(async () => {
+    response = await GET(NextRequest, { params: { id: "61" } });
+    data = await response.json();
+  });
+
+  test("HTTP 200", async () => {
     const actual = response.status;
     const expected = 200;
 
     assert.equal(actual, expected, `Response status: ${actual} should be: ${expected}`);
   });
 
-  test("GET /api/company/61 should return farm with id=61", async () => {
-    const response = await GET(NextRequest, { params: { id: "61" } });
-    const data = await response.json();
-
+  test("Farm with id=61", async () => {
     const actual = data[0].id;
     const expected = 61;
 
     assert.strictEqual(actual, expected, `Farm id returned: ${actual} - should be ${expected}`);
   });
 
-  test("GET /api/company/61 should contain more than one alpaca in list", async () => {
-    const response = await GET(NextRequest, { params: { id: "61" } });
-    const data = await response.json();
-
+  test("At least 2 items", async () => {
     const actual = data[0].alpacas.all.length;
-    const expected = 1;
+    const expected = 2;
 
-    assert.isAbove(actual, expected, `Farm returned: ${actual} alpacas - should have more than ${expected}`);
+    assert.isAtLeast(actual, expected, `Number of items returned: ${actual} - should return at least ${expected}`);
   });
 
-  test("GET /api/company/61 should contain aggregations", async () => {
-    const response = await GET(NextRequest, { params: { id: "61" } });
-    const data = await response.json();
-
+  test("Contains aggregations", async () => {
     const actual_color1 = data[0].aggregations.alpacas.color1.buckets.length;
     const expected_color1 = 9;
 
@@ -77,7 +74,9 @@ describe("GET /api/company/[id]", () => {
       `Farm returned gender aggs: ${actual_gender} - should be ${expected_gender}`
     );
   });
+});
 
+describe("GET /api/company/[id]", () => {
   test("GET /api/company/id-is-not-a-number - HTTP 400 invalid", async () => {
     const response = await GET(NextRequest, { params: { id: "id-is-not-a-number" } });
     const actual = response.status;

@@ -1,4 +1,4 @@
-import { describe, beforeAll, test, assert } from "vitest";
+import { assert, beforeAll, describe, test } from "vitest";
 import { POST } from "@/api/locations/search/route.js";
 
 describe("POST /api/locations/search", () => {
@@ -29,6 +29,6 @@ describe("POST /api/locations/search", () => {
     const actual = data.length;
     const expected = 1;
 
-    assert.isAtLeast(actual, expected, `Farm returned: ${actual} - should return at least ${expected}`);
+    assert.isAtLeast(actual, expected, `Number of items returned: ${actual} - should return at least ${expected}`);
   });
 });

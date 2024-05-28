@@ -1,4 +1,4 @@
-import { describe, beforeAll, test, assert } from "vitest";
+import { assert, beforeAll, describe, test } from "vitest";
 import { POST } from "@/api/companies/search/route.js";
 
 describe(`POST /api/companies/search { query: "lund" }`, () => {
