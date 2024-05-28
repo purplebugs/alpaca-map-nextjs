@@ -1,10 +1,10 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
- */
+/* TODO set fonts */
+/* TODO set image sizing */
+
 :root {
 
     --hex-dark-blue: #285dab;
@@ -62,9 +62,7 @@
 }
 
 #root {
-    /*     font-family: 'Poppins', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; */
+
 
     margin-top: 0;
 
