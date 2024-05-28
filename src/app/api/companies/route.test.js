@@ -1,24 +1,27 @@
-import { describe, test, assert } from "vitest";
+import { assert, beforeAll, describe, test } from "vitest";
 import { GET } from "@/api/companies/route.js";
 import { NextRequest } from "next/server";
 
 describe("GET /api/companies", () => {
-  test("GET /api/companies - HTTP 200", async () => {
-    const response = await GET(NextRequest);
+  let response;
+  let data;
 
+  beforeAll(async () => {
+    response = await GET(NextRequest);
+    data = await response.json();
+  });
+
+  test("HTTP 200", async () => {
     const actual = response.status;
     const expected = 200;
 
     assert.equal(actual, expected, `Response status: ${actual} should be: ${expected}`);
   });
 
-  test("GET /api/companies should contain more than one farm", async () => {
-    const response = await GET(NextRequest);
-    const data = await response.json();
-
+  test("At least 2 items", async () => {
     const actual = data.length;
-    const expected = 1;
+    const expected = 2;
 
-    assert.isAbove(actual, expected, `Farm returned: ${actual} - should have more than ${expected}`);
+    assert.isAtLeast(actual, expected, `Number of items returned: ${actual} - should return at least ${expected}`);
   });
 });
