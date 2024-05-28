@@ -3,9 +3,9 @@
     "baseUrl": ".",
     "paths": {
       "@/app/*": ["src/app/*"],
+      "@/components/*": ["src/app/components/*"],
       "@/data/*": ["src/data/*"],
-      "@/functions/*": ["src/app/functions/*"],
-      "@/public/*": ["public/*"]
+      "@/functions/*": ["src/app/functions/*"]
     }
   }
 }
