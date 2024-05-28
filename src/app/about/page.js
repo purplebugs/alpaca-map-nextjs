@@ -13,6 +13,7 @@ export default function Page() {
               <h3>Why</h3> <p> 😊 Alpacas make me happy, so I wanted to solve how to find and visit them</p>
               <figure>
                 <Image
+                  class="photo"
                   src="/Anita_visits_alpaca_Trygve.JPG"
                   alt="Anita visits alpaca Trygve and friends at Alpakkahagen, Norway"
                   width={567}
