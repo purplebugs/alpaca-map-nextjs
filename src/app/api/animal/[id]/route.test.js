@@ -1,27 +1,32 @@
-import { describe, test, assert } from "vitest";
+import { assert, beforeAll, describe, test } from "vitest";
 import { GET } from "@/api/animal/[id]/route.js";
 import { NextRequest } from "next/server";
 
 describe("GET /api/animal/[id]", () => {
-  test("GET /api/animal/2773 - HTTP 200", async () => {
-    const response = await GET(NextRequest, { params: { id: "2773" } });
+  let response;
+  let data;
 
+  beforeAll(async () => {
+    response = await GET(NextRequest, { params: { id: "2773" } });
+    data = await response.json();
+  });
+
+  test("HTTP 200", async () => {
     const actual = response.status;
     const expected = 200;
 
     assert.equal(actual, expected, `Response status: ${actual} should be: ${expected}`);
   });
 
-  test("GET /api/animal/2773 should return alpaca with id=2773", async () => {
-    const response = await GET(NextRequest, { params: { id: "2773" } });
-    const data = await response.json();
-
+  test("Value of data[0].alpacaId", async () => {
     const actual = data[0].alpacaId;
     const expected = 2773;
 
     assert.strictEqual(actual, expected, `Animal id returned: ${actual} - should be ${expected}`);
   });
+});
 
+describe("GET /api/animal/[id]", () => {
   test("GET /api/animal/id-is-not-a-number - HTTP 400 invalid", async () => {
     const response = await GET(NextRequest, { params: { id: "id-is-not-a-number" } });
     const actual = response.status;
