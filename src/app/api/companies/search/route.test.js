@@ -1,7 +1,7 @@
 import { describe, beforeAll, test, assert } from "vitest";
-import { POST } from "@/api/locations/search/route.js";
+import { POST } from "@/api/companies/search/route.js";
 
-describe("POST /api/locations/search", () => {
+describe(`POST /api/companies/search { query: "lund" }`, () => {
   let response;
   let data;
 
@@ -18,17 +18,31 @@ describe("POST /api/locations/search", () => {
     data = await response.json();
   });
 
-  test(`POST /api/locations/search { query: "lund" } - HTTP 200`, async () => {
+  test(`HTTP 200`, async () => {
     const actual = response.status;
     const expected = 200;
 
     assert.equal(actual, expected, `Response status: ${actual} should be: ${expected}`);
   });
 
-  test(`POST /api/locations/search { query: "lund" } should return at least 1 item`, async () => {
+  test(`At least 1 item`, async () => {
     const actual = data.length;
     const expected = 1;
 
-    assert.isAtLeast(actual, expected, `Farm returned: ${actual} - should return at least ${expected}`);
+    assert.isAtLeast(actual, expected, `Number of items returned: ${actual} - should return at least ${expected}`);
+  });
+
+  test(`Value of id[0]`, async () => {
+    const actual = data[0].id;
+    const expected = 197;
+
+    assert.equal(actual, expected, `Item ${actual} - should return ${expected}`);
+  });
+
+  test(`Value of name[0]`, async () => {
+    const actual = data[0].name;
+    const expected = `Marie <em>Lund</em>-Mikkelson`;
+
+    assert.equal(actual, expected, `Item ${actual} - should return ${expected}`);
   });
 });
