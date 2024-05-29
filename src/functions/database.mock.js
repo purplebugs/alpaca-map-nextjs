@@ -3,7 +3,7 @@ import { readFileSync } from "fs";
 export const fileReader = (fileIn) => {
   try {
     // TODO do not hardcode path
-    const myFile = readFileSync(`./src/app/data/${fileIn}`, "UTF-8");
+    const myFile = readFileSync(`./src/data/${fileIn}`, "UTF-8");
     return JSON.parse(myFile);
   } catch (error) {
     console.error(error);

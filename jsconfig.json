@@ -5,7 +5,7 @@
       "@/app/*": ["src/app/*"],
       "@/components/*": ["src/components/*"],
       "@/data/*": ["src/data/*"],
-      "@/functions/*": ["src/app/functions/*"]
+      "@/functions/*": ["src/functions/*"]
     }
   }
 }
