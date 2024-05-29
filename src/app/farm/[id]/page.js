@@ -1,5 +1,6 @@
 import { db } from "@/functions/db.js";
 import { AlpacaDetail } from "@/components/alpacaDetail.js";
+import { AlpacasDetail } from "@/components/alpacasDetail.js";
 import { Suspense } from "react";
 
 export default async function Page({ params }) {
@@ -130,14 +131,7 @@ export default async function Page({ params }) {
               <div className="box">
                 <h3>Alpacas</h3>
                 <Suspense fallback={<p>Loading alpacas...</p>}>
-                  <>
-                    {/* // TODO refactor into <AlpacasDetail status="active" alpacas={alpacasActive} /> */}
-                    {alpacasActive.map((alpaca) => (
-                      <>
-                        <AlpacaDetail key={alpaca.alpacaId} status="active" alpaca={alpaca}></AlpacaDetail>
-                      </>
-                    ))}
-                  </>
+                  <AlpacasDetail status="active" alpacas={alpacasActive} />
                 </Suspense>
               </div>
             )}
@@ -145,14 +139,18 @@ export default async function Page({ params }) {
             {alpacasDead?.length === 0 ? null : (
               <div className="box">
                 <h3>Alpacas - Dead</h3>
-                {/* // TODO <AlpacasDetail status="dead" alpacas={alpacasDead} /> */}
+                <Suspense fallback={<p>Loading alpacas...</p>}>
+                  <AlpacasDetail status="dead" alpacas={alpacasDead} />
+                </Suspense>
               </div>
             )}
 
             {alpacasExport?.length === 0 ? null : (
               <div className="box">
                 <h3>Alpacas - Export</h3>
-                {/* // TODO <AlpacasDetail status="export" alpacas={alpacasExport} /> */}
+                <Suspense fallback={<p>Loading alpacas...</p>}>
+                  <AlpacasDetail status="dead" alpacas={alpacasExport} />
+                </Suspense>
               </div>
             )}
           </section>
