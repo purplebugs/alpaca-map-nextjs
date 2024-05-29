@@ -1,5 +1,4 @@
 import { db } from "@/functions/db.js";
-import { AlpacaDetail } from "@/components/alpacaDetail.js";
 import { AlpacasDetail } from "@/components/alpacasDetail.js";
 import { Suspense } from "react";
 
