@@ -10,7 +10,7 @@ Migrate from previous alpaca map app that was using [Create React App](https://g
 
 ## First time setup 🐣
 
-See [First time setup](src/app/docs/README.init.md)
+See [First time setup](src/docs/README.init.md)
 
 ## Develop app 💻
 
