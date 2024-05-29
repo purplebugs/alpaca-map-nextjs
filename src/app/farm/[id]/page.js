@@ -1,7 +1,6 @@
 import { db } from "@/functions/db.js";
-
-// TODO Loading spinner
-// TODO Error handling
+import { AlpacaDetail } from "@/components/alpacaDetail.js";
+import { Suspense } from "react";
 
 export default async function Page({ params }) {
   const result = await db.getCompany(params.id);
@@ -130,21 +129,30 @@ export default async function Page({ params }) {
             {alpacasActive?.length === 0 ? null : (
               <div className="box">
                 <h3>Alpacas</h3>
-                {/* <AlpacasDetail status="active" alpacas={alpacasActive} /> */}
+                <Suspense fallback={<p>Loading alpacas...</p>}>
+                  <>
+                    {/* // TODO refactor into <AlpacasDetail status="active" alpacas={alpacasActive} /> */}
+                    {alpacasActive.map((alpaca) => (
+                      <>
+                        <AlpacaDetail key={alpaca.alpacaId} status="active" alpaca={alpaca}></AlpacaDetail>
+                      </>
+                    ))}
+                  </>
+                </Suspense>
               </div>
             )}
 
             {alpacasDead?.length === 0 ? null : (
               <div className="box">
                 <h3>Alpacas - Dead</h3>
-                {/* <AlpacasDetail status="dead" alpacas={alpacasDead} /> */}
+                {/* // TODO <AlpacasDetail status="dead" alpacas={alpacasDead} /> */}
               </div>
             )}
 
             {alpacasExport?.length === 0 ? null : (
               <div className="box">
                 <h3>Alpacas - Export</h3>
-                {/* <AlpacasDetail status="export" alpacas={alpacasExport} /> */}
+                {/* // TODO <AlpacasDetail status="export" alpacas={alpacasExport} /> */}
               </div>
             )}
           </section>
