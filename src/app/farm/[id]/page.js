@@ -140,7 +140,7 @@ export default async function Page({ params }) {
               <div className="box">
                 <h3>Alpacas - Dead</h3>
                 <Suspense fallback={<p>Loading alpacas...</p>}>
-                  <AlpacasDetail status="dead" alpacas={alpacasActive} />
+                  <AlpacasDetail status="dead" alpacas={alpacasDead} />
                 </Suspense>
               </div>
             )}
@@ -149,7 +149,7 @@ export default async function Page({ params }) {
               <div className="box">
                 <h3>Alpacas - Export</h3>
                 <Suspense fallback={<p>Loading alpacas...</p>}>
-                  <AlpacasDetail status="dead" alpacas={alpacasActive} />
+                  <AlpacasDetail status="dead" alpacas={alpacasExport} />
                 </Suspense>
               </div>
             )}
