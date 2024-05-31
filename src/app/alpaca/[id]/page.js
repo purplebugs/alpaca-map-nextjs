@@ -1,12 +1,15 @@
-import { db } from "@/functions/db.js";
-import { AlpacaDetail } from "@/components/alpacaDetail.js";
 import { Suspense } from "react";
+import { unstable_noStore as noStore } from "next/cache";
+
+import { AlpacaDetail } from "@/components/alpacaDetail.js";
+import { db } from "@/functions/db.js";
 import { generateImageSource } from "@/functions/generateImageSource";
 
 export default async function Page({ params }) {
   // TODO error handling when getting data.
   // See old repo https://github.com/purplebugs/alpaca-map/blob/main/client/src/pages/Alpaca.js#L12
 
+  noStore(); // Opt-into dynamic rendering
   const result = await db.getAnimal(params.id);
   const alpaca = result[0];
   const color = alpaca?.color?.color1?.original;
