@@ -1,0 +1,9 @@
+steps:
+  - name: node install
+    entrypoint: npm
+    args: ["install"]
+  - name: node run
+    entrypoint: npm
+    args: ["run", "create-env"]
+    env:
+      - "ELASTIC_CLOUD_ID=${_ELASTIC_CLOUD_ID}"
