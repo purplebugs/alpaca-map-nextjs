@@ -17,6 +17,8 @@ export default class Database {
         apiKey: process.env.ELASTIC_API_KEY,
       },
     });
+
+    console.log("Testing", process.env.ELASTIC_CLOUD_ID.substring(0, 4));
   }
 
   async getAnimal(id) {
