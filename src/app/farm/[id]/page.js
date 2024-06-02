@@ -1,6 +1,6 @@
+import { db } from "@/functions/db.js";
 import { AlpacasDetail } from "@/components/alpacasDetail.js";
 import { Suspense } from "react";
-import { db } from "@/functions/db.js";
 
 export default async function Page({ params }) {
   // TODO error handling when getting data.
