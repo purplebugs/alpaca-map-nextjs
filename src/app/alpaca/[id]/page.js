@@ -1,13 +1,13 @@
 import { generateImageSource } from "@/functions/generateImageSource";
 import { AlpacaDetail } from "@/components/alpacaDetail.js";
 import { Suspense } from "react";
-import { getData } from "@/functions/getData.js";
+import { getAnimal } from "@/functions/getData.js";
 
 export default async function Page({ params }) {
   // TODO error handling when getting data.
   // See old repo https://github.com/purplebugs/alpaca-map/blob/main/client/src/pages/Alpaca.js#L12
 
-  const result = await getData(params.id);
+  const result = await getAnimal(params.id);
   const alpaca = result[0];
   const color = alpaca?.color?.color1?.original;
   const imageSource = generateImageSource(color);
