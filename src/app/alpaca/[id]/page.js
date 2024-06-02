@@ -3,6 +3,8 @@ import { AlpacaDetail } from "@/components/alpacaDetail.js";
 import { Suspense } from "react";
 import { generateImageSource } from "@/functions/generateImageSource";
 
+export const dynamicParams = true;
+
 export default async function Page({ params }) {
   // TODO error handling when getting data.
   // See old repo https://github.com/purplebugs/alpaca-map/blob/main/client/src/pages/Alpaca.js#L12
