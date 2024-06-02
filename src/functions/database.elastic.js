@@ -1,3 +1,5 @@
+import { unstable_noStore as noStore } from "next/cache";
+
 import { Client } from "@elastic/elasticsearch";
 import AnimalFetcher from "@/functions/animalFetcher.js";
 import AnimalsFetcher from "@/functions/animalsFetcher.js";
@@ -9,6 +11,8 @@ import LocationsFetcher from "@/functions/locationsFetcher.js";
 
 export default class Database {
   constructor() {
+    noStore(); // Opt-into dynamic rendering
+
     this.elastic = new Client({
       cloud: {
         id: process.env.ELASTIC_CLOUD_ID,
