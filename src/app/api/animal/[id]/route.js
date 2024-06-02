@@ -1,6 +1,9 @@
+import { unstable_noStore as noStore } from "next/cache";
 import { db } from "@/functions/db.js";
 
 export async function GET(req, context) {
+  noStore(); // Opt-into dynamic rendering
+
   const { id } = await context?.params;
 
   try {
