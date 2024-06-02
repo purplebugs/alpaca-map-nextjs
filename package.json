@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest",
-    "create-env": "printenv > .env"
+    "test": "vitest"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.13.1",
