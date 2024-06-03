@@ -1,6 +1,8 @@
-import { db } from "@/functions/db.js";
+import { getDatabase } from "@/functions/getData.js";
 
 export async function GET() {
+  const db = getDatabase();
+
   try {
     const result = await db.getFarms();
 

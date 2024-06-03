@@ -1,6 +1,8 @@
-import { db } from "@/functions/db.js";
+import { getDatabase } from "@/functions/getData.js";
 
 export async function GET(req, context) {
+  const db = getDatabase();
+
   const searchParams = new URLSearchParams(req.url);
   let { lat, lng, radius } = await context?.params;
 

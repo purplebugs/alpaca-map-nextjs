@@ -1,6 +1,8 @@
-import { db } from "@/functions/db.js";
+import { getDatabase } from "@/functions/getData.js";
 
 export async function POST(request) {
+  const db = getDatabase();
+
   try {
     const formData = await request.formData();
     const query = formData.get("query");

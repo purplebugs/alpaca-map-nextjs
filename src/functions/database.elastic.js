@@ -1,3 +1,4 @@
+import "server-only";
 import { Client } from "@elastic/elasticsearch";
 import AnimalFetcher from "@/functions/animalFetcher.js";
 import AnimalsFetcher from "@/functions/animalsFetcher.js";
@@ -8,16 +9,32 @@ import GeoDistanceRadiusFetcher from "@/functions/geoDistanceRadiusFetcher.js";
 import LocationsFetcher from "@/functions/locationsFetcher.js";
 
 export default class Database {
-  constructor() {
+  constructor(id, key) {
     this.elastic = new Client({
+      cloud: {
+        id: id,
+      },
+      auth: {
+        apiKey: key,
+      },
+    });
+
+    /*     this.elastic = new Client({
       cloud: {
         id: process.env.ELASTIC_CLOUD_ID,
       },
       auth: {
         apiKey: process.env.ELASTIC_API_KEY,
       },
-    });
+    }); */
   }
+
+  /*   cache(async (id) => {
+    const db = connectToDatabase();
+  
+    const fetcher = new AnimalFetcher(db, id);
+    return await fetcher.fetch();
+  }) */
 
   async getAnimal(id) {
     const fetcher = new AnimalFetcher(this.elastic, id);
