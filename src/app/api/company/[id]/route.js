@@ -1,7 +1,6 @@
-import { getDatabase } from "@/functions/getData.js";
+import db from "@/functions/db.js";
 
 export async function GET(req, context) {
-  const db = getDatabase();
   const { id } = await context?.params;
 
   try {

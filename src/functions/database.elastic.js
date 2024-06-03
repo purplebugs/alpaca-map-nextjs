@@ -1,4 +1,3 @@
-import "server-only";
 import { Client } from "@elastic/elasticsearch";
 import AnimalFetcher from "@/functions/animalFetcher.js";
 import AnimalsFetcher from "@/functions/animalsFetcher.js";
@@ -7,72 +6,62 @@ import CompaniesFetcher from "@/functions/companiesFetcher.js";
 import FarmsFetcher from "@/functions/farmsFetcher.js";
 import GeoDistanceRadiusFetcher from "@/functions/geoDistanceRadiusFetcher.js";
 import LocationsFetcher from "@/functions/locationsFetcher.js";
+import { cache } from "react";
 
-export default class Database {
-  constructor(id, key) {
-    this.elastic = new Client({
-      cloud: {
-        id: id,
-      },
-      auth: {
-        apiKey: key,
-      },
-    });
+let elastic = null;
 
-    /*     this.elastic = new Client({
+const connectToDatabase = () => {
+  if (!elastic) {
+    elastic = new Client({
       cloud: {
         id: process.env.ELASTIC_CLOUD_ID,
       },
       auth: {
         apiKey: process.env.ELASTIC_API_KEY,
       },
-    }); */
+    });
   }
-
-  /*   cache(async (id) => {
-    const db = connectToDatabase();
-  
-    const fetcher = new AnimalFetcher(db, id);
-    return await fetcher.fetch();
-  }) */
-
-  async getAnimal(id) {
-    const fetcher = new AnimalFetcher(this.elastic, id);
-    return await fetcher.fetch();
-  }
-
-  async getAnimals(query) {
-    const fetcher = new AnimalsFetcher(this.elastic, query);
-
-    return await fetcher.fetch();
-  }
-
-  async getCompany(id) {
-    const fetcher = new CompanyFetcher(this.elastic, id);
-    return await fetcher.fetch();
-  }
-
-  async getCompanies(query) {
-    const fetcher = new CompaniesFetcher(this.elastic, query);
-
-    return await fetcher.fetch();
-  }
-
-  async getFarms() {
-    const fetcher = new FarmsFetcher(this.elastic);
-
-    return await fetcher.fetch();
-  }
-
-  async getLocations(query) {
-    const fetcher = new LocationsFetcher(this.elastic, query);
-
-    return await fetcher.fetch();
-  }
-
-  async getGeoDistanceRadius(lat, lng, radius, publicFarms, privateFarms) {
-    const fetcher = new GeoDistanceRadiusFetcher(this.elastic, lat, lng, radius, publicFarms, privateFarms);
-
-    return await fetcher.fetch();
-  }
+  return elastic;
 }
+
+export const getAnimal = cache(async (id) => {
+  const db = connectToDatabase();
+  const fetcher = new AnimalFetcher(db, id);
+  return await fetcher.fetch();
+});
+
+export const getAnimals = cache(async (query) => {
+  const db = connectToDatabase();
+  const fetcher = new AnimalsFetcher(db, query);
+  return await fetcher.fetch();
+});
+
+export const getCompany = cache(async (id) => {
+  const db = connectToDatabase();
+  const fetcher = new CompanyFetcher(db, id);
+  return await fetcher.fetch();
+});
+
+export const getCompanies = cache(async (query) => {
+  const db = connectToDatabase();
+  const fetcher = new CompaniesFetcher(db, query);
+  return await fetcher.fetch();
+});
+
+export const getFarms = cache(async () => {
+  const db = connectToDatabase();
+  const fetcher = new FarmsFetcher(db);
+  return await fetcher.fetch();
+});
+
+export const getLocations = cache(async (query) => {
+  const db = connectToDatabase();
+  const fetcher = new LocationsFetcher(db, query);
+  return await fetcher.fetch();
+});
+
+export const getGeoDistanceRadius = cache(async (lat, lng, radius, publicFarms, privateFarms) => {
+  const db = connectToDatabase();
+  const fetcher = new GeoDistanceRadiusFetcher(db, lat, lng, radius, publicFarms, privateFarms);
+  return await fetcher.fetch();
+});

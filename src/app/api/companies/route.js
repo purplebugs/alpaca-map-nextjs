@@ -1,8 +1,11 @@
-import { getDatabase } from "@/functions/getData.js";
+import db from "@/functions/db.js";
 
-export async function GET() {
-  const db = getDatabase();
+// Due to not passing in a parameter to the GET() method, 
+// next thinks this can be a static page upon build. 
+// Therefor forcing it do be dynamic.
+export const dynamic = 'force-dynamic';
 
+export async function GET() {  
   try {
     const result = await db.getFarms();
 

@@ -1,9 +1,8 @@
-import { getDatabase } from "@/functions/getData.js";
+import db from "@/functions/db.js";
 
 export async function GET(req, context) {
   const { id } = await context?.params;
-  const db = getDatabase();
-
+  
   try {
     const idAsNumber = +id; // parseInt(id) does not work as it converts eg "16dsfds" -> "16"
     if (!Number.isInteger(idAsNumber)) {
