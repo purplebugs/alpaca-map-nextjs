@@ -11,11 +11,11 @@ export const fileReader = (fileIn) => {
   }
 };
 
-export async function getAnimal(id) {
-  return id == 2773 ? await fileReader("animal_2773.json") : [];
-}
+export const getAnimal = (id) => {
+  return id == 2773 ? fileReader("animal_2773.json") : [];
+};
 
-export async function getAnimals(query) {
+export const getAnimals = (query) => {
   const result = [];
 
   if (query == "lund") {
@@ -27,28 +27,28 @@ export async function getAnimals(query) {
   }
 
   return result;
-}
+};
 
-export async function getCompany(id) {
-  return id === "61" ? await fileReader("company_61.json") : [];
-}
+export const getCompany = (id) => {
+  return id === "61" ? fileReader("company_61.json") : [];
+};
 
-export async function getCompanies(query) {
+export const getCompanies = (query) => {
   return query == "lund" ? fileReader("companies_lund.json") : [];
-}
+};
 
-export async function getFarms() {
-  return await fileReader("farms_mock.json");
-}
+export const getFarms = () => {
+  return fileReader("farms_mock.json");
+};
 
-export async function getGeoDistanceRadius(lat, lng, radius, publicFarms, privateFarms) {
+export const getGeoDistanceRadius = (lat, lng, radius, publicFarms, privateFarms) => {
   // Response is mock of searching "Kyrksæterøra, Norway" in location search bar (Google autocomplete)
   // then sending this request with found lat,lng:
   // http://localhost:3000/api/companies/63.292781/9.0826007/500000
 
   return fileReader("api_farms_radius_respose_Kyrksæterøra.json");
-}
+};
 
-export async function getLocations(query) {
+export const getLocations = (query) => {
   return query == "lund" ? fileReader("locations_lund.json") : [];
-}
+};
