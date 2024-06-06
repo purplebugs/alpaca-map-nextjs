@@ -1,4 +1,4 @@
-import { db } from "@/functions/db.js";
+import db from "@/functions/db.js";
 
 export async function POST(request) {
   try {

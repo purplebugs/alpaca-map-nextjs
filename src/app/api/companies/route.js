@@ -1,4 +1,9 @@
-import { db } from "@/functions/db.js";
+import db from "@/functions/db.js";
+
+// Due to not passing in a parameter to the GET() method,
+// nextjs thinks this can be a static page upon build.
+// Therefore forcing it do be dynamic.
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
