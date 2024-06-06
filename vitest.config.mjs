@@ -10,5 +10,6 @@ export default defineConfig({
       "@/api/": new URL("./src/app/api/", import.meta.url).pathname,
       "@/functions/": new URL("./src/functions/", import.meta.url).pathname,
     },
+    exclude: ["**/node_modules/**", "**/test-ui/**"],
   },
 });

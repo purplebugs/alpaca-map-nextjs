@@ -30,8 +30,16 @@ View at [http://localhost:3000](http://localhost:3000)
 
 ## Test app 🧪
 
+Unit tests
+
 ```bash
 npm run test
+```
+
+UI tests
+
+```bash
+npm run test-ui
 ```
 
 ## Deploy app 🤖
