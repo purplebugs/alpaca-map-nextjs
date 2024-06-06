@@ -23,49 +23,49 @@ const connectToDatabase = () => {
   return elastic;
 };
 
-export async function getAnimal(id) {
+export const getAnimal = async (id) => {
   const db = connectToDatabase();
   const fetcher = new AnimalFetcher(db, id);
   return await fetcher.fetch();
-}
+};
 
-export async function getAnimals(query) {
+export const getAnimals = async (query) => {
   const db = connectToDatabase();
   const fetcher = new AnimalsFetcher(db, query);
 
   return await fetcher.fetch();
-}
+};
 
-export async function getCompany(id) {
+export const getCompany = async (id) => {
   const db = connectToDatabase();
   const fetcher = new CompanyFetcher(db, id);
   return await fetcher.fetch();
-}
+};
 
-export async function getCompanies(query) {
+export const getCompanies = async (query) => {
   const db = connectToDatabase();
   const fetcher = new CompaniesFetcher(db, query);
 
   return await fetcher.fetch();
-}
+};
 
-export async function getFarms() {
+export const getFarms = async () => {
   const db = connectToDatabase();
   const fetcher = new FarmsFetcher(db);
 
   return await fetcher.fetch();
-}
+};
 
-export async function getLocations(query) {
+export const getLocations = async (query) => {
   const db = connectToDatabase();
   const fetcher = new LocationsFetcher(db, query);
 
   return await fetcher.fetch();
-}
+};
 
-export async function getGeoDistanceRadius(lat, lng, radius, publicFarms, privateFarms) {
+export const getGeoDistanceRadius = async (lat, lng, radius, publicFarms, privateFarms) => {
   const db = connectToDatabase();
   const fetcher = new GeoDistanceRadiusFetcher(db, lat, lng, radius, publicFarms, privateFarms);
 
   return await fetcher.fetch();
-}
+};
