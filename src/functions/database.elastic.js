@@ -30,35 +30,41 @@ export async function getAnimal(id) {
 }
 
 export async function getAnimals(query) {
+  const db = connectToDatabase();
   const fetcher = new AnimalsFetcher(db, query);
 
   return await fetcher.fetch();
 }
 
 export async function getCompany(id) {
+  const db = connectToDatabase();
   const fetcher = new CompanyFetcher(db, id);
   return await fetcher.fetch();
 }
 
 export async function getCompanies(query) {
+  const db = connectToDatabase();
   const fetcher = new CompaniesFetcher(db, query);
 
   return await fetcher.fetch();
 }
 
 export async function getFarms() {
+  const db = connectToDatabase();
   const fetcher = new FarmsFetcher(db);
 
   return await fetcher.fetch();
 }
 
 export async function getLocations(query) {
+  const db = connectToDatabase();
   const fetcher = new LocationsFetcher(db, query);
 
   return await fetcher.fetch();
 }
 
 export async function getGeoDistanceRadius(lat, lng, radius, publicFarms, privateFarms) {
+  const db = connectToDatabase();
   const fetcher = new GeoDistanceRadiusFetcher(db, lat, lng, radius, publicFarms, privateFarms);
 
   return await fetcher.fetch();
