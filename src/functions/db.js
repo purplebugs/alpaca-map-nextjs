@@ -1,4 +1,3 @@
-import * as elastic from '@/functions/database.elastic.js';
-import * as mock from '@/functions/database.mock.js';
-
-export default process?.env?.NODE_ENV === "test" ? mock : elastic ;
+export default process?.env?.NODE_ENV === "test"
+  ? await import("@/functions/database.mock.js")
+  : await import("@/functions/database.elastic.js");
