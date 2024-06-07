@@ -1,4 +1,5 @@
 import { Client } from "@elastic/elasticsearch";
+import { cache } from "react";
 import AnimalFetcher from "@/functions/animalFetcher.js";
 import AnimalsFetcher from "@/functions/animalsFetcher.js";
 import CompanyFetcher from "@/functions/companyFetcher.js";
@@ -23,49 +24,49 @@ const connectToDatabase = () => {
   return elastic;
 };
 
-export const getAnimal = async (id) => {
+export const getAnimal = cache(async (id) => {
   const db = connectToDatabase();
   const fetcher = new AnimalFetcher(db, id);
   return await fetcher.fetch();
-};
+});
 
-export const getAnimals = async (query) => {
+export const getAnimals = cache(async (query) => {
   const db = connectToDatabase();
   const fetcher = new AnimalsFetcher(db, query);
 
   return await fetcher.fetch();
-};
+});
 
-export const getCompany = async (id) => {
+export const getCompany = cache(async (id) => {
   const db = connectToDatabase();
   const fetcher = new CompanyFetcher(db, id);
   return await fetcher.fetch();
-};
+});
 
-export const getCompanies = async (query) => {
+export const getCompanies = cache(async (query) => {
   const db = connectToDatabase();
   const fetcher = new CompaniesFetcher(db, query);
 
   return await fetcher.fetch();
-};
+});
 
-export const getFarms = async () => {
+export const getFarms = cache(async () => {
   const db = connectToDatabase();
   const fetcher = new FarmsFetcher(db);
 
   return await fetcher.fetch();
-};
+});
 
-export const getLocations = async (query) => {
+export const getLocations = cache(async (query) => {
   const db = connectToDatabase();
   const fetcher = new LocationsFetcher(db, query);
 
   return await fetcher.fetch();
-};
+});
 
-export const getGeoDistanceRadius = async (lat, lng, radius, publicFarms, privateFarms) => {
+export const getGeoDistanceRadius = cache(async (lat, lng, radius, publicFarms, privateFarms) => {
   const db = connectToDatabase();
   const fetcher = new GeoDistanceRadiusFetcher(db, lat, lng, radius, publicFarms, privateFarms);
 
   return await fetcher.fetch();
-};
+});
