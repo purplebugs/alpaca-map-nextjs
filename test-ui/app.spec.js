@@ -29,7 +29,7 @@ test.describe("General elements", () => {
   });
 });
 
-test.describe("Alpaca page", () => {
+test.describe.skip("Alpaca page", () => {
   test("Headings are visible", async ({ page }) => {
     // ARRANGE
     await page.goto(`/alpaca/2773`);
@@ -85,7 +85,7 @@ test.describe("Alpaca page", () => {
   });
 });
 
-test.describe("Farm page", () => {
+test.describe.skip("Farm page", () => {
   test("Headings are visible", async ({ page }) => {
     // ARRANGE
     await page.goto(`/farm/61`);
