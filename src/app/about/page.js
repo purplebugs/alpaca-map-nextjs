@@ -58,7 +58,7 @@ export default function Page() {
 
             <aside>
               <h3>
-                The &ldquo;<span className="strikethrough">Silicon</span> Alpaca Valley&ldquo; pitch
+                The "<span className="strikethrough">Silicon</span> Alpaca Valley" pitch
               </h3>
               <p>
                 🤖 This website is made with AI<sup>*</sup> technology
