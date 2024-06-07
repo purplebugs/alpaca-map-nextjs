@@ -14,7 +14,7 @@ export default function Page() {
               <figure>
                 <Image
                   className="photo"
-                  src="/Anita_visits_alpaca_Trygve.JPG"
+                  src="/Anita_visits_alpaca_Trygve.jpg"
                   alt="Anita visits alpaca Trygve and friends at Alpakkahagen, Norway"
                   width={567}
                   height={756}
