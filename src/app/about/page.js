@@ -14,7 +14,7 @@ export default function Page() {
               <figure>
                 <Image
                   className="photo"
-                  src="/Anita_visits_alpaca_Trygve.JPG"
+                  src="/Anita_visits_alpaca_Trygve.jpg"
                   alt="Anita visits alpaca Trygve and friends at Alpakkahagen, Norway"
                   width={567}
                   height={756}
@@ -58,7 +58,7 @@ export default function Page() {
 
             <aside>
               <h3>
-                The &ldquo;<span className="strikethrough">Silicon</span> Alpaca Valley&ldquo; pitch
+                The &quot;<span className="strikethrough">Silicon</span> Alpaca Valley&quot; pitch
               </h3>
               <p>
                 🤖 This website is made with AI<sup>*</sup> technology

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest"
+    "test": "vitest",
+    "test-ui": "playwright test"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.13.1",
@@ -16,7 +17,9 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@playwright/test": "^1.44.1",
     "@testing-library/react": "^15.0.7",
+    "@types/node": "^20.14.2",
     "@vitejs/plugin-react": "^4.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",

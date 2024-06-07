@@ -48,3 +48,11 @@ gcloud auth login
 # set current project
 gcloud config set project alpaca-maps
 ```
+
+## Test 🧪
+
+Install browsers for UI tests
+
+```
+npx playwright install --with-deps
+```
