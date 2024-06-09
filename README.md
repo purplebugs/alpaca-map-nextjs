@@ -42,6 +42,12 @@ UI tests
 npm run test-ui
 ```
 
+Interactive mode
+
+```bash
+npm run test-ui -- --ui
+```
+
 ## Deploy app 🤖
 
 ### Auto deploy on push to main branch 🚀
