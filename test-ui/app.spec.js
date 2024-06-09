@@ -30,7 +30,7 @@ test.describe("General elements", () => {
 });
 
 // TODO resolve mock build issue and unskip
-test.describe.skip("Alpaca page", () => {
+test.describe("Alpaca page", () => {
   test("Headings are visible", async ({ page }) => {
     // ARRANGE
     await page.goto(`/alpaca/2773`);
@@ -87,7 +87,7 @@ test.describe.skip("Alpaca page", () => {
 });
 
 // TODO resolve mock build issue and unskip
-test.describe.skip("Farm page", () => {
+test.describe("Farm page", () => {
   test("Headings are visible", async ({ page }) => {
     // ARRANGE
     await page.goto(`/farm/61`);
