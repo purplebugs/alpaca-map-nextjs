@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
-    "test-ui": "playwright test"
+    "test-ui": "NODE_ENV=test playwright test"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.13.1",
