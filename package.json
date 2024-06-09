@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest",
-    "test-ui": "NODE_ENV=test playwright test"
+    "test": "DB_TYPE=mock vitest",
+    "test-ui": "DB_TYPE=mock playwright test"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.13.1",
