@@ -10,10 +10,11 @@ const RenderedItem = (item) => {
 };
 
 export default async function Results({ query }) {
-  const animals = await db?.getAnimals(query);
+  const [animals, companies, locations] = await Promise.all([db?.getAnimals(query), db?.getCompanies(query)]);
 
   console.log(animals);
 
+  // TODO add summary at the top
   // TODO get farms, areas and show results
   // TODO tests
 

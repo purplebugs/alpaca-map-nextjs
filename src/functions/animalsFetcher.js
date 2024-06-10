@@ -57,6 +57,7 @@ export default class AnimalsFetcher {
     const total = result.hits.total.value <= this.maxTotal ? result.hits.total.value : this.maxTotal;
 
     if (total === 0) {
+      const todo = { total: 0, items: [] }; // TODO update return structure for animals, locations, companies to include total
       resolve([]);
       return;
     }
