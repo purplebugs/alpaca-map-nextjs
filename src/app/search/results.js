@@ -15,7 +15,6 @@ export default async function Results({ query }) {
   console.log(animals);
 
   // TODO get farms, areas and show results
-  // TODO debouncing or similar for search
   // TODO tests
 
   return (

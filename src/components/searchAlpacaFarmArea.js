@@ -1,13 +1,14 @@
 "use client";
 
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { useDebouncedCallback } from "use-debounce";
 
 export default function SearchAlpacaFarmArea({ placeholder }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const handleChange = (term) => {
+  const handleChange = useDebouncedCallback((term) => {
     // Ref: https://nextjs.org/learn/dashboard-app/adding-search-and-pagination#2-update-the-url-with-the-search-params
 
     const params = new URLSearchParams(searchParams);
@@ -21,7 +22,7 @@ export default function SearchAlpacaFarmArea({ placeholder }) {
     console.log(term);
 
     replace(`${pathname}?${params.toString()}`);
-  };
+  }, 200);
 
   return (
     <>
