@@ -9,9 +9,11 @@ export default async function Page({ searchParams }) {
       <header>
         <h2>Search</h2>
       </header>
-      <main>
+      <main id="search-page">
         <div className="search-form">
-          <SearchAlpacaFarmArea placeholder="Find alpaca, farm, area" />
+          <div id="form-search-by-alpaca">
+            <SearchAlpacaFarmArea placeholder="Find alpaca, farm, area" />
+          </div>
         </div>
         <div className="search-results">
           <Suspense fallback={<p>Loading results...</p>}>
