@@ -41,7 +41,7 @@ describe(`POST /api/companies/search { query: "lund" }`, () => {
 
   test(`Value of name[0]`, async () => {
     const actual = data.items[0].name;
-    const expected = `Marie <em>Lund</em>-Mikkelson`;
+    const expected = `Margit <em>Lund</em>-Mikkelson`;
 
     assert.equal(actual, expected, `Item ${actual} - should return ${expected}`);
   });
