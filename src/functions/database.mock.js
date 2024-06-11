@@ -16,22 +16,14 @@ export const getAnimal = (id) => {
 };
 
 export const getAnimals = (query) => {
-  let total = 0;
-  let items = [];
-  let result = { total: total, items: items };
+  const result = { total: 0, items: [] };
 
   if (query == "lund") {
-    items = fileReader("animals_lund.json");
-    total = items.length;
-
-    result = { total: total, items: items };
+    return fileReader("animals_lund.json");
   }
 
   if (query == "trygv") {
-    items = fileReader("animals_trygv.json");
-    total = items.length;
-
-    result = { total: total, items: items };
+    return fileReader("animals_trygv.json");
   }
 
   return result;
@@ -42,15 +34,10 @@ export const getCompany = (id) => {
 };
 
 export const getCompanies = (query) => {
-  let total = 0;
-  let items = [];
-  let result = { total: total, items: items };
+  const result = { total: 0, items: [] };
 
   if (query == "lund") {
-    items = fileReader("animals_lund.json");
-    total = items.length;
-
-    result = { total: total, items: items };
+    return fileReader("companies_lund.json");
   }
   return result;
 };
