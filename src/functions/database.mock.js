@@ -16,14 +16,22 @@ export const getAnimal = (id) => {
 };
 
 export const getAnimals = (query) => {
-  const result = [];
+  let total = 0;
+  let items = [];
+  let result = { total: total, items: items };
 
   if (query == "lund") {
-    return fileReader("animals_lund.json");
+    items = fileReader("animals_lund.json");
+    total = items.length;
+
+    result = { total: total, items: items };
   }
 
   if (query == "trygv") {
-    return fileReader("animals_trygv.json");
+    items = fileReader("animals_trygv.json");
+    total = items.length;
+
+    result = { total: total, items: items };
   }
 
   return result;
