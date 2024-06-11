@@ -9,12 +9,30 @@ const RenderedItem = (item) => {
   return <span dangerouslySetInnerHTML={markup} />;
 };
 
-export default async function Results({ query }) {
+export default async function Results({ query, animalPageNumber }) {
+  console.log("RESULTS animalPageNumber", animalPageNumber);
+
   const [animals, companies, locations] = await Promise.all([
-    db?.getAnimals(query),
+    /*
+
+TODO update elastic search result to include pagination - add these fields:
+  "from": 5,
+  "size": 20,
+
+*/
+
+    db?.getAnimals(query), // TODO use animalPageNumber in db request to return paginated results
     db?.getCompanies(query),
     db?.getLocations(query),
   ]);
+
+  const itemsPerSection = 2;
+  const alpacaTotalPages = Math.ceil(animals?.total / itemsPerSection);
+
+  const alpacaPageList = Array.from({ length: alpacaTotalPages }, (_, i) => i + 1);
+  console.log("RESULTS alpacaPageList", alpacaPageList);
+
+  let alpacaCurrentPage = 1;
 
   return (
     <>
@@ -60,6 +78,15 @@ export default async function Results({ query }) {
       </ul>
 
       <h4 id="animals-list">🦙 Alpacas - {animals?.total}</h4>
+
+      <div>
+        {alpacaPageList.map((page) => (
+          <>
+            <Link href={`/search?query=${query}&animalPageNumber=${page}`}>{page}</Link> -{" "}
+          </>
+        ))}
+      </div>
+
       <ul data-testid="list-results-animals">
         {animals?.items?.map((item) => (
           <li key={item?.alpacaId}>
