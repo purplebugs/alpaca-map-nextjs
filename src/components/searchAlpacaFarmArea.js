@@ -24,14 +24,22 @@ export default function SearchAlpacaFarmArea({ placeholder }) {
 
   return (
     <>
-      <label htmlFor="search">Find alpacas, farms, area</label>
-      <input
-        placeholder={placeholder}
-        id="search"
-        onChange={(e) => handleChange(e.target.value)}
-        // Ref: https://nextjs.org/learn/dashboard-app/adding-search-and-pagination#3-keeping-the-url-and-input-in-sync
-        defaultValue={searchParams.get("query")?.toString()}
-      />
+      <div>
+        <h3>
+          <label htmlFor="search-by-alpaca">Find alpacas, farms, area</label>
+        </h3>
+      </div>
+      <div id="text-search-by-alpaca">
+        <input
+          name="search-by-alpaca"
+          id="search-by-alpaca"
+          type="text"
+          placeholder={placeholder}
+          onChange={(e) => handleChange(e.target.value)}
+          // Ref: https://nextjs.org/learn/dashboard-app/adding-search-and-pagination#3-keeping-the-url-and-input-in-sync
+          defaultValue={searchParams.get("query")?.toString()}
+        />{" "}
+      </div>
     </>
   );
 }

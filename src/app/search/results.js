@@ -16,13 +16,10 @@ export default async function Results({ query }) {
     db?.getLocations(query),
   ]);
 
-  // TODO get areas, add to summary and list
-  // TODO tests
-
   return (
     <>
       <p data-testid="search-list-results-heading">
-        {locations?.total > 0 ? <Link href="#locations-list">{locations?.total}</Link> : 0} - Areas - Farms{" "}
+        Areas {locations?.total > 0 ? <Link href="#locations-list">{locations?.total}</Link> : 0} - Farms{" "}
         {companies?.total > 0 ? <Link href="#companies-list">{companies?.total}</Link> : 0} - 🦙 Alpacas{" "}
         {animals?.total > 0 ? <Link href="#animals-list">{animals?.total}</Link> : 0}
       </p>
@@ -46,7 +43,7 @@ export default async function Results({ query }) {
         ))}
       </ul>
 
-      <h4 id="companies-list">🦙 Farms - {companies?.total}</h4>
+      <h4 id="companies-list">Farms - {companies?.total}</h4>
       <ul data-testid="list-results-companies">
         {companies?.items?.map((item) => (
           <li key={item.id}>
