@@ -52,7 +52,7 @@ export default class CompaniesFetcher {
     const total = result.hits.total.value <= this.maxTotal ? result.hits.total.value : this.maxTotal;
 
     if (total === 0) {
-      resolve([]);
+      resolve({ total: 0, items: [] });
       return;
     }
 
@@ -74,7 +74,7 @@ export default class CompaniesFetcher {
       return;
     }
 
-    resolve(this.data); // Callback
+    resolve({ total: total, items: this.data }); // Callback
   }
 
   fetch() {

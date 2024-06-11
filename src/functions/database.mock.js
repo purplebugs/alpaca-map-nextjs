@@ -16,7 +16,7 @@ export const getAnimal = (id) => {
 };
 
 export const getAnimals = (query) => {
-  const result = [];
+  const result = { total: 0, items: [] };
 
   if (query == "lund") {
     return fileReader("animals_lund.json");
@@ -34,7 +34,12 @@ export const getCompany = (id) => {
 };
 
 export const getCompanies = (query) => {
-  return query == "lund" ? fileReader("companies_lund.json") : [];
+  const result = { total: 0, items: [] };
+
+  if (query == "lund") {
+    return fileReader("companies_lund.json");
+  }
+  return result;
 };
 
 export const getFarms = () => {
