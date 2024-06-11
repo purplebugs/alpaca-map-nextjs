@@ -80,9 +80,10 @@ TODO update elastic search result to include pagination - add these fields:
       <h4 id="animals-list">🦙 Alpacas - {animals?.total}</h4>
 
       <div>
-        {alpacaPageList.map((page) => (
+        {alpacaPageList.map((page, index) => (
           <>
-            <Link href={`/search?query=${query}&animalPageNumber=${page}`}>{page}</Link> -{" "}
+            {index === 0 ? "" : " - "}
+            <Link href={`/search?query=${query}&animalPageNumber=${page}`}>{page}</Link>
           </>
         ))}
       </div>
