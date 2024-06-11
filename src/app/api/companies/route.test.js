@@ -19,7 +19,7 @@ describe("GET /api/companies", () => {
   });
 
   test("At least 2 items", async () => {
-    const actual = data.length;
+    const actual = data.total;
     const expected = 2;
 
     assert.isAtLeast(actual, expected, `Number of items returned: ${actual} - should return at least ${expected}`);

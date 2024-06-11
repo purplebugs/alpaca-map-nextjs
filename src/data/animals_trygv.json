@@ -1,14 +1,17 @@
-[
-  {
-    "alpacaId": 2773,
-    "alpacaRegisteredName": ["ALPAKKAHAGEN SØRUMS <em>TRYGVE</em>"],
-    "alpacaShortName": ["<em>TRYGVE</em>"],
-    "companyId": 61
-  },
-  {
-    "alpacaId": 4185,
-    "alpacaRegisteredName": ["LUNDEGÅRDS <em>TRYGVE</em>"],
-    "alpacaShortName": ["<em>TRYGVE</em>"],
-    "companyId": 28
-  }
-]
+{
+  "total": 2,
+  "items": [
+    {
+      "alpacaId": 2773,
+      "alpacaRegisteredName": ["ALPAKKAHAGEN SØRUMS <em>TRYGVE</em>"],
+      "alpacaShortName": ["<em>TRYGVE</em>"],
+      "companyId": 61
+    },
+    {
+      "alpacaId": 4185,
+      "alpacaRegisteredName": ["LUNDEGÅRDS <em>TRYGVE</em>"],
+      "alpacaShortName": ["<em>TRYGVE</em>"],
+      "companyId": 28
+    }
+  ]
+}
