@@ -26,21 +26,21 @@ describe(`POST /api/companies/search { query: "lund" }`, () => {
   });
 
   test(`At least 1 item`, async () => {
-    const actual = data.length;
+    const actual = data.total;
     const expected = 1;
 
     assert.isAtLeast(actual, expected, `Number of items returned: ${actual} - should return at least ${expected}`);
   });
 
   test(`Value of id[0]`, async () => {
-    const actual = data[0].id;
+    const actual = data.items[0].id;
     const expected = 197;
 
     assert.equal(actual, expected, `Item ${actual} - should return ${expected}`);
   });
 
   test(`Value of name[0]`, async () => {
-    const actual = data[0].name;
+    const actual = data.items[0].name;
     const expected = `Marie <em>Lund</em>-Mikkelson`;
 
     assert.equal(actual, expected, `Item ${actual} - should return ${expected}`);
