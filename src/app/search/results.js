@@ -22,7 +22,7 @@ export default async function Results({ query }) {
     <>
       <h4 id="animals-list">🦙 Alpacas - TODO total</h4>
       <ul data-testid="list-results-animals">
-        {animals?.map((item) => (
+        {animals?.items?.map((item) => (
           <li key={item?.alpacaId}>
             {RenderedItem(item?.alpacaRegisteredName)}
 
