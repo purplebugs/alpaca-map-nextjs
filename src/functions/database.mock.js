@@ -34,12 +34,7 @@ export const getCompany = (id) => {
 };
 
 export const getCompanies = (query) => {
-  const result = { total: 0, items: [] };
-
-  if (query == "lund") {
-    return fileReader("companies_lund.json");
-  }
-  return result;
+  return query == "lund" ? fileReader("companies_lund.json") : { total: 0, items: [] };
 };
 
 export const getFarms = () => {
@@ -55,5 +50,5 @@ export const getGeoDistanceRadius = (lat, lng, radius, publicFarms, privateFarms
 };
 
 export const getLocations = (query) => {
-  return query == "lund" ? fileReader("locations_lund.json") : [];
+  return query == "lund" ? fileReader("locations_lund.json") : { total: 0, items: [] };
 };
