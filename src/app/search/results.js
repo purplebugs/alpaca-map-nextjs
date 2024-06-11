@@ -63,8 +63,7 @@ export default async function Results({ query }) {
       <ul data-testid="list-results-animals">
         {animals?.items?.map((item) => (
           <li key={item?.alpacaId}>
-            {RenderedItem(item?.alpacaRegisteredName)}
-
+            Short Name: {RenderedItem(item?.alpacaRegisteredName)}
             <ul>
               <li>Registered Name: {RenderedItem(item?.alpacaRegisteredName)}</li>
               <li>

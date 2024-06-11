@@ -199,12 +199,12 @@ test.describe("Search page", () => {
     await page.getByRole("textbox", { name: "Find alpacas, farms, area" }).fill("lund");
 
     // ASSERT
-    expect(page.getByTestId("search-list-results-heading")).toContainText("Areas 1 - Farms 6 - 🦙 Alpacas 6");
+    expect(page.getByTestId("search-list-results-heading")).toContainText("Areas 1 - Farms 5 - 🦙 Alpacas 6");
     await expect(page.getByTestId("list-results-locations")).toContainText(/Kamperhaug/);
     await expect(page.getByTestId("list-results-locations-farm-id-209")).toHaveAttribute("href", /farm\/209/);
 
-    await expect(page.getByTestId("list-results-companies")).toContainText(/Helge Lund/);
-    await expect(page.getByTestId("list-results-companies-farm-id-195")).toHaveAttribute("href", /farm\/195/);
+    await expect(page.getByTestId("list-results-companies")).toContainText(/Margit Lund/);
+    await expect(page.getByTestId("list-results-companies-farm-id-197")).toHaveAttribute("href", /farm\/197/);
 
     await expect(page.getByTestId("list-results-animals")).toContainText(/Short Name: LUNA/);
     await expect(page.getByTestId("list-results-animals-animal-id-2277")).toHaveAttribute("href", /alpaca\/2277/);
