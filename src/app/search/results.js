@@ -10,7 +10,11 @@ const RenderedItem = (item) => {
 };
 
 export default async function Results({ query }) {
-  const [animals, companies, locations] = await Promise.all([db?.getAnimals(query), db?.getCompanies(query)]);
+  const [animals, companies, locations] = await Promise.all([
+    db?.getAnimals(query),
+    db?.getCompanies(query),
+    db?.getLocations(query),
+  ]);
 
   // TODO get areas, add to summary and list
   // TODO tests
@@ -18,10 +22,29 @@ export default async function Results({ query }) {
   return (
     <>
       <p data-testid="search-list-results-heading">
-        {/*         Areas TODO DO*/} - Farms{" "}
+        {locations?.total > 0 ? <Link href="#locations-list">{locations?.total}</Link> : 0} - Areas - Farms{" "}
         {companies?.total > 0 ? <Link href="#companies-list">{companies?.total}</Link> : 0} - 🦙 Alpacas{" "}
         {animals?.total > 0 ? <Link href="#animals-list">{animals?.total}</Link> : 0}
       </p>
+
+      <h4 id="locations-list">Areas - {locations?.total}</h4>
+      <ul data-testid="list-results-locations">
+        {locations?.items?.map((item) => (
+          <>
+            <li key={item?.id}>
+              {RenderedItem(item?.name)} - {RenderedItem(item?.location?.google?.administrative_area_level_2)},{" "}
+              {RenderedItem(item?.location?.google?.administrative_area_level_1)}
+            </li>
+            <ul>
+              <li>
+                <Link href={`/farm/${item?.id}`} data-testid={`list-results-locations-farm-id-${item?.id}`}>
+                  Farm info
+                </Link>
+              </li>
+            </ul>
+          </>
+        ))}
+      </ul>
 
       <h4 id="companies-list">🦙 Farms - {companies?.total}</h4>
       <ul data-testid="list-results-companies">

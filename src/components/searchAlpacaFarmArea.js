@@ -19,14 +19,12 @@ export default function SearchAlpacaFarmArea({ placeholder }) {
       params.delete("query");
     }
 
-    console.log(term);
-
     replace(`${pathname}?${params.toString()}`);
   }, 200);
 
   return (
     <>
-      <label htmlFor="search">Search</label>
+      <label htmlFor="search">Find alpacas, farms, area</label>
       <input
         placeholder={placeholder}
         id="search"
