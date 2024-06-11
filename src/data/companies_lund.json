@@ -1,22 +1,25 @@
-[
-  {
-    "id": 197,
-    "name": ["Marie <em>Lund</em>-Mikkelson"]
-  },
-  {
-    "id": 115,
-    "name": ["Cherie <em>Lunde</em>"]
-  },
-  {
-    "id": 270,
-    "name": ["Marthe <em>Lunde</em>"]
-  },
-  {
-    "id": 233,
-    "name": ["Arne <em>Lund</em>/Ole Lie"]
-  },
-  {
-    "id": 142,
-    "name": ["Kjetil Harry <em>Lunde</em>"]
-  }
-]
+{
+  "total": 5,
+  "items": [
+    {
+      "id": 197,
+      "name": ["Marie <em>Lund</em>-Mikkelson"]
+    },
+    {
+      "id": 115,
+      "name": ["Cherie <em>Lunde</em>"]
+    },
+    {
+      "id": 270,
+      "name": ["Marthe <em>Lunde</em>"]
+    },
+    {
+      "id": 233,
+      "name": ["Arne <em>Lund</em>/Ole Lie"]
+    },
+    {
+      "id": 142,
+      "name": ["Kjetil Harry <em>Lunde</em>"]
+    }
+  ]
+}
