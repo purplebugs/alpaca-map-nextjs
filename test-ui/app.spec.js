@@ -29,7 +29,6 @@ test.describe("General elements", () => {
   });
 });
 
-// TODO resolve mock build issue and unskip
 test.describe("Alpaca page", () => {
   test("Headings are visible", async ({ page }) => {
     // ARRANGE
@@ -86,7 +85,6 @@ test.describe("Alpaca page", () => {
   });
 });
 
-// TODO resolve mock build issue and unskip
 test.describe("Farm page", () => {
   test("Headings are visible", async ({ page }) => {
     // ARRANGE
@@ -157,6 +155,59 @@ test.describe("Farm page", () => {
     await expect(page.getByTestId("alpaca-detail-active").first()).toContainText(
       "Registered nameAMBERSUN SIGNEShort nameAMBERSUN SIGNEGenderSEX_FEMALEDOB03 September 2011BreedBREED_HUACAYAStatusSTATUS_ACTIVETag Id9002Colour 1WhiteColour SolidWhite"
     );
+  });
+});
+
+test.describe("Search page", () => {
+  test("Page elements", async ({ page }) => {
+    // ARRANGE
+    await page.goto(`/search`);
+
+    // ASSERT
+    expect(page.getByTestId("search-list-results-heading")).toBeVisible;
+    await expect(page.getByRole("heading", { name: "Find alpacas, farms, area" })).toBeVisible();
+    await expect(page.getByRole("textbox", { name: `Find alpacas, farms, area` })).toBeVisible();
+    await expect(page.getByPlaceholder("Find alpaca, farm, area")).toBeVisible();
+
+    // await expect(input).toHaveClass("pill half"); TODO put back when re do CSS ??
+  });
+
+  test(`TYPE "trygv" returns alpacas only, CLICK alpaca found shows alpaca page`, async ({ page }) => {
+    // ARRANGE
+    await page.goto(`/search`);
+
+    // ACT
+    await page.getByRole("textbox", { name: `Find alpacas, farms, area` }).fill("trygv");
+
+    // ASSERT
+    expect(page.getByTestId("search-list-results-heading")).toContainText("Farms 0 - 🦙 Alpacas 2");
+    const listResults = page.getByTestId("list-results-animals");
+    await expect(listResults).toContainText(/ALPAKKAHAGEN SØRUMS TRYGVE/);
+    await expect(listResults).toContainText(/LUNDEGÅRDS TRYGVE/);
+
+    // ACT + ASSERT
+    await page.getByTestId("list-results-animals-animal-id-2773").click();
+    // Expects the URL to contain string
+    await expect(page).toHaveURL(/\/alpaca\/2773$/);
+  });
+
+  test(`TYPE "lund" returns areas, farms, alpacas`, async ({ page }) => {
+    // ARRANGE
+    await page.goto(`/search`);
+
+    // ACT
+    await page.getByRole("textbox", { name: "Find alpacas, farms, area" }).fill("lund");
+
+    // ASSERT
+    expect(page.getByTestId("search-list-results-heading")).toContainText("Areas 1 - Farms 5 - 🦙 Alpacas 6");
+    await expect(page.getByTestId("list-results-locations")).toContainText(/Kamperhaug/);
+    await expect(page.getByTestId("list-results-locations-farm-id-209")).toHaveAttribute("href", /farm\/209/);
+
+    await expect(page.getByTestId("list-results-companies")).toContainText(/Margit Lund/);
+    await expect(page.getByTestId("list-results-companies-farm-id-197")).toHaveAttribute("href", /farm\/197/);
+
+    await expect(page.getByTestId("list-results-animals")).toContainText(/Short Name: LUNA/);
+    await expect(page.getByTestId("list-results-animals-animal-id-2277")).toHaveAttribute("href", /alpaca\/2277/);
   });
 });
 
