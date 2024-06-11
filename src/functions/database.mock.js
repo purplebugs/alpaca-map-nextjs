@@ -42,7 +42,17 @@ export const getCompany = (id) => {
 };
 
 export const getCompanies = (query) => {
-  return query == "lund" ? fileReader("companies_lund.json") : [];
+  let total = 0;
+  let items = [];
+  let result = { total: total, items: items };
+
+  if (query == "lund") {
+    items = fileReader("animals_lund.json");
+    total = items.length;
+
+    result = { total: total, items: items };
+  }
+  return result;
 };
 
 export const getFarms = () => {
