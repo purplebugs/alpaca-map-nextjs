@@ -57,12 +57,12 @@
     },
     "location": {
       "type": "Point",
-      "coordinates": [11.2229125, 60.0075085],
+      "coordinates": [11.2229452, 60.0075045],
       "google": {
         "formatted_address": "Bingenveien 35, 1923 Sørum, Norway",
         "place_id": "ChIJn_8GjgHWQ0YRZcYaf8f3180",
         "directions_url_href": "https://www.google.com/maps/dir/?api=1&origin=&destination=Bingenveien%2035,%201923%20S%C3%B8rum,%20Norway",
-        "administrative_area_level_1": "Viken",
+        "administrative_area_level_1": "Akershus",
         "administrative_area_level_2": "Lillestrøm"
       },
       "original": {
