@@ -26,7 +26,7 @@ describe("POST /api/locations/search", () => {
   });
 
   test(`POST /api/locations/search { query: "lund" } should return at least 1 item`, async () => {
-    const actual = data.length;
+    const actual = data.total;
     const expected = 1;
 
     assert.isAtLeast(actual, expected, `Number of items returned: ${actual} - should return at least ${expected}`);
