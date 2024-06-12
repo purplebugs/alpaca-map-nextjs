@@ -57,9 +57,9 @@ export const getFarms = cache(async () => {
   return await fetcher.fetch();
 });
 
-export const getLocations = cache(async (query) => {
+export const getLocations = cache(async (query, from, size) => {
   const db = connectToDatabase();
-  const fetcher = new LocationsFetcher(db, query);
+  const fetcher = new LocationsFetcher(db, query, from, size);
 
   return await fetcher.fetch();
 });
