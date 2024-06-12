@@ -10,11 +10,9 @@ const RenderedItem = (item) => {
   return <span dangerouslySetInnerHTML={markup} />;
 };
 
-export default async function Results({ query, animalPageNumber }) {
-  console.log("RESULTS animalPageNumber", animalPageNumber);
-
+export default async function Results({ query, alpacasPageNumber }) {
   const itemsPerSection = 5;
-  const from = (animalPageNumber - 1) * itemsPerSection;
+  const from = (alpacasPageNumber - 1) * itemsPerSection;
 
   const [animals, companies, locations] = await Promise.all([
     db?.getAnimals(query, from, itemsPerSection),
@@ -70,7 +68,7 @@ export default async function Results({ query, animalPageNumber }) {
 
       <h4 id="animals-list">🦙 Alpacas - {animals?.total}</h4>
 
-      <Pagination items={alpacaPageList} query={query} pageNumber={"animalPageNumber"} />
+      <Pagination items={alpacaPageList} query={query} pageNumber={"alpacasPageNumber"} />
 
       <ul data-testid="list-results-animals">
         {animals?.items?.map((item) => (
