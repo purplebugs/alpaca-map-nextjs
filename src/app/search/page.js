@@ -5,6 +5,7 @@ import Results from "@/app/search/results.js";
 export default async function Page({ searchParams }) {
   const query = searchParams?.query || "";
   const alpacasPageNumber = searchParams?.alpacasPageNumber || 1;
+  const farmPageNumber = searchParams?.farmPageNumber || 1;
 
   return (
     <>
@@ -19,7 +20,7 @@ export default async function Page({ searchParams }) {
         </div>
         <div className="search-results">
           <Suspense fallback={<p>Loading results...</p>}>
-            <Results query={query} alpacasPageNumber={alpacasPageNumber} />
+            <Results query={query} alpacasPageNumber={alpacasPageNumber} farmPageNumber={farmPageNumber} />
           </Suspense>
         </div>
       </main>

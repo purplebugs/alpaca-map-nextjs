@@ -10,18 +10,25 @@ const RenderedItem = (item) => {
   return <span dangerouslySetInnerHTML={markup} />;
 };
 
-export default async function Results({ query, alpacasPageNumber }) {
+export default async function Results({ query, alpacasPageNumber, farmPageNumber }) {
   const itemsPerSection = 5;
-  const from = (alpacasPageNumber - 1) * itemsPerSection;
+
+  // TODO keep value of all current page numbers regardless of which page number links are clicked
+
+  const fromAlpacas = (alpacasPageNumber - 1) * itemsPerSection;
+  const fromFarms = (farmPageNumber - 1) * itemsPerSection;
 
   const [animals, companies, locations] = await Promise.all([
-    db?.getAnimals(query, from, itemsPerSection),
-    db?.getCompanies(query),
+    db?.getAnimals(query, fromAlpacas, itemsPerSection),
+    db?.getCompanies(query, fromFarms, itemsPerSection),
     db?.getLocations(query),
   ]);
 
   const alpacaTotalPages = Math.ceil(animals?.total / itemsPerSection);
   const alpacaPageList = Array.from({ length: alpacaTotalPages }, (_, i) => i + 1);
+
+  const farmTotalPages = Math.ceil(companies?.total / itemsPerSection);
+  const farmPageList = Array.from({ length: farmTotalPages }, (_, i) => i + 1);
 
   return (
     <>
@@ -51,6 +58,9 @@ export default async function Results({ query, alpacasPageNumber }) {
       </ul>
 
       <h4 id="companies-list">Farms - {companies?.total}</h4>
+
+      <Pagination items={farmPageList} query={query} pageNumber={"farmPageNumber"} />
+
       <ul data-testid="list-results-companies">
         {companies?.items?.map((item) => (
           <li key={item.id}>
