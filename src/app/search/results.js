@@ -10,12 +10,12 @@ const RenderedItem = (item) => {
   return <span dangerouslySetInnerHTML={markup} />;
 };
 
-export default async function Results({ query, alpacasPageNumber, farmPageNumber }) {
+export default async function Results({ query, alpacaPageNumber, farmPageNumber }) {
   const itemsPerSection = 5;
 
   // TODO keep value of all current page numbers regardless of which page number links are clicked
 
-  const fromAlpacas = (alpacasPageNumber - 1) * itemsPerSection;
+  const fromAlpacas = (alpacaPageNumber - 1) * itemsPerSection;
   const fromFarms = (farmPageNumber - 1) * itemsPerSection;
 
   const [animals, companies, locations] = await Promise.all([
@@ -78,7 +78,7 @@ export default async function Results({ query, alpacasPageNumber, farmPageNumber
 
       <h4 id="animals-list">🦙 Alpacas - {animals?.total}</h4>
 
-      <Pagination items={alpacaPageList} query={query} pageNumber={"alpacasPageNumber"} />
+      <Pagination items={alpacaPageList} query={query} pageNumber={"alpacaPageNumber"} />
 
       <ul data-testid="list-results-animals">
         {animals?.items?.map((item) => (
