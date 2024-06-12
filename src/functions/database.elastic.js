@@ -43,9 +43,9 @@ export const getCompany = cache(async (id) => {
   return await fetcher.fetch();
 });
 
-export const getCompanies = cache(async (query) => {
+export const getCompanies = cache(async (query, from, size) => {
   const db = connectToDatabase();
-  const fetcher = new CompaniesFetcher(db, query);
+  const fetcher = new CompaniesFetcher(db, query, from, size);
 
   return await fetcher.fetch();
 });
