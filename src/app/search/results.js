@@ -12,27 +12,17 @@ const RenderedItem = (item) => {
 export default async function Results({ query, animalPageNumber }) {
   console.log("RESULTS animalPageNumber", animalPageNumber);
 
+  const from = (animalPageNumber - 1) * 2;
+  const itemsPerSection = 5;
+
   const [animals, companies, locations] = await Promise.all([
-    /*
-
-TODO update elastic search result to include pagination - add these fields:
-  "from": 5,
-  "size": 20,
-
-*/
-
-    db?.getAnimals(query), // TODO use animalPageNumber in db request to return paginated results
+    db?.getAnimals(query, from, itemsPerSection),
     db?.getCompanies(query),
     db?.getLocations(query),
   ]);
 
-  const itemsPerSection = 2;
   const alpacaTotalPages = Math.ceil(animals?.total / itemsPerSection);
-
   const alpacaPageList = Array.from({ length: alpacaTotalPages }, (_, i) => i + 1);
-  console.log("RESULTS alpacaPageList", alpacaPageList);
-
-  let alpacaCurrentPage = 1;
 
   return (
     <>
