@@ -1,13 +1,10 @@
 export default class CompaniesFetcher {
-  constructor(elastic, query = "") {
+  constructor(elastic, query = "", from, size) {
     this.elastic = elastic;
     this.data = []; // Initial stated
-
     this.query = query;
-    this.from = 0;
-    this.size = 25;
-    this.continue = true;
-    this.maxTotal = 999;
+    this.from = from ?? 0;
+    this.size = size ?? 100;
   }
 
   async _fetch(resolve, reject) {
@@ -49,10 +46,10 @@ export default class CompaniesFetcher {
       reject(error);
     }
 
-    const total = result.hits.total.value <= this.maxTotal ? result.hits.total.value : this.maxTotal;
+    const total = result.hits.total.value;
 
     if (total === 0) {
-      resolve({ total: 0, items: [] });
+      resolve({ total: 0, items: [], from: this.from, size: this.size });
       return;
     }
 
@@ -65,16 +62,7 @@ export default class CompaniesFetcher {
       this.data.push(farm);
     });
 
-    this.from = this.from + this.size;
-
-    this.continue = this.from <= total;
-
-    if (this.continue) {
-      await this._fetch(resolve); // Callback
-      return;
-    }
-
-    resolve({ total: total, items: this.data }); // Callback
+    resolve({ total: total, items: this.data, from: this.from, size: this.size }); // Callback
   }
 
   fetch() {

@@ -31,4 +31,18 @@ describe("POST /api/locations/search", () => {
 
     assert.isAtLeast(actual, expected, `Number of items returned: ${actual} - should return at least ${expected}`);
   });
+
+  test(`Value of param: from`, async () => {
+    const actual = data.from;
+    const expected = 0;
+
+    assert.equal(actual, expected, `Param: ${actual} - should return ${expected}`);
+  });
+
+  test(`Value of param: size`, async () => {
+    const actual = data.size;
+    const expected = 100;
+
+    assert.equal(actual, expected, `Param: ${actual} - should return ${expected}`);
+  });
 });

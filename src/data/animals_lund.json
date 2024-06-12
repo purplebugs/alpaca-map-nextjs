@@ -37,5 +37,7 @@
       "alpacaShortName": ["LA <em>LUNA</em>"],
       "companyId": 40
     }
-  ]
+  ],
+  "from": "0",
+  "size": "100"
 }

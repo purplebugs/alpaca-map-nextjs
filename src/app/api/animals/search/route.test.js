@@ -32,21 +32,35 @@ describe(`POST /api/animals/search { query: "trygv" }`, () => {
     assert.isAtLeast(actual, expected, `Number of items returned: ${actual} - should return at least ${expected}`);
   });
 
-  test(`Value of data[0].alpacaId`, async () => {
+  test(`Value of param: from`, async () => {
+    const actual = data.from;
+    const expected = 0;
+
+    assert.equal(actual, expected, `Param: ${actual} - should return ${expected}`);
+  });
+
+  test(`Value of param: size`, async () => {
+    const actual = data.size;
+    const expected = 100;
+
+    assert.equal(actual, expected, `Param: ${actual} - should return ${expected}`);
+  });
+
+  test(`Value of alpacaId`, async () => {
     const actual = data.items[0].alpacaId;
     const expected = 2773;
 
     assert.equal(actual, expected, `Item ${actual} - should return ${expected}`);
   });
 
-  test(`Value of  data[0].alpacaRegisteredName[0]`, async () => {
+  test(`Value of alpacaRegisteredName`, async () => {
     const actual = data.items[0].alpacaRegisteredName[0];
     const expected = "ALPAKKAHAGEN SØRUMS <em>TRYGVE</em>";
 
     assert.equal(actual, expected, `Item ${actual} - should return ${expected}`);
   });
 
-  test(`Value of  data[0].alpacaShortName[0]`, async () => {
+  test(`Value of alpacaShortName`, async () => {
     const actual = data.items[0].alpacaShortName[0];
     const expected = "<em>TRYGVE</em>";
 
