@@ -10,18 +10,19 @@ const RenderedItem = (item) => {
   return <span dangerouslySetInnerHTML={markup} />;
 };
 
-export default async function Results({ query, alpacaPageNumber, farmPageNumber }) {
+export default async function Results({ query, alpacaPageNumber, farmPageNumber, locationPageNumber }) {
   const itemsPerSection = 5;
 
   // TODO keep value of all current page numbers regardless of which page number links are clicked
 
-  const fromAlpacas = (alpacaPageNumber - 1) * itemsPerSection;
-  const fromFarms = (farmPageNumber - 1) * itemsPerSection;
+  const fromAlpaca = (alpacaPageNumber - 1) * itemsPerSection;
+  const fromFarm = (farmPageNumber - 1) * itemsPerSection;
+  const fromLocation = (locationPageNumber - 1) * itemsPerSection;
 
   const [animals, companies, locations] = await Promise.all([
-    db?.getAnimals(query, fromAlpacas, itemsPerSection),
-    db?.getCompanies(query, fromFarms, itemsPerSection),
-    db?.getLocations(query),
+    db?.getAnimals(query, fromAlpaca, itemsPerSection),
+    db?.getCompanies(query, fromFarm, itemsPerSection),
+    db?.getLocations(query, fromLocation, itemsPerSection),
   ]);
 
   const alpacaTotalPages = Math.ceil(animals?.total / itemsPerSection);
@@ -29,6 +30,9 @@ export default async function Results({ query, alpacaPageNumber, farmPageNumber 
 
   const farmTotalPages = Math.ceil(companies?.total / itemsPerSection);
   const farmPageList = Array.from({ length: farmTotalPages }, (_, i) => i + 1);
+
+  const locationTotalPages = Math.ceil(locations?.total / itemsPerSection);
+  const locationPageList = Array.from({ length: locationTotalPages }, (_, i) => i + 1);
 
   return (
     <>
@@ -39,6 +43,9 @@ export default async function Results({ query, alpacaPageNumber, farmPageNumber 
       </p>
 
       <h4 id="locations-list">Areas - {locations?.total}</h4>
+
+      <Pagination items={locationPageList} query={query} pageNumber={"locationPageNumber"} />
+
       <ul data-testid="list-results-locations">
         {locations?.items?.map((item) => (
           <>
