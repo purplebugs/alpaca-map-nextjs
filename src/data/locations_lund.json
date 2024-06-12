@@ -6,11 +6,12 @@
       "location": {
         "google": {
           "administrative_area_level_1": "Rogaland",
-          "administrative_area_level_2": "Lund"
+          "administrative_area_level_2": ["<em>Lund</em>"]
         }
       },
-      "name": "Kamperhaug v/Victoria Rasmussen og Gard Syver",
-      "location.google.administrative_area_level_2": ["<em>Lund</em>"]
+      "name": "Kamperhaug v/Victoria Rasmussen og Gard Syver"
     }
-  ]
+  ],
+  "from": "0",
+  "size": "100"
 }

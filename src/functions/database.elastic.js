@@ -30,9 +30,9 @@ export const getAnimal = cache(async (id) => {
   return await fetcher.fetch();
 });
 
-export const getAnimals = cache(async (query) => {
+export const getAnimals = cache(async (query, from, size) => {
   const db = connectToDatabase();
-  const fetcher = new AnimalsFetcher(db, query);
+  const fetcher = new AnimalsFetcher(db, query, from, size);
 
   return await fetcher.fetch();
 });
@@ -43,9 +43,9 @@ export const getCompany = cache(async (id) => {
   return await fetcher.fetch();
 });
 
-export const getCompanies = cache(async (query) => {
+export const getCompanies = cache(async (query, from, size) => {
   const db = connectToDatabase();
-  const fetcher = new CompaniesFetcher(db, query);
+  const fetcher = new CompaniesFetcher(db, query, from, size);
 
   return await fetcher.fetch();
 });
@@ -57,9 +57,9 @@ export const getFarms = cache(async () => {
   return await fetcher.fetch();
 });
 
-export const getLocations = cache(async (query) => {
+export const getLocations = cache(async (query, from, size) => {
   const db = connectToDatabase();
-  const fetcher = new LocationsFetcher(db, query);
+  const fetcher = new LocationsFetcher(db, query, from, size);
 
   return await fetcher.fetch();
 });
