@@ -1,3 +1,4 @@
+import { Pagination } from "@/components/pagination";
 import Link from "next/link";
 import db from "@/functions/db.js";
 
@@ -12,8 +13,8 @@ const RenderedItem = (item) => {
 export default async function Results({ query, animalPageNumber }) {
   console.log("RESULTS animalPageNumber", animalPageNumber);
 
-  const from = (animalPageNumber - 1) * 2;
   const itemsPerSection = 5;
+  const from = (animalPageNumber - 1) * itemsPerSection;
 
   const [animals, companies, locations] = await Promise.all([
     db?.getAnimals(query, from, itemsPerSection),
@@ -69,14 +70,7 @@ export default async function Results({ query, animalPageNumber }) {
 
       <h4 id="animals-list">🦙 Alpacas - {animals?.total}</h4>
 
-      <div>
-        {alpacaPageList.map((page, index) => (
-          <>
-            {index === 0 ? "" : " - "}
-            <Link href={`/search?query=${query}&animalPageNumber=${page}`}>{page}</Link>
-          </>
-        ))}
-      </div>
+      <Pagination items={alpacaPageList} query={query} pageNumber={"animalPageNumber"} />
 
       <ul data-testid="list-results-animals">
         {animals?.items?.map((item) => (
