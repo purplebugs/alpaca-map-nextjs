@@ -30,9 +30,12 @@ export const getAnimal = cache(async (id) => {
   return await fetcher.fetch();
 });
 
-export const getAnimals = cache(async (query) => {
+export const getAnimals = cache(async (query, from, size) => {
   const db = connectToDatabase();
-  const fetcher = new AnimalsFetcher(db, query);
+
+  console.log("db - from", from);
+  console.log("db - size", size);
+  const fetcher = new AnimalsFetcher(db, query, from, size);
 
   return await fetcher.fetch();
 });
