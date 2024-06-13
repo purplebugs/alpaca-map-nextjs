@@ -1,0 +1,103 @@
+{
+  "total": 16,
+  "items": [
+    {
+      "alpacaId": 1190,
+      "alpacaRegisteredName": ["LUNDEGÅRDS <em>GERD</em>"],
+      "alpacaShortName": ["<em>GERD</em>"],
+      "companyId": 264
+    },
+    {
+      "alpacaId": 4422,
+      "alpacaRegisteredName": ["NOREFJELL'S <em>GERD</em>"],
+      "alpacaShortName": ["<em>GERD</em>"],
+      "companyId": 58
+    },
+    {
+      "alpacaId": 4375,
+      "alpacaRegisteredName": ["SKOGNES <em>GåRD</em> DOLE"],
+      "alpacaShortName": "OLE",
+      "companyId": 333
+    },
+    {
+      "alpacaId": 4376,
+      "alpacaRegisteredName": ["SKOGNES <em>GåRD</em> OLE"],
+      "alpacaShortName": "OLE",
+      "companyId": 333
+    },
+    {
+      "alpacaId": 4377,
+      "alpacaRegisteredName": ["SKOGNES <em>GåRD</em> DOFFEN"],
+      "alpacaShortName": "DOFFEN",
+      "companyId": 333
+    },
+    {
+      "alpacaId": 4378,
+      "alpacaRegisteredName": ["SKOGNES <em>GåRD</em> LETTY"],
+      "alpacaShortName": "LETTY",
+      "companyId": 174
+    },
+    {
+      "alpacaId": 4379,
+      "alpacaRegisteredName": ["SKOGNES <em>GåRD</em> SVEN"],
+      "alpacaShortName": "SVEN",
+      "companyId": 332
+    },
+    {
+      "alpacaId": 3912,
+      "alpacaRegisteredName": ["FLATNER STORE <em>GÅRD</em> FERDINAND"],
+      "alpacaShortName": "FERDINAND",
+      "companyId": 198
+    },
+    {
+      "alpacaId": 3913,
+      "alpacaRegisteredName": ["FLATNER STORE <em>GÅRD</em> CELIA"],
+      "alpacaShortName": "CELIA",
+      "companyId": 198
+    },
+    {
+      "alpacaId": 3914,
+      "alpacaRegisteredName": ["FLATNER STORE <em>GÅRD</em> HERMÈS"],
+      "alpacaShortName": "HERMèS",
+      "companyId": 198
+    },
+    {
+      "alpacaId": 4293,
+      "alpacaRegisteredName": ["FLATNER STORE <em>GÅRD</em> COPPER"],
+      "alpacaShortName": "COPPER",
+      "companyId": 198
+    },
+    {
+      "alpacaId": 4294,
+      "alpacaRegisteredName": ["FLATNER STORE <em>GÅRD</em> TODD"],
+      "alpacaShortName": "TODD",
+      "companyId": 198
+    },
+    {
+      "alpacaId": 4295,
+      "alpacaRegisteredName": ["FLATNER STORE <em>GÅRD</em> MILO"],
+      "alpacaShortName": "MILO",
+      "companyId": 198
+    },
+    {
+      "alpacaId": 4296,
+      "alpacaRegisteredName": ["FLATNER STORE <em>GÅRD</em> ANNA"],
+      "alpacaShortName": "ANNA",
+      "companyId": 198
+    },
+    {
+      "alpacaId": 4297,
+      "alpacaRegisteredName": ["FLATNER STORE <em>GÅRD</em> ELSA"],
+      "alpacaShortName": "ELSA",
+      "companyId": 198
+    },
+    {
+      "alpacaId": 4298,
+      "alpacaRegisteredName": ["FLATNER STORE <em>GÅRD</em> TIMON"],
+      "alpacaShortName": "TIMON",
+      "companyId": 198
+    }
+  ],
+  "from": "0",
+  "size": "100"
+}

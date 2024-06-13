@@ -11,13 +11,9 @@ export default function SearchAlpacaFarmArea({ placeholder }) {
   const handleChange = useDebouncedCallback((term) => {
     // Ref: https://nextjs.org/learn/dashboard-app/adding-search-and-pagination#2-update-the-url-with-the-search-params
 
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams();
 
-    if (term) {
-      params.set("query", term);
-    } else {
-      params.delete("query");
-    }
+    params.set("query", term);
 
     replace(`${pathname}?${params.toString()}`);
   }, 200);
