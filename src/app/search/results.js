@@ -10,19 +10,17 @@ const RenderedItem = (item) => {
   return <span dangerouslySetInnerHTML={markup} />;
 };
 
-export default async function Results({ query, alpacaPageNumber, farmPageNumber, locationPageNumber }) {
+export default async function Results({ searchParams, alpacaPageNumber, farmPageNumber, locationPageNumber }) {
   const itemsPerSection = 5;
-
-  // TODO keep value of all current page numbers regardless of which page number links are clicked
 
   const fromAlpaca = (alpacaPageNumber - 1) * itemsPerSection;
   const fromFarm = (farmPageNumber - 1) * itemsPerSection;
   const fromLocation = (locationPageNumber - 1) * itemsPerSection;
 
   const [animals, companies, locations] = await Promise.all([
-    db?.getAnimals(query, fromAlpaca, itemsPerSection),
-    db?.getCompanies(query, fromFarm, itemsPerSection),
-    db?.getLocations(query, fromLocation, itemsPerSection),
+    db?.getAnimals(searchParams?.query, fromAlpaca, itemsPerSection),
+    db?.getCompanies(searchParams?.query, fromFarm, itemsPerSection),
+    db?.getLocations(searchParams?.query, fromLocation, itemsPerSection),
   ]);
 
   const alpacaTotalPages = Math.ceil(animals?.total / itemsPerSection);
@@ -44,7 +42,7 @@ export default async function Results({ query, alpacaPageNumber, farmPageNumber,
 
       <h4 id="locations-list">Areas - {locations?.total}</h4>
 
-      <Pagination items={locationPageList} query={query} pageNumber={"locationPageNumber"} />
+      <Pagination items={locationPageList} searchParams={searchParams} section={"locationPageNumber"} />
 
       <ul data-testid="list-results-locations">
         {locations?.items?.map((item) => (
@@ -66,7 +64,7 @@ export default async function Results({ query, alpacaPageNumber, farmPageNumber,
 
       <h4 id="companies-list">Farms - {companies?.total}</h4>
 
-      <Pagination items={farmPageList} query={query} pageNumber={"farmPageNumber"} />
+      <Pagination items={farmPageList} searchParams={searchParams} section={"farmPageNumber"} />
 
       <ul data-testid="list-results-companies">
         {companies?.items?.map((item) => (
@@ -85,7 +83,7 @@ export default async function Results({ query, alpacaPageNumber, farmPageNumber,
 
       <h4 id="animals-list">🦙 Alpacas - {animals?.total}</h4>
 
-      <Pagination items={alpacaPageList} query={query} pageNumber={"alpacaPageNumber"} />
+      <Pagination items={alpacaPageList} searchParams={searchParams} section={"alpacaPageNumber"} />
 
       <ul data-testid="list-results-animals">
         {animals?.items?.map((item) => (

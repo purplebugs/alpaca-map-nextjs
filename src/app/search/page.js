@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import Results from "@/app/search/results.js";
 
 export default async function Page({ searchParams }) {
-  const query = searchParams?.query || "";
   const alpacaPageNumber = searchParams?.alpacaPageNumber || 1;
   const farmPageNumber = searchParams?.farmPageNumber || 1;
   const locationPageNumber = searchParams?.locationPageNumber || 1;
@@ -22,7 +21,7 @@ export default async function Page({ searchParams }) {
         <div className="search-results">
           <Suspense fallback={<p>Loading results...</p>}>
             <Results
-              query={query}
+              searchParams={searchParams}
               alpacaPageNumber={alpacaPageNumber}
               farmPageNumber={farmPageNumber}
               locationPageNumber={locationPageNumber}

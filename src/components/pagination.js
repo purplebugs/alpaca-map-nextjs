@@ -1,14 +1,20 @@
 import Link from "next/link";
 
-export const Pagination = ({ items, query, pageNumber }) => {
+export const Pagination = ({ searchParams, items, section }) => {
+  const urlSearchParams = new URLSearchParams(searchParams);
+
   return (
     <div>
-      {items?.map((page, index) => (
-        <>
-          {index === 0 ? "" : " - "}
-          <Link href={`/search?query=${query}&${pageNumber}=${page}`}>{page}</Link>
-        </>
-      ))}
+      {items?.map((page, index) => {
+        urlSearchParams.set(section, page);
+
+        return (
+          <>
+            {index === 0 ? "" : " - "}
+            <Link href={`/search?${urlSearchParams.toString()}`}>{page}</Link>
+          </>
+        );
+      })}
     </div>
   );
 };
