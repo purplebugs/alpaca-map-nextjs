@@ -222,7 +222,7 @@ test.describe("Search page", () => {
     await expect(page.getByTestId("pagination-alpacaPageNumber")).toBeVisible();
   });
 
-  test(`TYPE "gård" - CLICK farm link 4 - updates URL - click alpaca link 2 - updates URL- TYPE "gåd" - updates URL`, async ({
+  test(`TYPE "gård" - CLICK farm link 4 - updates URL - click alpaca link 2 - updates URL - click farm link 3 - updates URL - TYPE "gåd" - updates URL`, async ({
     page,
   }) => {
     // ARRANGE
@@ -246,6 +246,15 @@ test.describe("Search page", () => {
 
     // ASSERT
     await expect(page).toHaveURL(/\/?query=g%C3%A5rd&farmPageNumber=2&alpacaPageNumber=4$/);
+
+    // ACT
+    await page
+      .getByTestId("pagination-farmPageNumber")
+      .locator(page.getByRole("link", { name: 3 }))
+      .click();
+
+    // ASSERT
+    await expect(page).toHaveURL(/\/?query=g%C3%A5rd&farmPageNumber=3&alpacaPageNumber=4$/);
 
     // ACT
     await page.getByRole("textbox", { name: "Find alpacas, farms, area" }).fill("går");
