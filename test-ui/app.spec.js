@@ -209,6 +209,50 @@ test.describe("Search page", () => {
     await expect(page.getByTestId("list-results-animals")).toContainText(/Short Name: LUNA/);
     await expect(page.getByTestId("list-results-animals-animal-id-2277")).toHaveAttribute("href", /alpaca\/2277/);
   });
+
+  test(`TYPE "gård" shows pagination sections`, async ({ page }) => {
+    // ARRANGE
+    await page.goto(`/search`);
+
+    // ACT
+    await page.getByRole("textbox", { name: "Find alpacas, farms, area" }).fill("gård");
+
+    // ASSERT
+    await expect(page.getByTestId("pagination-farmPageNumber")).toBeVisible();
+    await expect(page.getByTestId("pagination-alpacaPageNumber")).toBeVisible();
+  });
+
+  test(`TYPE "gård" - CLICK farm link 4 - updates URL - click alpaca link 2 - updates URL- TYPE "gåd" - updates URL`, async ({
+    page,
+  }) => {
+    // ARRANGE
+    await page.goto(`/search`);
+
+    // ACT
+    await page.getByRole("textbox", { name: "Find alpacas, farms, area" }).fill("gård");
+    await page
+      .getByTestId("pagination-farmPageNumber")
+      .locator(page.getByRole("link", { name: 2 }))
+      .click();
+
+    // ASSERT
+    await expect(page).toHaveURL(/\/?query=g%C3%A5rd&farmPageNumber=2$/);
+
+    // ACT
+    await page
+      .getByTestId("pagination-alpacaPageNumber")
+      .locator(page.getByRole("link", { name: 4 }))
+      .click();
+
+    // ASSERT
+    await expect(page).toHaveURL(/\/?query=g%C3%A5rd&farmPageNumber=2&alpacaPageNumber=4$/);
+
+    // ACT
+    await page.getByRole("textbox", { name: "Find alpacas, farms, area" }).fill("går");
+
+    // ASSERT
+    await expect(page).toHaveURL(/\/?query=g%C3%A5r$/);
+  });
 });
 
 test.describe("About page", () => {

@@ -4,7 +4,7 @@ export const Pagination = ({ searchParams, items, section }) => {
   const urlSearchParams = new URLSearchParams(searchParams);
 
   return (
-    <div>
+    <div data-testid={`pagination-${section}`}>
       {items?.map((page, index) => {
         urlSearchParams.set(section, page);
 

@@ -1,0 +1,91 @@
+{
+  "total": 21,
+  "items": [
+    {
+      "id": 174,
+      "name": ["Skognes <em>Gård</em>"]
+    },
+    {
+      "id": 76,
+      "name": ["Sørflaen <em>Gård</em>"]
+    },
+    {
+      "id": 81,
+      "name": ["Johnsrud <em>Gård</em>"]
+    },
+    {
+      "id": 234,
+      "name": ["Lil <em>Gård</em>"]
+    },
+    {
+      "id": 294,
+      "name": ["Jonsrud <em>Gård</em>"]
+    },
+    {
+      "id": 235,
+      "name": ["Bjørgum <em>Gård</em>"]
+    },
+    {
+      "id": 288,
+      "name": ["Birkeli <em>gård</em>"]
+    },
+    {
+      "id": 114,
+      "name": ["Barman <em>Gård</em> AS"]
+    },
+    {
+      "id": 128,
+      "name": ["Midt-Tjore <em>gård</em>"]
+    },
+    {
+      "id": 324,
+      "name": ["Barnas <em>Gård</em> Hunderfossen"]
+    },
+    {
+      "id": 239,
+      "name": ["Jahr Alpakka <em>Gård</em>"]
+    },
+    {
+      "id": 333,
+      "name": ["Østre Vollane <em>Gård</em>"]
+    },
+    {
+      "id": 351,
+      "name": ["Nese <em>Gard</em>"]
+    },
+    {
+      "id": 285,
+      "name": ["Hjelmervik <em>Gård</em>, Åse Hjelmervik"]
+    },
+    {
+      "id": 248,
+      "name": ["Jegersberg <em>Gård</em> v/Ilja Svensson"]
+    },
+    {
+      "id": 214,
+      "name": ["Ramnes Søndre <em>Gård</em> Ingunn Skjeggestad"]
+    },
+    {
+      "id": 295,
+      "name": ["Moen <em>Gård</em> AS Cecilie Pedersen"]
+    },
+    {
+      "id": 302,
+      "name": ["Østre Tveite <em>Gård</em> v/Caroline Kjevik"]
+    },
+    {
+      "id": 213,
+      "name": ["Lerke <em>Gård</em> John Egil Skajem og Gina Rose"]
+    },
+    {
+      "id": 280,
+      "name": ["Solnes <em>Gard</em> v/Jens Andreas Kalstad"]
+    },
+    {
+      "id": 209,
+      "name": ["Kamperhaug v/Victoria Rasmussen og <em>Gard</em> Syver"]
+    }
+  ],
+  "from": "0",
+  "size": "100"
+}
