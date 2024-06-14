@@ -30,21 +30,27 @@ export default class LocationsFetcher {
             minimum_should_match: 1,
             should: [
               {
-                match: {
-                  "location.google.administrative_area_level_1": {
-                    query: this.query,
-                    fuzziness: "auto",
-                    _name: "administrative_area_level_1",
-                  },
+                multi_match: {
+                  query: this.query,
+                  fields: [
+                    "location.google.administrative_area_level_1",
+                    "location.google.administrative_area_level_2",
+                  ],
+                  fuzziness: "0",
+                  type: "best_fields",
+                  _name: "administrative_area_level_1_2_fuzziness_0",
                 },
               },
               {
-                match: {
-                  "location.google.administrative_area_level_2": {
-                    query: this.query,
-                    fuzziness: "auto",
-                    _name: "administrative_area_level_2",
-                  },
+                multi_match: {
+                  query: this.query,
+                  fields: [
+                    "location.google.administrative_area_level_1",
+                    "location.google.administrative_area_level_2",
+                  ],
+                  fuzziness: "auto",
+                  type: "best_fields",
+                  _name: "administrative_area_level_1_2_fuzziness_auto",
                 },
               },
             ],
