@@ -45,19 +45,15 @@ export default async function Results({ searchParams, alpacaPageNumber, farmPage
       <Pagination items={locationPageList} searchParams={searchParams} section={"locationPageNumber"} />
 
       <ul data-testid="list-results-locations">
-        {locations?.items?.map((item) => (
+        {locations?.items?.map((item, index) => (
           <>
-            <li key={item?.id}>
-              {RenderedItem(item?.name)} - {RenderedItem(item?.location?.google?.administrative_area_level_2)},{" "}
+            <li key={index}>
+              <Link href={`/farm/${item?.id}`} data-testid={`list-results-locations-farm-id-${item?.id}`}>
+                {RenderedItem(item?.name)}
+              </Link>{" "}
+              - {RenderedItem(item?.location?.google?.administrative_area_level_2)},{" "}
               {RenderedItem(item?.location?.google?.administrative_area_level_1)}
             </li>
-            <ul>
-              <li>
-                <Link href={`/farm/${item?.id}`} data-testid={`list-results-locations-farm-id-${item?.id}`}>
-                  Farm info
-                </Link>
-              </li>
-            </ul>
           </>
         ))}
       </ul>
@@ -67,16 +63,11 @@ export default async function Results({ searchParams, alpacaPageNumber, farmPage
       <Pagination items={farmPageList} searchParams={searchParams} section={"farmPageNumber"} />
 
       <ul data-testid="list-results-companies">
-        {companies?.items?.map((item) => (
-          <li key={item.id}>
-            {RenderedItem(item.name)}
-            <ul>
-              <li>
-                <Link href={`/farm/${item.id}`} data-testid={`list-results-companies-farm-id-${item.id}`}>
-                  Alpaca info
-                </Link>
-              </li>
-            </ul>
+        {companies?.items?.map((item, index) => (
+          <li key={index}>
+            <Link href={`/farm/${item.id}`} data-testid={`list-results-companies-farm-id-${item.id}`}>
+              {RenderedItem(item.name)}
+            </Link>
           </li>
         ))}
       </ul>
@@ -86,19 +77,20 @@ export default async function Results({ searchParams, alpacaPageNumber, farmPage
       <Pagination items={alpacaPageList} searchParams={searchParams} section={"alpacaPageNumber"} />
 
       <ul data-testid="list-results-animals">
-        {animals?.items?.map((item) => (
-          <li key={item?.alpacaId}>
-            Short Name: {RenderedItem(item?.alpacaRegisteredName)}
-            <ul>
-              <li>Registered Name: {RenderedItem(item?.alpacaRegisteredName)}</li>
-              <li>
-                <Link
-                  href={`/alpaca/${item?.alpacaId}`}
-                  data-testid={`list-results-animals-animal-id-${item?.alpacaId}`}>
-                  Alpaca info
-                </Link>
-              </li>
-            </ul>
+        {animals?.items?.map((item, index) => (
+          <li key={index}>
+            <p>
+              Short Name:{" "}
+              <Link href={`/alpaca/${item?.alpacaId}`} data-testid={`list-results-animals-animal-id-${item?.alpacaId}`}>
+                {RenderedItem(item?.alpacaRegisteredName)}
+              </Link>
+            </p>
+            <p>
+              Registered Name:{" "}
+              <Link href={`/alpaca/${item?.alpacaId}`} data-testid={`list-results-animals-animal-id-${item?.alpacaId}`}>
+                {RenderedItem(item?.alpacaRegisteredName)}
+              </Link>
+            </p>
           </li>
         ))}
       </ul>

@@ -7,12 +7,11 @@ export const Pagination = ({ searchParams, items, section }) => {
     <div data-testid={`pagination-${section}`}>
       {items?.map((page, index) => {
         urlSearchParams.set(section, page);
-
         return (
-          <>
+          <span key={index}>
             {index === 0 ? "" : " - "}
             <Link href={`/search?${urlSearchParams.toString()}`}>{page}</Link>
-          </>
+          </span>
         );
       })}
     </div>
