@@ -26,7 +26,7 @@ export default class AnimalsFetcher {
                   fields: ["alpacaRegisteredName", "alpacaShortName"],
                   fuzziness: "0",
                   type: "best_fields",
-                  _name: "alpacaRegisteredName_alpacaShortName_0_fuzziness",
+                  _name: "alpacaRegisteredName_alpacaShortName_fuzziness_0",
                 },
               },
               {
@@ -35,7 +35,7 @@ export default class AnimalsFetcher {
                   fields: ["alpacaRegisteredName", "alpacaShortName"],
                   fuzziness: "auto",
                   type: "best_fields",
-                  _name: "alpacaRegisteredName_alpacaShortName_auto_fuzziness",
+                  _name: "alpacaRegisteredName_alpacaShortName_fuzziness_auto",
                 },
               },
             ],
