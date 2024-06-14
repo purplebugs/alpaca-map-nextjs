@@ -2,18 +2,6 @@
   "total": 16,
   "items": [
     {
-      "alpacaId": 1190,
-      "alpacaRegisteredName": ["LUNDEGÅRDS <em>GERD</em>"],
-      "alpacaShortName": ["<em>GERD</em>"],
-      "companyId": 264
-    },
-    {
-      "alpacaId": 4422,
-      "alpacaRegisteredName": ["NOREFJELL'S <em>GERD</em>"],
-      "alpacaShortName": ["<em>GERD</em>"],
-      "companyId": 58
-    },
-    {
       "alpacaId": 4375,
       "alpacaRegisteredName": ["SKOGNES <em>GåRD</em> DOLE"],
       "alpacaShortName": "OLE",
@@ -96,6 +84,18 @@
       "alpacaRegisteredName": ["FLATNER STORE <em>GÅRD</em> TIMON"],
       "alpacaShortName": "TIMON",
       "companyId": 198
+    },
+    {
+      "alpacaId": 1190,
+      "alpacaRegisteredName": ["LUNDEGÅRDS <em>GERD</em>"],
+      "alpacaShortName": ["<em>GERD</em>"],
+      "companyId": 264
+    },
+    {
+      "alpacaId": 4422,
+      "alpacaRegisteredName": ["NOREFJELL'S <em>GERD</em>"],
+      "alpacaShortName": ["<em>GERD</em>"],
+      "companyId": 58
     }
   ],
   "from": "0",
