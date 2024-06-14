@@ -24,9 +24,18 @@ export default class AnimalsFetcher {
                 multi_match: {
                   query: this.query,
                   fields: ["alpacaRegisteredName", "alpacaShortName"],
+                  fuzziness: "0",
+                  type: "best_fields",
+                  _name: "alpacaRegisteredName_alpacaShortName_fuzziness_0",
+                },
+              },
+              {
+                multi_match: {
+                  query: this.query,
+                  fields: ["alpacaRegisteredName", "alpacaShortName"],
                   fuzziness: "auto",
                   type: "best_fields",
-                  _name: "alpacaRegisteredName_alpacaShortName",
+                  _name: "alpacaRegisteredName_alpacaShortName_fuzziness_auto",
                 },
               },
             ],

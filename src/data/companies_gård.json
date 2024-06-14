@@ -50,10 +50,6 @@
       "name": ["Østre Vollane <em>Gård</em>"]
     },
     {
-      "id": 351,
-      "name": ["Nese <em>Gard</em>"]
-    },
-    {
       "id": 285,
       "name": ["Hjelmervik <em>Gård</em>, Åse Hjelmervik"]
     },
@@ -76,6 +72,10 @@
     {
       "id": 213,
       "name": ["Lerke <em>Gård</em> John Egil Skajem og Gina Rose"]
+    },
+    {
+      "id": 351,
+      "name": ["Nese <em>Gard</em>"]
     },
     {
       "id": 280,
