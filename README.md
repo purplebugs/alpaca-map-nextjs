@@ -6,7 +6,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Purpose 😊
 
-Migrate from previous alpaca map app that was using [Create React App](https://github.com/facebook/create-react-app) and handcoded CSS to using [Next.js](https://nextjs.org/) and [tailwind css](https://tailwindcss.com/)
+Migrate from previous alpaca map app
+
+1. [Create React App](https://github.com/facebook/create-react-app) -> [Next.js](https://nextjs.org/)
+2. Handcoded CSS -> [tailwind css](https://tailwindcss.com/)
+3. Google map embedded in React -> Map as a web component in plain JS
 
 ## First time setup 🐣
 
