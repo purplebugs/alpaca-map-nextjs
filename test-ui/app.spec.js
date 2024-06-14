@@ -186,7 +186,7 @@ test.describe("Search page", () => {
     await expect(listResults).toContainText(/LUNDEGÅRDS TRYGVE/);
 
     // ACT + ASSERT
-    await page.getByTestId("list-results-animals-animal-id-2773").click();
+    await page.getByTestId("list-results-animals-animal-id-2773-short-name").click();
     // Expects the URL to contain string
     await expect(page).toHaveURL(/\/alpaca\/2773$/);
   });
@@ -207,7 +207,14 @@ test.describe("Search page", () => {
     await expect(page.getByTestId("list-results-companies-farm-id-197")).toHaveAttribute("href", /farm\/197/);
 
     await expect(page.getByTestId("list-results-animals")).toContainText(/Short Name: LUNA/);
-    await expect(page.getByTestId("list-results-animals-animal-id-2277")).toHaveAttribute("href", /alpaca\/2277/);
+    await expect(page.getByTestId("list-results-animals-animal-id-2277-short-name")).toHaveAttribute(
+      "href",
+      /alpaca\/2277/
+    );
+    await expect(page.getByTestId("list-results-animals-animal-id-2277-registered-name")).toHaveAttribute(
+      "href",
+      /alpaca\/2277/
+    );
   });
 
   test(`TYPE "gård" shows pagination sections`, async ({ page }) => {
