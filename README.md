@@ -56,7 +56,7 @@ npm run test-ui -- --ui
 
 ### Auto deploy on push to main branch 🚀
 
-- 👾 [beta.alpaca.life](beta.alpaca.life): App auto deploys on push to `main` branch -> to [Google Cloud Run](https://console.cloud.google.com/run/) `beta`
+- 👾 [beta.alpaca.life](https://beta.alpaca.life): App auto deploys on push to `main` branch -> to [Google Cloud Run](https://console.cloud.google.com/run/) `beta`
 
 Check latest builds at [Google Cloud Build](https://console.cloud.google.com/cloud-build/)
 
