@@ -186,7 +186,7 @@ test.describe("Search page", () => {
     await expect(listResults).toContainText(/LUNDEGÅRDS TRYGVE/);
 
     // ACT + ASSERT
-    await page.getByTestId("list-results-animals-animal-id-2773").click();
+    await page.getByTestId("list-results-animals-animal-id-2773-short-name").click();
     // Expects the URL to contain string
     await expect(page).toHaveURL(/\/alpaca\/2773$/);
   });

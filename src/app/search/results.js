@@ -83,7 +83,7 @@ export default async function Results({ searchParams, alpacaPageNumber, farmPage
               Short Name:{" "}
               <Link
                 href={`/alpaca/${item?.alpacaId}`}
-                data-testid={`list-results-animals-animal-id${item?.alpacaId}-short-name`}>
+                data-testid={`list-results-animals-animal-id-${item?.alpacaId}-short-name`}>
                 {RenderedItem(item?.alpacaRegisteredName)}
               </Link>
             </p>
@@ -91,7 +91,7 @@ export default async function Results({ searchParams, alpacaPageNumber, farmPage
               Registered Name:{" "}
               <Link
                 href={`/alpaca/${item?.alpacaId}`}
-                data-testid={`list-results-animals-animal-id${item?.alpacaId}-registered-name`}>
+                data-testid={`list-results-animals-animal-id-${item?.alpacaId}-registered-name`}>
                 {RenderedItem(item?.alpacaRegisteredName)}
               </Link>
             </p>
