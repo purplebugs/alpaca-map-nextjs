@@ -81,13 +81,17 @@ export default async function Results({ searchParams, alpacaPageNumber, farmPage
           <li key={index}>
             <p>
               Short Name:{" "}
-              <Link href={`/alpaca/${item?.alpacaId}`} data-testid={`list-results-animals-animal-id-${item?.alpacaId}`}>
+              <Link
+                href={`/alpaca/${item?.alpacaId}`}
+                data-testid={`list-results-animals-animal-id${item?.alpacaId}-short-name`}>
                 {RenderedItem(item?.alpacaRegisteredName)}
               </Link>
             </p>
             <p>
               Registered Name:{" "}
-              <Link href={`/alpaca/${item?.alpacaId}`} data-testid={`list-results-animals-animal-id-${item?.alpacaId}`}>
+              <Link
+                href={`/alpaca/${item?.alpacaId}`}
+                data-testid={`list-results-animals-animal-id${item?.alpacaId}-registered-name`}>
                 {RenderedItem(item?.alpacaRegisteredName)}
               </Link>
             </p>
