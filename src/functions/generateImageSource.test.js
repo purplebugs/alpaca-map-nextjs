@@ -134,7 +134,7 @@ describe("generateImageSource()", () => {
 
     // ASSERT
 
-    const expected = "/alpaca_images/dark_light_alpaca.jpeg";
+    const expected = "/alpaca_images/light_brown_alpaca.jpeg";
 
     assert.strictEqual(actual, expected, `Image source generated: ${actual} should be: ${expected}`);
   });
