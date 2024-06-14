@@ -1,15 +1,4 @@
-import { readFileSync } from "fs";
-
-export const fileReader = (fileIn) => {
-  try {
-    // TODO do not hardcode path
-    const myFile = readFileSync(`./src/data/${fileIn}`, "UTF-8");
-    return JSON.parse(myFile);
-  } catch (error) {
-    console.error(error);
-    return new Error("🧨 fileReader: Could not read from file");
-  }
-};
+import { fileReader } from "@/functions/utils.js";
 
 export const getAnimal = (id) => {
   return id == 2773 ? fileReader("animal_2773.json") : [];

@@ -1,5 +1,21 @@
-import { assert, beforeAll, describe, test } from "vitest";
-import { replaceHighlight } from "@/functions/utils";
+import { assert, test } from "vitest";
+import { fileReader, replaceHighlight } from "@/functions/utils";
+
+test("fileReader() throws error when not correct file format", async () => {
+  let response = null;
+  try {
+    // TODO do not hardcode path
+    response = fileReader(`alpaca.png`, "./public/");
+  } catch (error) {
+    return error;
+  }
+  console.log("THERE!");
+  const actual = response.message;
+  console.log(actual);
+  const expected = "🧨 fileReader: Could not read from file";
+
+  assert.equal(actual, expected, `Response status: ${actual} should be: ${expected}`);
+});
 
 test("replaceHighlight() should merge override source with highlighted fields", async () => {
   const obj = {
@@ -26,7 +42,7 @@ test("replaceHighlight() should merge override source with highlighted fields", 
   };
 
   // ACT
-  const actual = replaceHighlight(obj._source, obj.highlight);
+  const actual = await replaceHighlight(obj._source, obj.highlight);
 
   // ASSERT
 
