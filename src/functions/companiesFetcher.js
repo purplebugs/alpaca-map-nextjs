@@ -24,7 +24,17 @@ export default class CompaniesFetcher {
                 match: {
                   name: {
                     query: this.query,
+                    fuzziness: "0",
+                    _name: "name_fuzziness_0",
+                  },
+                },
+              },
+              {
+                match: {
+                  name: {
+                    query: this.query,
                     fuzziness: "auto",
+                    _name: "name_fuzziness_auto",
                   },
                 },
               },
