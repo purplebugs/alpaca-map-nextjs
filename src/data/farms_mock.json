@@ -54,8 +54,11 @@
       "lat": 63.4305,
       "lng": 10.3951,
       "location": {
-        "type": "Point",
         "coordinates": [10.3951, 63.4305],
+        "geo_json": {
+          "type": "Point",
+          "coordinates": [10.3951, 63.4305]
+        },
         "google": {
           "formatted_address": "My Trondheim street 4321, 0123 Trondheim, Norway",
           "place_id": "something_2"
@@ -81,8 +84,11 @@
       "lat": 69.6492,
       "lng": 18.9553,
       "location": {
-        "type": "Point",
         "coordinates": [18.9553, 69.6492],
+        "geo_json": {
+          "type": "Point",
+          "coordinates": [18.9553, 69.6492]
+        },
         "google": {
           "formatted_address": "My Tromsø street 4321, 0123 Tromsø, Norway",
           "place_id": "something_3"
@@ -108,8 +114,11 @@
       "lat": 58.97,
       "lng": 5.7331,
       "location": {
-        "type": "Point",
         "coordinates": [5.7331, 58.97],
+        "geo_json": {
+          "type": "Point",
+          "coordinates": [5.7331, 58.97]
+        },
         "google": {
           "formatted_address": "My Stavanger street 4321, 0123 Stavanger, Norway",
           "place_id": "something_4"
@@ -135,8 +144,11 @@
       "lat": 71.1132,
       "lng": 25.827,
       "location": {
-        "type": "Point",
         "coordinates": [25.827, 71.1132],
+        "geo_json": {
+          "type": "Point",
+          "coordinates": [25.827, 71.1132]
+        },
         "google": {
           "formatted_address": "My Skarsvåg street 4321, 0123 Skarsvåg, Norway",
           "place_id": "something_5"
@@ -162,8 +174,11 @@
       "lat": 58.152951,
       "lng": 7.9490892,
       "location": {
-        "type": "Point",
         "coordinates": [7.9490892, 58.152951],
+        "geo_json": {
+          "type": "Point",
+          "coordinates": [7.9490892, 58.152951]
+        },
         "google": {
           "formatted_address": "My Kristiansand street 4321, 0123 Kristiansand, Norway",
           "place_id": "something_6"
@@ -189,8 +204,11 @@
       "lat": 63.3687244,
       "lng": 9.145974400000002,
       "location": {
-        "type": "Point",
         "coordinates": [9.145974400000002, 63.3687244],
+        "geo_json": {
+          "type": "Point",
+          "coordinates": [9.145974400000002, 63.3687244]
+        },
         "google": {
           "formatted_address": "My Kyrksæterøra street 4321, 0123 Kyrksæterøra, Norway",
           "place_id": "something_6"

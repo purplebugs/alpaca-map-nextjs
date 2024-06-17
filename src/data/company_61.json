@@ -17,8 +17,11 @@
     "lat": 60.0075045,
     "lng": 11.2229452,
     "location": {
-      "type": "Point",
       "coordinates": [11.2229452, 60.0075045],
+      "geo_json": {
+        "type": "Point",
+        "coordinates": [11.2229452, 60.0075045]
+      },
       "google": {
         "formatted_address": "Bingenveien 35, 1923 Sørum, Norway",
         "place_id": "ChIJn_8GjgHWQ0YRZcYaf8f3180",

@@ -1,61 +1,110 @@
 [
   {
     "id": 120,
-    "city": "KYRKSÆTERØRA",
+    "city": "Kyrksæterøra",
     "count": {
       "alpacas": {
         "status": {
-          "active": 18,
-          "dead": 2,
+          "active": 19,
+          "dead": 5,
           "export": 0
         },
-        "total": 20
+        "total": 24
       }
     },
+    "descriptionCompany": null,
+    "email": "firmapost@oddanalpakka.no",
     "lat": 63.3687244,
     "lng": 9.145974400000002,
     "location": {
-      "type": "Point",
       "coordinates": [9.145974400000002, 63.3687244],
+      "geo_json": {
+        "type": "Point",
+        "coordinates": [9.145974400000002, 63.3687244]
+      },
       "google": {
         "formatted_address": "Lernesstranda 912, 7200 Kyrksæterøra, Norway",
-        "place_id": "ChIJTU-B4LL8EkYRyJYVNTgbWYI"
+        "place_id": "ChIJTU-B4LL8EkYRyJYVNTgbWYI",
+        "directions_url_href": "https://www.google.com/maps/dir/?api=1&origin=&destination=Lernesstranda%20912,%207200%20Kyrks%C3%A6ter%C3%B8ra,%20Norway",
+        "administrative_area_level_1": "Trøndelag",
+        "administrative_area_level_2": "Heim"
+      },
+      "original": {
+        "keeper": 120,
+        "keeperName": "Oddan Alpakka",
+        "street": "Lernestranda 912",
+        "city": "KYRKSÆTERØRA",
+        "zip": "7200",
+        "country_code_original": "NO",
+        "country_code": "NO",
+        "country_name": "Norway"
       }
     },
+    "name": "Oddan Alpakka",
+    "phone": "95734623",
     "public": true,
     "private": false,
-    "name": "Oddan Alpakka"
+    "url": null,
+    "webpage": null
   },
   {
     "id": 151,
-    "city": "HELLANDSJØEN",
+    "city": "Hellandsjøen",
     "count": {
       "alpacas": {
         "status": {
           "active": 12,
-          "dead": 0,
+          "dead": 1,
           "export": 0
         },
-        "total": 12
+        "total": 13
       }
     },
-    "lat": 63.4177812,
-    "lng": 8.966676999999999,
+    "descriptionCompany": "Hege Kalland",
+    "email": null,
+    "lat": 63.41599549999999,
+    "lng": 8.932702599999999,
     "location": {
-      "type": "Point",
-      "coordinates": [8.966676999999999, 63.4177812],
+      "coordinates": [8.932702599999999, 63.41599549999999],
+      "geo_json": {
+        "type": "Point",
+        "coordinates": [8.932702599999999, 63.41599549999999]
+      },
       "google": {
-        "formatted_address": "7206 Hellandsjøen, Norway",
-        "place_id": "ChIJ62gZecr-EkYRkU-pGniFooc"
+        "formatted_address": "Vågaunveien 91, 7206 Hellandsjøen, Norway",
+        "place_id": "ChIJi02JbiH5EkYRAshjpUzM9qA",
+        "directions_url_href": "https://www.google.com/maps/dir/?api=1&origin=&destination=V%C3%A5gaunveien%2091,%207206%20Hellandsj%C3%B8en,%20Norway",
+        "administrative_area_level_1": "Trøndelag",
+        "administrative_area_level_2": "Heim"
+      },
+      "original": {
+        "keeper": 151,
+        "keeperName": "Opplev Auna",
+        "street": "Vågaunveien 91",
+        "city": "HELLANDSJØEN",
+        "zip": "7206",
+        "country_code_original": "NO",
+        "country_code": "NO",
+        "country_name": "Norway"
       }
     },
+    "name": "Opplev Auna",
+    "phone": null,
     "public": false,
     "private": true,
-    "name": "Kyst Alpakka"
+    "url": {
+      "original": "post@opplevauna.no",
+      "domain": "opplevauna.no",
+      "full": "http://post@opplevauna.no",
+      "path": "/",
+      "pretty": "opplevauna.no",
+      "scheme": "http"
+    },
+    "webpage": "post@opplevauna.no"
   },
   {
     "id": 129,
-    "city": "VALSØYBOTN",
+    "city": "Valsøybotn",
     "count": {
       "alpacas": {
         "status": {
@@ -66,45 +115,142 @@
         "total": 2
       }
     },
-    "lat": 63.0984032,
-    "lng": 8.6050267,
+    "descriptionCompany": null,
+    "email": null,
+    "lat": 63.0984014,
+    "lng": 8.6050594,
     "location": {
-      "type": "Point",
-      "coordinates": [8.6050267, 63.0984032],
+      "coordinates": [8.6050594, 63.0984014],
+      "geo_json": {
+        "type": "Point",
+        "coordinates": [8.6050594, 63.0984014]
+      },
       "google": {
         "formatted_address": "Valsøyfjordvegen 950, 6686 Valsøybotnen, Norway",
-        "place_id": "ChIJW0MPI8SnE0YR0ySg0_uQ0fs"
+        "place_id": "ChIJwQk2gESmE0YR7jkCLLoqckY",
+        "directions_url_href": "https://www.google.com/maps/dir/?api=1&origin=&destination=Vals%C3%B8yfjordvegen%20950,%206686%20Vals%C3%B8ybotnen,%20Norway",
+        "administrative_area_level_1": "Trøndelag",
+        "administrative_area_level_2": "Heim"
+      },
+      "original": {
+        "keeper": 129,
+        "keeperName": "Pestua Valsøybotn",
+        "street": " Valsøyfjordvegen 950",
+        "city": "VALSØYBOTN",
+        "zip": "6686",
+        "country_code_original": "NO",
+        "country_code": "NO",
+        "country_name": "Norway"
       }
     },
+    "name": "Pestua Valsøybotn",
+    "phone": null,
     "public": false,
     "private": true,
-    "name": "Pestua Valsøybotn"
+    "url": {
+      "original": "ketil.hansen.trd@gmail.com",
+      "domain": "gmail.com",
+      "full": "http://ketil.hansen.trd@gmail.com",
+      "path": "/",
+      "pretty": "gmail.com",
+      "scheme": "http"
+    },
+    "webpage": "ketil.hansen.trd@gmail.com"
   },
   {
     "id": 215,
-    "city": "HAMARVIK",
+    "city": "Hamarvik",
     "count": {
       "alpacas": {
         "status": {
-          "active": 2,
+          "active": 3,
           "dead": 1,
           "export": 0
         },
-        "total": 3
+        "total": 4
       }
     },
-    "lat": 63.68596089999999,
-    "lng": 8.6714577,
+    "descriptionCompany": null,
+    "email": "alpakkahanne@gmail.com",
+    "lat": 63.6890201,
+    "lng": 8.757221999999999,
     "location": {
-      "type": "Point",
-      "coordinates": [8.6714577, 63.68596089999999],
+      "coordinates": [8.757221999999999, 63.6890201],
+      "geo_json": {
+        "type": "Point",
+        "coordinates": [8.757221999999999, 63.6890201]
+      },
       "google": {
-        "formatted_address": "7263 Hamarvik, Norway",
-        "place_id": "ChIJWVm9_jtoEkYRPiDSOTnpSAM"
+        "formatted_address": "Flatvalveien 49, 7263 Hamarvik, Norway",
+        "place_id": "ChIJEdjB1_ldEkYRyHyNmdcR6E0",
+        "directions_url_href": "https://www.google.com/maps/dir/?api=1&origin=&destination=Flatvalveien%2049,%207263%20Hamarvik,%20Norway",
+        "administrative_area_level_1": "Trøndelag",
+        "administrative_area_level_2": "Frøya"
+      },
+      "original": {
+        "keeper": 215,
+        "keeperName": "Alpakka Frøya",
+        "street": "Flatvalveien 49",
+        "city": "HAMARVIK",
+        "zip": "7263",
+        "country_code_original": "NO",
+        "country_code": "NO",
+        "country_name": "Norway"
       }
     },
+    "name": "Alpakka Frøya",
+    "phone": "95903199",
     "public": false,
     "private": true,
-    "name": "Alpakka Frøya"
+    "url": null,
+    "webpage": null
+  },
+  {
+    "id": 328,
+    "city": "Rissa",
+    "count": {
+      "alpacas": {
+        "status": {
+          "active": 4,
+          "dead": 0,
+          "export": 0
+        },
+        "total": 4
+      }
+    },
+    "descriptionCompany": null,
+    "email": "annikkenydstie@hotmail.com",
+    "lat": 63.52888950000001,
+    "lng": 9.9263465,
+    "location": {
+      "coordinates": [9.9263465, 63.52888950000001],
+      "geo_json": {
+        "type": "Point",
+        "coordinates": [9.9263465, 63.52888950000001]
+      },
+      "google": {
+        "formatted_address": "Vikanveien 5, 7100 Rissa, Norway",
+        "place_id": "ChIJk92SpbHIEkYRMej4ULjGDig",
+        "directions_url_href": "https://www.google.com/maps/dir/?api=1&origin=&destination=Vikanveien%205,%207100%20Rissa,%20Norway",
+        "administrative_area_level_1": "Trøndelag",
+        "administrative_area_level_2": "Indre Fosen"
+      },
+      "original": {
+        "keeper": 328,
+        "keeperName": "Annikken Ydstie og Bernt Rune Richardsen",
+        "street": "Vikanveien 5",
+        "city": "RISSA",
+        "zip": "7100",
+        "country_code_original": "NO",
+        "country_code": "NO",
+        "country_name": "Norway"
+      }
+    },
+    "name": "Annikken Ydstie og Bernt Rune Richardsen",
+    "phone": null,
+    "public": false,
+    "private": true,
+    "url": null,
+    "webpage": null
   }
 ]
