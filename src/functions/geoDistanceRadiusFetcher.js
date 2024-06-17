@@ -21,7 +21,7 @@ export default class GeoDistanceRadiusFetcher {
     filter.push({
       geo_distance: {
         "distance": this.radius,
-        "location.coordinates": {
+        "location.geo_json": {
           lat: this.lat,
           lon: this.lng,
         },
@@ -53,6 +53,8 @@ export default class GeoDistanceRadiusFetcher {
       );
     }
 
+    console.log("filter", filter);
+
     try {
       result = await this.elastic.search({
         index: "farms_all",
@@ -71,7 +73,7 @@ export default class GeoDistanceRadiusFetcher {
         sort: [
           {
             _geo_distance: {
-              "location.coordinates": {
+              "location.geo_json": {
                 lat: this.lat,
                 lon: this.lng,
               },
