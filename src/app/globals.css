@@ -259,6 +259,7 @@ section#map-info {
         img.graphic {
             margin-top: 1rem;
             width: 80%;
+            height: auto;
         }
     }
 
