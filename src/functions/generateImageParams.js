@@ -1,4 +1,4 @@
-export const generateImageSource = (color = null) => {
+export const generateImageParams = (color = null) => {
   const path = "/alpaca_images";
   const defaultSource = "default_alpaca.jpeg";
   const defaultWidth = 1024;

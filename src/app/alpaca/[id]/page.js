@@ -1,4 +1,4 @@
-import { generateImageSource } from "@/functions/generateImageSource";
+import { generateImageParams } from "@/functions/generateImageParams";
 import { AlpacaDetail } from "@/components/alpacaDetail.js";
 import { Suspense } from "react";
 import Image from "next/image";
@@ -11,7 +11,7 @@ export default async function Page({ params }) {
   const result = await db.getAnimal(params.id);
   const alpaca = result[0];
   const color = alpaca?.color?.color1?.original;
-  const imageProps = generateImageSource(color);
+  const imageProps = generateImageParams(color);
 
   const statusText = alpaca?.status; // TODO Cleanup status coming from API instead of here
 
