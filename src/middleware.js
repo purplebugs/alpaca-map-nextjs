@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 const corsOptions = {
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Authorization", // TODO do not need this
+  "Access-Control-Allow-Origin": "*",
 };
 
 // TODO error handling
