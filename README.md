@@ -24,6 +24,12 @@ Run the development server for auto-updates while editing
 npm run dev
 ```
 
+Create a build
+
+```bash
+npm run build
+```
+
 Start the app
 
 ```bash
