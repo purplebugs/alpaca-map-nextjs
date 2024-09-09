@@ -4,6 +4,14 @@ import { Suspense } from "react";
 import Image from "next/image";
 import db from "@/functions/db.js";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleInfo,
+  faHouseFlag,
+  faKey,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
+
 export default async function Page({ params }) {
   // TODO error handling when getting data.
   // See old repo https://github.com/purplebugs/alpaca-map/blob/main/client/src/pages/Alpaca.js#L12
@@ -56,9 +64,15 @@ export default async function Page({ params }) {
               <h3>Lives at</h3>
               <div className="inner-box" data-testid="farm-name">
                 <div className="box-row">
-                  <div className="icon">{/* {<FontAwesomeIcon icon={faCircleInfo} />} */}</div>
+                  <div className="icon">
+                    {" "}
+                    {<FontAwesomeIcon icon={faCircleInfo} />}
+                  </div>
                   <div className="text">
-                    <a data-testid="farm-name-link" href={`/farm/${alpaca?.companyId}`}>
+                    <a
+                      data-testid="farm-name-link"
+                      href={`/farm/${alpaca?.companyId}`}
+                    >
                       {alpaca?.keeperName}
                     </a>
                   </div>
@@ -67,19 +81,23 @@ export default async function Page({ params }) {
               <div className="inner-box" data-testid="farm-public-private">
                 <div className="box-row">
                   <div className="icon">
-                    {/* {alpaca?.public === true ? (
+                    {alpaca?.public === true ? (
                       <FontAwesomeIcon icon={faHouseFlag} />
                     ) : (
                       <FontAwesomeIcon icon={faKey} />
-                    )} */}
+                    )}
                   </div>
-                  <div className="text">{alpaca?.public === true ? "Public Farm" : "Private Farm"}</div>
+                  <div className="text">
+                    {alpaca?.public === true ? "Public Farm" : "Private Farm"}
+                  </div>
                 </div>
               </div>
 
               <address data-testid="farm-address" className="inner-box">
                 <div className="box-row" data-testid="farm-address-city">
-                  <div className="icon">{/* {<FontAwesomeIcon icon={faLocationDot} />} */}</div>
+                  <div className="icon">
+                    {<FontAwesomeIcon icon={faLocationDot} />}
+                  </div>
                   <div className="text">City: {alpaca?.city}</div>
                 </div>
               </address>
