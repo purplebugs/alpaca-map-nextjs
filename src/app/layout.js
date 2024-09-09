@@ -1,4 +1,4 @@
-import { Roboto, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "@/app/globals.css";
 
 import Nav from "@/components/nav.js";
