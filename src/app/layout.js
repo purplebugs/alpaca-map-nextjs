@@ -8,6 +8,10 @@ export const metadata = {
   description: "Where can I find and visit alpacas?",
 };
 
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
+
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
