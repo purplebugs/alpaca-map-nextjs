@@ -35,19 +35,19 @@ export default async function Page({ params }) {
       </header>
       <main>
         <article id="farm">
-          <section className="overview">
-            <div className="box">
+          <section>
+            <div>
               <h3>Farm Overview</h3>
-              <div className="inner-box" data-testid="farm-public-private">
-                <div className="box-row">
-                  <div className="icon">
+              <div data-testid="farm-public-private">
+                <div>
+                  <div>
                     {farm?.public === true ? (
                       <FontAwesomeIcon icon={faHouseFlag} />
                     ) : (
                       <FontAwesomeIcon icon={faKey} />
                     )}
                   </div>
-                  <div className="text">
+                  <div>
                     {farm?.public === true ? "Public Farm" : "Private Farm"}
                   </div>
                 </div>
@@ -55,12 +55,12 @@ export default async function Page({ params }) {
 
               {farm?.url && (
                 <address data-testid="farm-address-webpage">
-                  <div className="inner-box">
-                    <div className="box-row">
-                      <div className="icon">
+                  <div>
+                    <div>
+                      <div>
                         <FontAwesomeIcon icon={faGlobe} />
                       </div>
-                      <div className="text">
+                      <div>
                         <a
                           href={farm?.url?.full}
                           target="_blank"
@@ -68,7 +68,7 @@ export default async function Page({ params }) {
                           data-testid="farm-webpage-link"
                         >
                           {farm?.url?.pretty}{" "}
-                          <span className="icon link-arrow">
+                          <span>
                             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                           </span>
                         </a>
@@ -78,38 +78,32 @@ export default async function Page({ params }) {
                 </address>
               )}
 
-              <address data-testid="farm-address" className="inner-box">
-                <div className="box-row" data-testid="farm-address-city">
-                  <div className="icon">
-                    {<FontAwesomeIcon icon={faLocationDot} />}
-                  </div>
-                  <div className="text">City: {farm?.city}</div>
+              <address data-testid="farm-address">
+                <div data-testid="farm-address-city">
+                  <div>{<FontAwesomeIcon icon={faLocationDot} />}</div>
+                  <div>City: {farm?.city}</div>
                 </div>
-                <div className="box-row" data-testid="farm-address-street">
-                  <div className="icon">
-                    {<FontAwesomeIcon icon={faRoad} />}
-                  </div>
-                  <div className="text">
+                <div data-testid="farm-address-street">
+                  <div>{<FontAwesomeIcon icon={faRoad} />}</div>
+                  <div>
                     {" "}
                     Address: {farm?.location?.google?.formatted_address}
                   </div>
                 </div>
-                <div className="box-row" data-testid="farm-address-email">
-                  <div className="icon">
-                    {<FontAwesomeIcon icon={faEnvelope} />}
-                  </div>
-                  <div className="text"> Email: {farm?.email}</div>
+                <div data-testid="farm-address-email">
+                  <div>{<FontAwesomeIcon icon={faEnvelope} />}</div>
+                  <div> Email: {farm?.email}</div>
                 </div>
               </address>
 
               {farmDirections && (
                 <address data-testid="farm-directions">
-                  <div className="inner-box">
-                    <div className="box-row">
-                      <div className="icon">
+                  <div>
+                    <div>
+                      <div>
                         <FontAwesomeIcon icon={faCar} />
                       </div>
-                      <div className="text">
+                      <div>
                         <a
                           href={farmDirections}
                           target="_blank"
@@ -117,7 +111,7 @@ export default async function Page({ params }) {
                           data-testid="farm-directions-link"
                         >
                           Directions
-                          <span className="icon link-arrow">
+                          <span>
                             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                           </span>
                         </a>
@@ -128,23 +122,19 @@ export default async function Page({ params }) {
               )}
             </div>
           </section>
-          <section className="more">
-            <div className="box">
+          <section>
+            <div>
               <h3>Alpaca Overview</h3>
-              <div className="inner-box" data-testid="alpaca-count">
-                <div className="box-row">
-                  <div className="icon">🦙</div>
-                  <div className="text">
-                    Alpacas: {farm.count?.alpacas?.status?.active}
-                  </div>
+              <div data-testid="alpaca-count">
+                <div>
+                  <div>🦙</div>
+                  <div>Alpacas: {farm.count?.alpacas?.status?.active}</div>
                 </div>
               </div>
-              <div className="inner-box" data-testid="alpaca-gender">
-                <div className="box-row">
-                  <div className="icon">
-                    {<FontAwesomeIcon icon={faVenusMars} />}
-                  </div>
-                  <div className="text">
+              <div data-testid="alpaca-gender">
+                <div>
+                  <div>{<FontAwesomeIcon icon={faVenusMars} />}</div>
+                  <div>
                     <ul>
                       {farm?.aggregations?.alpacas?.gender?.buckets.map(
                         (bucket) => {
@@ -159,12 +149,10 @@ export default async function Page({ params }) {
                   </div>
                 </div>
               </div>
-              <div className="inner-box" data-testid="alpaca-colour">
-                <div className="box-row">
-                  <div className="icon">
-                    {<FontAwesomeIcon icon={faPalette} />}
-                  </div>
-                  <div className="text">
+              <div data-testid="alpaca-colour">
+                <div>
+                  <div>{<FontAwesomeIcon icon={faPalette} />}</div>
+                  <div>
                     <ul>
                       {farm?.aggregations?.alpacas?.color1?.buckets.map(
                         (bucket) => {
@@ -182,7 +170,7 @@ export default async function Page({ params }) {
             </div>
 
             {alpacasActive?.length === 0 ? null : (
-              <div className="box">
+              <div>
                 <h3>Alpacas</h3>
                 <Suspense fallback={<p>Loading alpacas...</p>}>
                   <AlpacasDetail status="active" alpacas={alpacasActive} />
@@ -191,7 +179,7 @@ export default async function Page({ params }) {
             )}
 
             {alpacasDead?.length === 0 ? null : (
-              <div className="box">
+              <div>
                 <h3>Alpacas - Dead</h3>
                 <Suspense fallback={<p>Loading alpacas...</p>}>
                   <AlpacasDetail status="dead" alpacas={alpacasDead} />
@@ -200,7 +188,7 @@ export default async function Page({ params }) {
             )}
 
             {alpacasExport?.length === 0 ? null : (
-              <div className="box">
+              <div>
                 <h3>Alpacas - Export</h3>
                 <Suspense fallback={<p>Loading alpacas...</p>}>
                   <AlpacasDetail status="dead" alpacas={alpacasExport} />
