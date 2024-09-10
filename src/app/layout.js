@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable}`}>
       <body>
-        <div id="root">
+        <div id="root" className="grid place-items-center">
           <nav>
             <Nav />
           </nav>
