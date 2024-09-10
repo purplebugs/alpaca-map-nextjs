@@ -15,24 +15,24 @@ const Nav = () => {
         </div>
         <div id="nav-menu">
           <Link href="/">
-            <span className="icon">
+            <span>
               <FontAwesomeIcon icon={faMapLocationDot} className="fa-2x" />
             </span>
-            <span className="hidden-mobile">Find Alpacas on Map</span>
+            <span>Find Alpacas on Map</span>
           </Link>
 
           <Link href="/search">
-            <span className="icon">
+            <span>
               <FontAwesomeIcon icon={faMagnifyingGlass} className="fa-2x" />
             </span>
-            <span className="hidden-mobile">Search</span>
+            <span>Search</span>
           </Link>
 
           <Link href="/about">
-            <span className="icon">
+            <span>
               <FontAwesomeIcon icon={faCircleQuestion} className="fa-2x" />
             </span>
-            <span className="hidden-mobile">About</span>
+            <span>About</span>
           </Link>
         </div>
       </nav>
