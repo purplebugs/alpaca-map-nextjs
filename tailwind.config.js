@@ -10,7 +10,7 @@ export const theme = {
     current: "currentColor",
     inherit: "inherit",
     transparent: "transparent",
-    "pale-blue": "#3d78ce",
+    blue: "#3d78ce",
     pink: "#ed87a1",
     brown: {
       50: "#fdf8f6",
