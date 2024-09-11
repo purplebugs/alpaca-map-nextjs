@@ -1,3 +1,9 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleQuestion,
+  faMagnifyingGlass,
+  faMapLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 const Nav = () => {
@@ -9,18 +15,24 @@ const Nav = () => {
         </div>
         <div id="nav-menu">
           <Link href="/">
-            <span className="icon">{/* <FontAwesomeIcon icon={faMapLocationDot} size="2x" /> */}</span>
-            <span className="hidden-mobile">Find Alpacas on Map</span>
+            <span>
+              <FontAwesomeIcon icon={faMapLocationDot} className="fa-2x" />
+            </span>
+            <span>Find Alpacas on Map</span>
           </Link>
 
           <Link href="/search">
-            <span className="icon">{/* <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" /> */}</span>
-            <span className="hidden-mobile">Search</span>
+            <span>
+              <FontAwesomeIcon icon={faMagnifyingGlass} className="fa-2x" />
+            </span>
+            <span>Search</span>
           </Link>
 
           <Link href="/about">
-            <span className="icon">{/* <FontAwesomeIcon icon={faCircleQuestion} size="2x" /> */}</span>
-            <span className="hidden-mobile">About</span>
+            <span>
+              <FontAwesomeIcon icon={faCircleQuestion} className="fa-2x" />
+            </span>
+            <span>About</span>
           </Link>
         </div>
       </nav>
