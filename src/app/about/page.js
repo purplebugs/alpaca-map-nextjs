@@ -1,3 +1,4 @@
+import logo from "public/alpaca.life.logo.png";
 import Image from "next/image";
 
 export default function Page() {
@@ -73,11 +74,13 @@ export default function Page() {
             <div>
               <p>
                 <Image
-                  src="/alpaca.life.logo.png"
                   alt="Alpaca.Life logo"
-                  width={300}
-                  height={300}
-                  priority
+                  src={logo}
+                  sizes="100vw"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                  }}
                 />
               </p>
             </div>
