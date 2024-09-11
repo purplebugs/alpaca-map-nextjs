@@ -9,7 +9,7 @@ import Link from "next/link";
 const Nav = () => {
   return (
     <>
-      <nav className="bg-yellow-50 py-4">
+      <nav className="bg-pale-blue py-5 text-white font-bold">
         <div id="nav-branding" className="absolute">
           <Link href="/">Logo</Link>
         </div>
