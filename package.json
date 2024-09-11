@@ -11,7 +11,7 @@
     "test-ui": "DB_TYPE=mock playwright test"
   },
   "dependencies": {
-    "@elastic/elasticsearch": "^8.13.1",
+    "@elastic/elasticsearch": "8.15.0",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
