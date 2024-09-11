@@ -12,9 +12,6 @@ export const theme = {
     transparent: "transparent",
     "pale-blue": "#3d78ce",
     pink: "#ed87a1",
-    blue: {
-      950: "#17275c",
-    },
     brown: {
       50: "#fdf8f6",
       100: "#f2e8e5",
