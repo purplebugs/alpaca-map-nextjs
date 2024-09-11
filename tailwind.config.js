@@ -28,6 +28,7 @@ export const theme = {
       900: "#43302b",
     },
     white: "#ffffff",
+    yellow: "#edbb34",
   },
   extend: {
     fontFamily: {

@@ -26,10 +26,7 @@ const Nav = () => {
 
             <div>
               <Link href="/search" className="flex items-center gap-1">
-                <FontAwesomeIcon
-                  icon={faMagnifyingGlass}
-                  className="fa-2x hover:stroke-white stroke-2"
-                />
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="fa-2x" />
                 <span className="hidden md:block hover:underline hover:decoration-8">
                   Search
                 </span>
