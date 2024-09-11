@@ -9,31 +9,39 @@ import Link from "next/link";
 const Nav = () => {
   return (
     <>
-      <nav>
-        <div id="nav-branding">
+      <nav className="bg-blue py-5 text-white font-bold">
+        <div id="nav-branding" className="absolute">
           <Link href="/">Logo</Link>
         </div>
-        <div id="nav-menu">
-          <Link href="/">
-            <span>
-              <FontAwesomeIcon icon={faMapLocationDot} className="fa-2x" />
-            </span>
-            <span>Find Alpacas on Map</span>
-          </Link>
+        <div id="nav-menu" className="relative flex flex-col items-center">
+          <div className="relative flex flex-row gap-5">
+            <div>
+              <Link href="/" className="flex items-center gap-1">
+                <FontAwesomeIcon icon={faMapLocationDot} className="fa-2x" />
+                <span className="hidden md:block hover:underline hover:decoration-8">
+                  Find Alpacas on Map
+                </span>
+              </Link>
+            </div>
 
-          <Link href="/search">
-            <span>
-              <FontAwesomeIcon icon={faMagnifyingGlass} className="fa-2x" />
-            </span>
-            <span>Search</span>
-          </Link>
+            <div>
+              <Link href="/search" className="flex items-center gap-1">
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="fa-2x" />
+                <span className="hidden md:block hover:underline hover:decoration-8">
+                  Search
+                </span>
+              </Link>
+            </div>
 
-          <Link href="/about">
-            <span>
-              <FontAwesomeIcon icon={faCircleQuestion} className="fa-2x" />
-            </span>
-            <span>About</span>
-          </Link>
+            <div>
+              <Link href="/about" className="flex items-center gap-1">
+                <FontAwesomeIcon icon={faCircleQuestion} className="fa-2x" />
+                <span className="hidden md:block hover:underline hover:decoration-8">
+                  About
+                </span>
+              </Link>
+            </div>
+          </div>
         </div>
       </nav>
     </>
