@@ -76,24 +76,17 @@ export default async function Results({
 
       <ul data-testid="list-results-locations">
         {locations?.items?.map((item) => (
-          <>
-            <li key={item?.id}>
-              <Link
-                href={`/farm/${item?.id}`}
-                data-testid={`list-results-locations-farm-id-${item?.id}`}
-              >
-                {RenderedItem(item?.name)}
-              </Link>{" "}
-              -{" "}
-              {RenderedItem(
-                item?.location?.google?.administrative_area_level_2
-              )}
-              ,{" "}
-              {RenderedItem(
-                item?.location?.google?.administrative_area_level_1
-              )}
-            </li>
-          </>
+          <li key={item?.id}>
+            <Link
+              href={`/farm/${item?.id}`}
+              data-testid={`list-results-locations-farm-id-${item?.id}`}
+            >
+              {RenderedItem(item?.name)}
+            </Link>{" "}
+            -{" "}
+            {RenderedItem(item?.location?.google?.administrative_area_level_2)},{" "}
+            {RenderedItem(item?.location?.google?.administrative_area_level_1)}
+          </li>
         ))}
       </ul>
 
