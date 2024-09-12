@@ -74,10 +74,10 @@ export default async function Results({
         section={"locationPageNumber"}
       />
 
-      <ul key={locations.id} data-testid="list-results-locations">
-        {locations?.items?.map((item, index) => (
+      <ul data-testid="list-results-locations">
+        {locations?.items?.map((item) => (
           <>
-            <li key={index}>
+            <li key={item?.id}>
               <Link
                 href={`/farm/${item?.id}`}
                 data-testid={`list-results-locations-farm-id-${item?.id}`}
@@ -105,9 +105,9 @@ export default async function Results({
         section={"farmPageNumber"}
       />
 
-      <ul key={companies.id} data-testid="list-results-companies">
-        {companies?.items?.map((item, index) => (
-          <li key={index}>
+      <ul data-testid="list-results-companies">
+        {companies?.items?.map((item) => (
+          <li key={item?.id}>
             <Link
               href={`/farm/${item.id}`}
               data-testid={`list-results-companies-farm-id-${item.id}`}
@@ -126,9 +126,9 @@ export default async function Results({
         section={"alpacaPageNumber"}
       />
 
-      <ul key={animals.id} data-testid="list-results-animals">
-        {animals?.items?.map((item, index) => (
-          <li key={index}>
+      <ul data-testid="list-results-animals">
+        {animals?.items?.map((item) => (
+          <li key={item?.alpacaId}>
             <p>
               Short Name:{" "}
               <Link

@@ -135,7 +135,7 @@ export default async function Page({ params }) {
                 <div>
                   <div>{<FontAwesomeIcon icon={faVenusMars} />}</div>
                   <div>
-                    <ul key={farm.id}>
+                    <ul>
                       {farm?.aggregations?.alpacas?.gender?.buckets.map(
                         (bucket) => {
                           return (
@@ -153,7 +153,7 @@ export default async function Page({ params }) {
                 <div>
                   <div>{<FontAwesomeIcon icon={faPalette} />}</div>
                   <div>
-                    <ul key={farm.id}>
+                    <ul>
                       {farm?.aggregations?.alpacas?.color1?.buckets.map(
                         (bucket) => {
                           return (
