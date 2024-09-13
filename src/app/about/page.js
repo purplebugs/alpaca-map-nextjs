@@ -11,7 +11,7 @@ export default function Page() {
       </header>
       <main className="text-black-almost">
         <article>
-          <section>
+          <section className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold leading-loose tracking-tight">
                 Why
@@ -22,7 +22,7 @@ export default function Page() {
                 visit them
               </p>
               <div className="flex justify-center">
-                <figure className="w-11/12 py-8">
+                <figure className="w-11/12 pt-8">
                   <Image
                     src="/Anita_visits_alpaca_Trygve.jpg"
                     alt="Anita visits alpaca Trygve and friends at Alpakkahagen, Norway"

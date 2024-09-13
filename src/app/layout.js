@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <Nav />
         <div
           id="root"
-          className="relative bg-brown-100 mx-2 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10"
+          className="relative bg-brown-100 mx-2 mb-8 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10"
         >
           {children}
         </div>
