@@ -5,34 +5,41 @@ export default function Page() {
   return (
     <>
       <header>
-        <h2>About</h2>
+        <h2 className="text-4xl font-bold text-center tracking-tight text-black-almost sm:text-6xl pt-2">
+          About
+        </h2>
       </header>
-      <main>
+      <main className="text-black-almost">
         <article>
           <section>
             <div>
-              <h3>Why</h3>{" "}
+              <h3 className="text-2xl font-bold leading-loose tracking-tight">
+                Why
+              </h3>{" "}
               <p>
                 {" "}
                 😊 Alpacas make me happy, so I wanted to solve how to find and
                 visit them
               </p>
-              <figure>
+              <figure className="py-8">
                 <Image
                   src="/Anita_visits_alpaca_Trygve.jpg"
                   alt="Anita visits alpaca Trygve and friends at Alpakkahagen, Norway"
                   width={567}
                   height={756}
                   priority
+                  className="border border-2 border-black-almost rounded-2xl ring-8 ring-pink"
                 />
 
-                <figcaption>
+                <figcaption className="py-4">
                   Anita visits alpaca Trygve and friends at Alpakkahagen, Norway
                 </figcaption>
               </figure>
             </div>
             <div>
-              <h3>Donate</h3>
+              <h3 className="text-2xl font-bold leading-loose tracking-tight">
+                Donate
+              </h3>
               <p>
                 🫖 To help with the cost of running the site, feel free to
                 <a
@@ -45,7 +52,9 @@ export default function Page() {
               </p>
             </div>
             <div>
-              <h3>Credits</h3>
+              <h3 className="text-2xl font-bold leading-loose tracking-tight">
+                Credits
+              </h3>
               <p>
                 🦙 Data with kind permission from
                 <a
@@ -86,10 +95,10 @@ export default function Page() {
             </div>
 
             <aside>
-              <h3>
+              <h4 className="text-xl font-bold leading-loose tracking-tight">
                 The &quot;<span className="line-through">Silicon</span> Alpaca
                 Valley&quot; pitch
-              </h3>
+              </h4>
               <p>
                 🤖 This website is made with AI<sup>*</sup> technology
               </p>

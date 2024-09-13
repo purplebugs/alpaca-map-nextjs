@@ -12,6 +12,7 @@ export const theme = {
     transparent: "transparent",
     blue: "#3d78ce",
     pink: "#ed87a1",
+    "black-almost": "#333333",
     brown: {
       50: "#fdf8f6",
       100: "#f2e8e5",
