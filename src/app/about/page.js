@@ -98,8 +98,8 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="py-12">
-              <aside className="border border-2 border-black-almost rounded-2xl ring-8 ring-yellow p-4">
+            <div className="flex justify-center py-12">
+              <aside className="w-11/12 border border-2 border-black-almost rounded-2xl ring-8 ring-yellow p-4">
                 <h4 className="text-xl font-bold leading-loose tracking-tight">
                   The &quot;<span className="line-through">Silicon</span> Alpaca
                   Valley&quot; pitch
