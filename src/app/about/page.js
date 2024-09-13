@@ -44,11 +44,12 @@ export default function Page() {
                 Donate
               </h3>
               <p>
-                🫖 To help with the cost of running the site, feel free to
+                🫖 To help with the cost of running the site, feel free to{" "}
                 <a
                   href="https://ko-fi.com/anitalipsky"
                   target="_blank"
                   rel="noreferrer"
+                  className="text-blue-dark underline hover:decoration-8"
                 >
                   buy me a cuppa tea
                 </a>
@@ -59,25 +60,25 @@ export default function Page() {
                 Credits
               </h3>
               <p>
-                🦙 Data with kind permission from
+                🦙 Data with kind permission from{" "}
                 <a
                   href="https://www.alpakkaforeningen.no/"
                   target="_blank"
                   rel="noreferrer"
-                  title="alpaca icons"
+                  className="text-blue-dark underline hover:decoration-8"
                 >
                   Den Norske Alpakkaforening
                 </a>
               </p>
               <p>
-                🙋‍♀️ By Anita Lipsky - A
+                🙋‍♀️ By Anita Lipsky - A{" "}
                 <a
                   href="https://www.purplebugs.com/"
                   target="_blank"
                   rel="noreferrer"
-                  title="alpaca icons"
+                  className="text-blue-dark underline hover:decoration-8"
                 >
-                  Purple Bugs
+                  Purple Bugs{" "}
                 </a>
                 project
               </p>
