@@ -98,31 +98,33 @@ export default function Page() {
               </p>
             </div>
 
-            <aside>
-              <h4 className="text-xl font-bold leading-loose tracking-tight">
-                The &quot;<span className="line-through">Silicon</span> Alpaca
-                Valley&quot; pitch
-              </h4>
-              <p>
-                🤖 This website is made with AI<sup>*</sup> technology
-              </p>
+            <div className="py-12">
+              <aside className="border border-2 border-black-almost rounded-2xl ring-8 ring-yellow p-4">
+                <h4 className="text-xl font-bold leading-loose tracking-tight">
+                  The &quot;<span className="line-through">Silicon</span> Alpaca
+                  Valley&quot; pitch
+                </h4>
+                <p>
+                  🤖 This website is made with AI<sup>*</sup> technology
+                </p>
 
-              <p>
-                🦄 Alpaca life started as a wild dream, to make finding alpacas
-                accessible to all
-              </p>
+                <p>
+                  🦄 Alpaca life started as a wild dream, to make finding
+                  alpacas accessible to all
+                </p>
 
-              <p>
-                💖 I believed no matter your location, abilities or profession,
-                everyone, everywhere should have the power to discover and
-                connect over alpacas
-              </p>
+                <p>
+                  💖 I believed no matter your location, abilities or
+                  profession, everyone, everywhere should have the power to
+                  discover and connect over alpacas
+                </p>
 
-              <p>🌏 Alpaca.Life - Making the world an alpaca place</p>
-              <p>
-                <em>*Alpaca innovation</em>
-              </p>
-            </aside>
+                <p>🌏 Alpaca.Life - Making the world an alpaca place</p>
+                <p>
+                  <em>*Alpaca innovation</em>
+                </p>
+              </aside>
+            </div>
           </section>
         </article>
       </main>
