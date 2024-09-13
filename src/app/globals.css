@@ -2,4 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TODO set image sizing */
+@layer base {
+  p {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+  }
+}
