@@ -21,20 +21,23 @@ export default function Page() {
                 😊 Alpacas make me happy, so I wanted to solve how to find and
                 visit them
               </p>
-              <figure className="py-8">
-                <Image
-                  src="/Anita_visits_alpaca_Trygve.jpg"
-                  alt="Anita visits alpaca Trygve and friends at Alpakkahagen, Norway"
-                  width={567}
-                  height={756}
-                  priority
-                  className="border border-2 border-black-almost rounded-2xl ring-8 ring-pink"
-                />
+              <div className="flex justify-center">
+                <figure className="w-11/12 py-8">
+                  <Image
+                    src="/Anita_visits_alpaca_Trygve.jpg"
+                    alt="Anita visits alpaca Trygve and friends at Alpakkahagen, Norway"
+                    width={567}
+                    height={756}
+                    priority
+                    className="border border-2 border-black-almost rounded-2xl ring-8 ring-pink"
+                  />
 
-                <figcaption className="py-4">
-                  Anita visits alpaca Trygve and friends at Alpakkahagen, Norway
-                </figcaption>
-              </figure>
+                  <figcaption className="py-4">
+                    Anita visits alpaca Trygve and friends at Alpakkahagen,
+                    Norway
+                  </figcaption>
+                </figure>
+              </div>
             </div>
             <div>
               <h3 className="text-2xl font-bold leading-loose tracking-tight">
