@@ -1,10 +1,11 @@
+'use client'
+
+import { AlpacaMap } from "@/components/map.js";
+
 export default function Home() {
   return (
-    <main>
-      Main Page - Map of alpacas
-      <h1 className="text-3xl font-bold underline">
-        Tailwind styling in Next.js!
-      </h1>
+    <main>      
+      <AlpacaMap apikey="AIzaSyDRbvgttCBwylkqM9mcdBM5FoFEUKinng0"></AlpacaMap>
     </main>
   );
 }

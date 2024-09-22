@@ -17,9 +17,12 @@
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@lit/react": "1.0.5",
+    "@purplebugs/alpaca-map": "*",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "sharp": "^0.33.5",
     "use-debounce": "^10.0.1"
   },
   "devDependencies": {
