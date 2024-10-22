@@ -22,13 +22,12 @@ const poppins = Poppins({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable}`}>
-      <body className="relative flex min-h-screen flex-col justify-start bg-white py-0">
+      <body className="flex min-h-screen flex-col justify-start bg-white py-0 overflow-scroll">
         <Nav />
-        <div
-          id="root"
-          className="relative bg-brown-100 mx-2 mb-8 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10"
-        >
-          {children}
+        <div id="root" className="relative overflow-auto p-8 bg-brown-100">
+          <div className="min-w-md mx-auto max-w-4xl p-6 bg-white rounded-xl shadow-lg gap-x-4">
+            {children}
+          </div>
         </div>
         <footer>
           <Nav />

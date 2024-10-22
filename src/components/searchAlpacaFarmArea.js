@@ -21,12 +21,13 @@ export default function SearchAlpacaFarmArea({ placeholder }) {
   return (
     <>
       <div>
-        <h3>
-          <label htmlFor="search-by-alpaca">Find alpacas, farms, area</label>
+        <h3 className="text-2xl font-bold leading-loose tracking-tight">
+          <label htmlFor="search-by-alpaca">Find alpaca, farm, area</label>
         </h3>
       </div>
       <div id="text-search-by-alpaca">
         <input
+          className="rounded-full px-4 py-4 w-full border-2"
           name="search-by-alpaca"
           id="search-by-alpaca"
           type="text"
