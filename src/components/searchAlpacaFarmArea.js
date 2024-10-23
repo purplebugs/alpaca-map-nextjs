@@ -27,7 +27,7 @@ export default function SearchAlpacaFarmArea({ placeholder }) {
       </div>
       <div id="text-search-by-alpaca">
         <input
-          className="rounded-full px-4 py-4 w-full border-2"
+          className="rounded-full px-4 py-4 w-full border-2 border-black-almost"
           name="search-by-alpaca"
           id="search-by-alpaca"
           type="text"
