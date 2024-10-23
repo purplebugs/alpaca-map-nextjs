@@ -45,26 +45,46 @@ export default async function Results({
 
   return (
     <>
-      <p data-testid="search-list-results-heading">
-        Areas{" "}
-        {locations?.total > 0 ? (
-          <Link href="#locations-list">{locations?.total}</Link>
-        ) : (
-          0
-        )}{" "}
-        - Farms{" "}
-        {companies?.total > 0 ? (
-          <Link href="#companies-list">{companies?.total}</Link>
-        ) : (
-          0
-        )}{" "}
-        - 🦙 Alpacas{" "}
-        {animals?.total > 0 ? (
-          <Link href="#animals-list">{animals?.total}</Link>
-        ) : (
-          0
-        )}
-      </p>
+      <div
+        data-testid="search-list-results-heading"
+        className="flex flex-wrap justify-center"
+      >
+        <div
+          data-testid="search-list-results-heading-areas"
+          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40"
+        >
+          {locations?.total > 0 ? (
+            <Link href="#locations-list">{locations?.total}</Link>
+          ) : (
+            0
+          )}{" "}
+          Areas
+        </div>
+
+        <div
+          data-testid="search-list-results-heading-areas"
+          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40"
+        >
+          {companies?.total > 0 ? (
+            <Link href="#companies-list">{companies?.total}</Link>
+          ) : (
+            0
+          )}{" "}
+          Farms
+        </div>
+        <div
+          data-testid="search-list-results-heading-areas"
+          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40"
+        >
+          🦙
+          {animals?.total > 0 ? (
+            <Link href="#animals-list">{animals?.total}</Link>
+          ) : (
+            0
+          )}{" "}
+          Alpacas
+        </div>
+      </div>
 
       <h4 id="locations-list">Areas - {locations?.total}</h4>
 
