@@ -51,38 +51,47 @@ export default async function Results({
       >
         <div
           data-testid="search-list-results-heading-areas"
-          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40"
+          className="p-1 m-0.5 md:p-3 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 md:flex md:space-y-0 md:gap-x-6"
         >
-          {locations?.total > 0 ? (
-            <Link href="#locations-list">{locations?.total}</Link>
-          ) : (
-            0
-          )}{" "}
-          Areas
+          <div className="text-center bg-brown-400">
+            {locations?.total > 0 ? (
+              <Link href="#locations-list">{locations?.total}</Link>
+            ) : (
+              0
+            )}
+          </div>
+
+          <div className="text-center bg-brown-600">Areas</div>
         </div>
 
         <div
           data-testid="search-list-results-heading-areas"
-          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40"
+          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 md:flex md:space-y-0 md:gap-x-6"
         >
-          {companies?.total > 0 ? (
-            <Link href="#companies-list">{companies?.total}</Link>
-          ) : (
-            0
-          )}{" "}
-          Farms
+          <div className="text-center bg-brown-400">
+            {companies?.total > 0 ? (
+              <Link href="#companies-list">{companies?.total}</Link>
+            ) : (
+              0
+            )}
+          </div>
+          <div className="text-center bg-brown-600">Farms</div>
         </div>
+
         <div
           data-testid="search-list-results-heading-areas"
-          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40"
+          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 md:flex md:space-y-0 md:gap-x-6"
         >
-          🦙
-          {animals?.total > 0 ? (
-            <Link href="#animals-list">{animals?.total}</Link>
-          ) : (
-            0
-          )}{" "}
-          Alpacas
+          <div className="text-center bg-brown-400">
+            🦙
+            {animals?.total > 0 ? (
+              <Link href="#animals-list">{animals?.total}</Link>
+            ) : (
+              0
+            )}{" "}
+          </div>
+
+          <div className="text-center bg-brown-600">Alpacas</div>
         </div>
       </div>
 
