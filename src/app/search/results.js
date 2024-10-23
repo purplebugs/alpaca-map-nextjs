@@ -54,7 +54,7 @@ export default async function Results({
       >
         <div
           data-testid="search-list-results-heading-areas"
-          className="p-1 m-0.5 md:p-3 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 flex flex-col justify-between md:flex-row"
+          className="p-1 m-0.5 sm:p-3 sm:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 flex items-center flex-col justify-between sm:flex-row sm:justify-normal gap-x-4"
         >
           <div className="text-center text-2xl">
             {locations?.total > 0 ? (
@@ -72,7 +72,7 @@ export default async function Results({
 
         <div
           data-testid="search-list-results-heading-areas"
-          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 flex flex-col justify-between md:flex-row"
+          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 flex items-center flex-col justify-between md:flex-row sm:justify-normal gap-x-4"
         >
           <div className="text-center text-2xl">
             {companies?.total > 0 ? (
@@ -89,7 +89,7 @@ export default async function Results({
 
         <div
           data-testid="search-list-results-heading-areas"
-          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 flex flex-col justify-between md:flex-row"
+          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 flex items-center flex-col justify-between md:flex-row sm:justify-normal gap-x-4"
         >
           <div className="text-center text-2xl">
             {animals?.total > 0 ? (
