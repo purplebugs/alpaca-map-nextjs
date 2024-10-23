@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse, faMap } from "@fortawesome/free-solid-svg-icons";
+
 import { Pagination } from "@/components/pagination";
 import Link from "next/link";
 import db from "@/functions/db.js";
@@ -51,9 +54,9 @@ export default async function Results({
       >
         <div
           data-testid="search-list-results-heading-areas"
-          className="p-1 m-0.5 md:p-3 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 md:flex md:space-y-0 md:gap-x-6"
+          className="p-1 m-0.5 md:p-3 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 flex flex-col justify-between md:flex-row"
         >
-          <div className="text-center bg-brown-400">
+          <div className="text-center text-2xl">
             {locations?.total > 0 ? (
               <Link href="#locations-list">{locations?.total}</Link>
             ) : (
@@ -61,37 +64,42 @@ export default async function Results({
             )}
           </div>
 
-          <div className="text-center bg-brown-600">Areas</div>
+          <div className="text-center">
+            <FontAwesomeIcon icon={faMap} className="fa-lg" />
+          </div>
+          <div className="text-center">Areas</div>
         </div>
 
         <div
           data-testid="search-list-results-heading-areas"
-          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 md:flex md:space-y-0 md:gap-x-6"
+          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 flex flex-col justify-between md:flex-row"
         >
-          <div className="text-center bg-brown-400">
+          <div className="text-center text-2xl">
             {companies?.total > 0 ? (
               <Link href="#companies-list">{companies?.total}</Link>
             ) : (
               0
             )}
           </div>
-          <div className="text-center bg-brown-600">Farms</div>
+          <div className="text-center">
+            <FontAwesomeIcon icon={faHouse} className="fa-lg" />
+          </div>
+          <div className="text-center">Farms</div>
         </div>
 
         <div
           data-testid="search-list-results-heading-areas"
-          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 md:flex md:space-y-0 md:gap-x-6"
+          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 flex flex-col justify-between md:flex-row"
         >
-          <div className="text-center bg-brown-400">
-            🦙
+          <div className="text-center text-2xl">
             {animals?.total > 0 ? (
               <Link href="#animals-list">{animals?.total}</Link>
             ) : (
               0
-            )}{" "}
+            )}
           </div>
-
-          <div className="text-center bg-brown-600">Alpacas</div>
+          <div className="text-center text-2xl">🦙</div>
+          <div className="text-center">Alpacas</div>
         </div>
       </div>
 

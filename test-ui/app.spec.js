@@ -242,7 +242,7 @@ test.describe("Search page", () => {
 
     // ASSERT
     expect(page.getByTestId("search-list-results-heading")).toContainText(
-      "0 Areas0 Farms🦙2 Alpacas"
+      "0Areas0Farms2🦙Alpacas"
     );
     const listResults = page.getByTestId("list-results-animals");
     await expect(listResults).toContainText(/ALPAKKAHAGEN SØRUMS TRYGVE/);
@@ -267,7 +267,7 @@ test.describe("Search page", () => {
 
     // ASSERT
     expect(page.getByTestId("search-list-results-heading")).toContainText(
-      "1 Areas5 Farms🦙6 Alpacas"
+      "1Areas5Farms6🦙Alpacas"
     );
     await expect(page.getByTestId("list-results-locations")).toContainText(
       /Kamperhaug/
