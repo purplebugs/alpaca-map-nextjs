@@ -224,9 +224,7 @@ test.describe("Search page", () => {
     await expect(
       page.getByRole("textbox", { name: `Find alpaca, farm, area` })
     ).toBeVisible();
-    await expect(
-      page.getByPlaceholder("Find alpaca, farm, area")
-    ).toBeVisible();
+    await expect(page.getByPlaceholder("Luna")).toBeVisible();
 
     // await expect(input).toHaveClass("pill half"); TODO put back when re do CSS ??
   });
