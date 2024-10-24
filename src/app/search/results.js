@@ -10,7 +10,7 @@ const RenderedItem = (item) => {
   const markup = { __html: item };
 
   // We know this data is clean as it does not come from the the general public
-  return <span class="highlight" dangerouslySetInnerHTML={markup} />;
+  return <span className="highlight" dangerouslySetInnerHTML={markup} />;
 };
 
 export default async function Results({
@@ -100,29 +100,44 @@ export default async function Results({
       </div>
 
       {locations?.total > 0 && (
-        <div id="locations-list" className="my-6">
+        <div id="locations-list" className="my-6 space-y-4">
           <h3 className="text-2xl font-bold leading-loose tracking-tight">
             <FontAwesomeIcon icon={faMap} className="fa-lg" /> Areas -{" "}
             {locations?.total}
           </h3>
 
-          <ul data-testid="list-results-locations">
+          <ul data-testid="list-results-locations" className="space-y-4">
             {locations?.items?.map((item) => (
-              <li key={item?.id}>
-                <Link
-                  href={`/farm/${item?.id}`}
-                  data-testid={`list-results-locations-farm-id-${item?.id}`}
+              <li key={item?.id} className="flex items-center">
+                <svg
+                  className="h-6 w-6 flex-none fill-brown-100 stroke-brown-500 stroke-2"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
                 >
-                  {RenderedItem(item?.name)}
-                </Link>{" "}
-                -{" "}
-                {RenderedItem(
-                  item?.location?.google?.administrative_area_level_2
-                )}
-                ,{" "}
-                {RenderedItem(
-                  item?.location?.google?.administrative_area_level_1
-                )}
+                  <circle cx="12" cy="12" r="11" />
+                  <path
+                    d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9"
+                    fill="none"
+                  />
+                </svg>
+
+                <div className="ml-4">
+                  <Link
+                    href={`/farm/${item?.id}`}
+                    data-testid={`list-results-locations-farm-id-${item?.id}`}
+                    className="hover:underline hover:decoration-8"
+                  >
+                    {RenderedItem(item?.name)}
+                  </Link>{" "}
+                  -{" "}
+                  {RenderedItem(
+                    item?.location?.google?.administrative_area_level_2
+                  )}
+                  ,{" "}
+                  {RenderedItem(
+                    item?.location?.google?.administrative_area_level_1
+                  )}
+                </div>
               </li>
             ))}
           </ul>
@@ -136,21 +151,36 @@ export default async function Results({
       )}
 
       {companies?.total > 0 && (
-        <div id="companies-list" className="my-6">
+        <div id="companies-list" className="my-6 space-y-4">
           <h3 className="text-2xl font-bold leading-loose tracking-tight">
             <FontAwesomeIcon icon={faHouse} className="fa-lg" /> Farms -{" "}
             {companies?.total}
           </h3>
 
-          <ul data-testid="list-results-companies">
+          <ul data-testid="list-results-companies" className="space-y-4">
             {companies?.items?.map((item) => (
-              <li key={item?.id}>
-                <Link
-                  href={`/farm/${item.id}`}
-                  data-testid={`list-results-companies-farm-id-${item.id}`}
+              <li key={item?.id} className="flex items-center">
+                <svg
+                  className="h-6 w-6 flex-none fill-brown-100 stroke-brown-500 stroke-2"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
                 >
-                  {RenderedItem(item.name)}
-                </Link>
+                  <circle cx="12" cy="12" r="11" />
+                  <path
+                    d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9"
+                    fill="none"
+                  />
+                </svg>
+
+                <div className="ml-4">
+                  <Link
+                    href={`/farm/${item.id}`}
+                    data-testid={`list-results-companies-farm-id-${item.id}`}
+                    className="hover:underline hover:decoration-8"
+                  >
+                    {RenderedItem(item.name)}
+                  </Link>
+                </div>
               </li>
             ))}
           </ul>
@@ -164,32 +194,48 @@ export default async function Results({
       )}
 
       {animals?.total > 0 && (
-        <div id="animals-list" className="my-6">
+        <div id="animals-list" className="my-6 space-y-4">
           <h3 className="text-2xl font-bold leading-loose tracking-tight">
             🦙 Alpacas - {animals?.total}
           </h3>
 
-          <ul data-testid="list-results-animals">
+          <ul data-testid="list-results-animals" className="space-y-4">
             {animals?.items?.map((item) => (
-              <li key={item?.alpacaId}>
-                <p>
+              <li key={item?.alpacaId} className="flex items-center">
+                <svg
+                  className="h-6 w-6 flex-none fill-brown-100 stroke-brown-500 stroke-2"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                >
+                  <circle cx="12" cy="12" r="11" />
+                  <path
+                    d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9"
+                    fill="none"
+                  />
+                </svg>
+
+                <div className="ml-4">
                   Short Name:{" "}
                   <Link
                     href={`/alpaca/${item?.alpacaId}`}
                     data-testid={`list-results-animals-animal-id-${item?.alpacaId}-short-name`}
+                    className="hover:underline hover:decoration-8"
                   >
-                    {RenderedItem(item?.alpacaRegisteredName)}
+                    {RenderedItem(item?.alpacaShortName)}
                   </Link>
-                </p>
-                <p>
-                  Registered Name:{" "}
-                  <Link
-                    href={`/alpaca/${item?.alpacaId}`}
-                    data-testid={`list-results-animals-animal-id-${item?.alpacaId}-registered-name`}
-                  >
-                    {RenderedItem(item?.alpacaRegisteredName)}
-                  </Link>
-                </p>
+                  <ul>
+                    <li>
+                      Registered Name:{" "}
+                      <Link
+                        href={`/alpaca/${item?.alpacaId}`}
+                        data-testid={`list-results-animals-animal-id-${item?.alpacaId}-registered-name`}
+                        className="hover:underline hover:decoration-8"
+                      >
+                        {RenderedItem(item?.alpacaRegisteredName)}
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </li>
             ))}
           </ul>
