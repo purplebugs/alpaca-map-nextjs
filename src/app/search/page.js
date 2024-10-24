@@ -10,12 +10,14 @@ export default async function Page({ searchParams }) {
   return (
     <>
       <header>
-        <h2>Search</h2>
+        <h2 className="text-4xl font-bold text-center tracking-tight text-black-almost sm:text-6xl pt-2">
+          Search
+        </h2>
       </header>
       <main id="search-page">
         <div>
           <div id="form-search-by-alpaca">
-            <SearchAlpacaFarmArea placeholder="Find alpaca, farm, area" />
+            <SearchAlpacaFarmArea placeholder="Luna" />
           </div>
         </div>
         <div>

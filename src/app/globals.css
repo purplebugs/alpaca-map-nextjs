@@ -7,4 +7,9 @@
     margin-block-start: 1em;
     margin-block-end: 1em;
   }
+
+  span.highlight em {
+    background-color: yellow;
+    font-weight: bold;
+  }
 }
