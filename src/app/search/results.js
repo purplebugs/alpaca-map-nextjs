@@ -99,83 +99,100 @@ export default async function Results({
         </Link>
       </div>
 
-      <h4 id="locations-list">Areas - {locations?.total}</h4>
+      {locations?.total > 0 && (
+        <>
+          <h4 id="locations-list">Areas - {locations?.total}</h4>
 
-      <Pagination
-        items={locationPageList}
-        searchParams={searchParams}
-        section={"locationPageNumber"}
-      />
+          <Pagination
+            items={locationPageList}
+            searchParams={searchParams}
+            section={"locationPageNumber"}
+          />
 
-      <ul data-testid="list-results-locations">
-        {locations?.items?.map((item) => (
-          <li key={item?.id}>
-            <Link
-              href={`/farm/${item?.id}`}
-              data-testid={`list-results-locations-farm-id-${item?.id}`}
-            >
-              {RenderedItem(item?.name)}
-            </Link>{" "}
-            -{" "}
-            {RenderedItem(item?.location?.google?.administrative_area_level_2)},{" "}
-            {RenderedItem(item?.location?.google?.administrative_area_level_1)}
-          </li>
-        ))}
-      </ul>
+          <ul data-testid="list-results-locations">
+            {locations?.items?.map((item) => (
+              <li key={item?.id}>
+                <Link
+                  href={`/farm/${item?.id}`}
+                  data-testid={`list-results-locations-farm-id-${item?.id}`}
+                >
+                  {RenderedItem(item?.name)}
+                </Link>{" "}
+                -{" "}
+                {RenderedItem(
+                  item?.location?.google?.administrative_area_level_2
+                )}
+                ,{" "}
+                {RenderedItem(
+                  item?.location?.google?.administrative_area_level_1
+                )}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
 
-      <h4 id="companies-list">Farms - {companies?.total}</h4>
+      {companies?.total > 0 && (
+        <>
+          <h4 id="companies-list">Farms - {companies?.total}</h4>
 
-      <Pagination
-        items={farmPageList}
-        searchParams={searchParams}
-        section={"farmPageNumber"}
-      />
+          <Pagination
+            items={farmPageList}
+            searchParams={searchParams}
+            section={"farmPageNumber"}
+          />
 
-      <ul data-testid="list-results-companies">
-        {companies?.items?.map((item) => (
-          <li key={item?.id}>
-            <Link
-              href={`/farm/${item.id}`}
-              data-testid={`list-results-companies-farm-id-${item.id}`}
-            >
-              {RenderedItem(item.name)}
-            </Link>
-          </li>
-        ))}
-      </ul>
+          <ul data-testid="list-results-companies">
+            {companies?.items?.map((item) => (
+              <li key={item?.id}>
+                <Link
+                  href={`/farm/${item.id}`}
+                  data-testid={`list-results-companies-farm-id-${item.id}`}
+                >
+                  {RenderedItem(item.name)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
 
-      <h4 id="animals-list">🦙 Alpacas - {animals?.total}</h4>
+      {animals?.total > 0 && (
+        <>
+          <h4 id="animals-list">🦙 Alpacas - {animals?.total}</h4>
 
-      <Pagination
-        items={alpacaPageList}
-        searchParams={searchParams}
-        section={"alpacaPageNumber"}
-      />
+          <Pagination
+            items={alpacaPageList}
+            searchParams={searchParams}
+            section={"alpacaPageNumber"}
+          />
 
-      <ul data-testid="list-results-animals">
-        {animals?.items?.map((item) => (
-          <li key={item?.alpacaId}>
-            <p>
-              Short Name:{" "}
-              <Link
-                href={`/alpaca/${item?.alpacaId}`}
-                data-testid={`list-results-animals-animal-id-${item?.alpacaId}-short-name`}
-              >
-                {RenderedItem(item?.alpacaRegisteredName)}
-              </Link>
-            </p>
-            <p>
-              Registered Name:{" "}
-              <Link
-                href={`/alpaca/${item?.alpacaId}`}
-                data-testid={`list-results-animals-animal-id-${item?.alpacaId}-registered-name`}
-              >
-                {RenderedItem(item?.alpacaRegisteredName)}
-              </Link>
-            </p>
-          </li>
-        ))}
-      </ul>
+          <ul data-testid="list-results-animals">
+            {animals?.items?.map((item) => (
+              <li key={item?.alpacaId}>
+                <p>
+                  Short Name:{" "}
+                  <Link
+                    href={`/alpaca/${item?.alpacaId}`}
+                    data-testid={`list-results-animals-animal-id-${item?.alpacaId}-short-name`}
+                  >
+                    {RenderedItem(item?.alpacaRegisteredName)}
+                  </Link>
+                </p>
+                <p>
+                  Registered Name:{" "}
+                  <Link
+                    href={`/alpaca/${item?.alpacaId}`}
+                    data-testid={`list-results-animals-animal-id-${item?.alpacaId}-registered-name`}
+                  >
+                    {RenderedItem(item?.alpacaRegisteredName)}
+                  </Link>
+                </p>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </>
   );
 }
