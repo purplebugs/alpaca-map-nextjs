@@ -52,55 +52,51 @@ export default async function Results({
         data-testid="search-list-results-heading"
         className="flex flex-wrap justify-center"
       >
-        <div
-          data-testid="search-list-results-heading-areas"
-          className="p-1 m-0.5 sm:p-3 sm:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 flex items-center flex-col justify-between sm:flex-row sm:justify-normal gap-x-4"
+        <Link
+          href="#locations-list"
+          className="hover:bg-brown-400 hover:underline hover:decoration-8
+          p-1 m-0.5 sm:p-3 sm:m-3 bg-brown-200 rounded-xl shadow-lg 
+          grow shrink-0 basis-20 md:basis-40 
+          flex items-center flex-col justify-between sm:flex-row sm:justify-normal gap-x-4"
         >
           <div className="text-center text-2xl">
-            {locations?.total > 0 ? (
-              <Link href="#locations-list">{locations?.total}</Link>
-            ) : (
-              0
-            )}
+            {locations?.total > 0 ? locations?.total : 0}
           </div>
-
           <div className="text-center">
             <FontAwesomeIcon icon={faMap} className="fa-lg" />
           </div>
           <div className="text-center">Areas</div>
-        </div>
+        </Link>
 
-        <div
-          data-testid="search-list-results-heading-areas"
-          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 flex items-center flex-col justify-between md:flex-row sm:justify-normal gap-x-4"
+        <Link
+          href="#companies-list"
+          className="hover:bg-brown-400 hover:underline hover:decoration-8
+          p-1 m-0.5 sm:p-3 sm:m-3 bg-brown-200 rounded-xl shadow-lg 
+          grow shrink-0 basis-20 md:basis-40 
+          flex items-center flex-col justify-between sm:flex-row sm:justify-normal gap-x-4"
         >
           <div className="text-center text-2xl">
-            {companies?.total > 0 ? (
-              <Link href="#companies-list">{companies?.total}</Link>
-            ) : (
-              0
-            )}
+            {companies?.total > 0 ? companies?.total : 0}
           </div>
           <div className="text-center">
             <FontAwesomeIcon icon={faHouse} className="fa-lg" />
           </div>
           <div className="text-center">Farms</div>
-        </div>
+        </Link>
 
-        <div
-          data-testid="search-list-results-heading-areas"
-          className="p-1 md:p-3 m-0.5 md:m-3 bg-brown-200 rounded-xl shadow-lg grow shrink basis-20 md:basis-40 flex items-center flex-col justify-between md:flex-row sm:justify-normal gap-x-4"
+        <Link
+          href="#companies-list"
+          className="hover:bg-brown-400 hover:underline hover:decoration-8
+          p-1 m-0.5 sm:p-3 sm:m-3 bg-brown-200 rounded-xl shadow-lg 
+          grow shrink-0 basis-20 md:basis-40 
+          flex items-center flex-col justify-between sm:flex-row sm:justify-normal gap-x-4"
         >
           <div className="text-center text-2xl">
-            {animals?.total > 0 ? (
-              <Link href="#animals-list">{animals?.total}</Link>
-            ) : (
-              0
-            )}
+            {animals?.total > 0 ? animals?.total : 0}
           </div>
           <div className="text-center text-2xl">🦙</div>
           <div className="text-center">Alpacas</div>
-        </div>
+        </Link>
       </div>
 
       <h4 id="locations-list">Areas - {locations?.total}</h4>
