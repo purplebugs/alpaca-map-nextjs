@@ -50,7 +50,7 @@ export default async function Results({
     <>
       <div
         data-testid="search-list-results-heading"
-        className="flex flex-wrap justify-center"
+        className="flex flex-wrap justify-center py-2"
       >
         <Link
           href="#locations-list"
@@ -100,14 +100,11 @@ export default async function Results({
       </div>
 
       {locations?.total > 0 && (
-        <>
-          <h4 id="locations-list">Areas - {locations?.total}</h4>
-
-          <Pagination
-            items={locationPageList}
-            searchParams={searchParams}
-            section={"locationPageNumber"}
-          />
+        <div id="locations-list" className="my-6">
+          <h3 className="text-2xl font-bold leading-loose tracking-tight">
+            <FontAwesomeIcon icon={faMap} className="fa-lg" /> Areas -{" "}
+            {locations?.total}
+          </h3>
 
           <ul data-testid="list-results-locations">
             {locations?.items?.map((item) => (
@@ -129,18 +126,21 @@ export default async function Results({
               </li>
             ))}
           </ul>
-        </>
+
+          <Pagination
+            items={locationPageList}
+            searchParams={searchParams}
+            section={"locationPageNumber"}
+          />
+        </div>
       )}
 
       {companies?.total > 0 && (
-        <>
-          <h4 id="companies-list">Farms - {companies?.total}</h4>
-
-          <Pagination
-            items={farmPageList}
-            searchParams={searchParams}
-            section={"farmPageNumber"}
-          />
+        <div id="companies-list" className="my-6">
+          <h3 className="text-2xl font-bold leading-loose tracking-tight">
+            <FontAwesomeIcon icon={faHouse} className="fa-lg" /> Farms -{" "}
+            {companies?.total}
+          </h3>
 
           <ul data-testid="list-results-companies">
             {companies?.items?.map((item) => (
@@ -154,18 +154,20 @@ export default async function Results({
               </li>
             ))}
           </ul>
-        </>
+
+          <Pagination
+            items={farmPageList}
+            searchParams={searchParams}
+            section={"farmPageNumber"}
+          />
+        </div>
       )}
 
       {animals?.total > 0 && (
-        <>
-          <h4 id="animals-list">🦙 Alpacas - {animals?.total}</h4>
-
-          <Pagination
-            items={alpacaPageList}
-            searchParams={searchParams}
-            section={"alpacaPageNumber"}
-          />
+        <div id="animals-list" className="my-6">
+          <h3 className="text-2xl font-bold leading-loose tracking-tight">
+            🦙 Alpacas - {animals?.total}
+          </h3>
 
           <ul data-testid="list-results-animals">
             {animals?.items?.map((item) => (
@@ -191,7 +193,13 @@ export default async function Results({
               </li>
             ))}
           </ul>
-        </>
+
+          <Pagination
+            items={alpacaPageList}
+            searchParams={searchParams}
+            section={"alpacaPageNumber"}
+          />
+        </div>
       )}
     </>
   );
