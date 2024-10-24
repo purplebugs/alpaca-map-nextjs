@@ -85,7 +85,7 @@ export default async function Results({
         </Link>
 
         <Link
-          href="#companies-list"
+          href="#animals-list"
           className="hover:bg-brown-400 hover:underline hover:decoration-8
           p-1 m-0.5 sm:p-3 sm:m-3 bg-brown-200 rounded-xl shadow-lg 
           grow shrink-0 basis-20 md:basis-40 
