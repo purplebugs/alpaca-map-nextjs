@@ -10,7 +10,7 @@ const RenderedItem = (item) => {
   const markup = { __html: item };
 
   // We know this data is clean as it does not come from the the general public
-  return <span dangerouslySetInnerHTML={markup} />;
+  return <span class="highlight" dangerouslySetInnerHTML={markup} />;
 };
 
 export default async function Results({
