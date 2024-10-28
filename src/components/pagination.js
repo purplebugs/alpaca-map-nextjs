@@ -7,8 +7,7 @@ export const Pagination = ({ searchParams, items, section }) => {
     items?.length > 1 && (
       <div
         data-testid={`pagination-${section}`}
-        className="hover:bg-brown-400
-    p-1 m-0.5 sm:p-3 sm:m-3 bg-brown-200 rounded-xl shadow-lg"
+        className="hover:bg-brown-400 text-center p-1 m-0.5 sm:p-3 sm:m-3 bg-brown-200 rounded-xl shadow-lg"
       >
         {items?.map((page, index) => {
           urlSearchParams.set(section, page);
