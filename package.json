@@ -22,7 +22,8 @@
     "react-dom": "^18",
     "use-debounce": "10.0.4",
     "@lit/react": "1.0.5",
-    "@purplebugs/alpaca-map": "*"
+    "@purplebugs/alpaca-map": "*",
+    "@lit-labs/ssr-dom-shim": "1.2.1"
   },
   "devDependencies": {
     "@playwright/test": "1.48.0",
