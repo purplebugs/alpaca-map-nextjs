@@ -1,9 +1,14 @@
 export const generateImageParams = (color = null) => {
-  const path = "/alpaca_images";
+  const path = "/assets/alpaca_images";
   const defaultSource = "default_alpaca.jpeg";
   const defaultWidth = 1024;
   const defaultHeight = 1024;
-  const imageProps = { path: path, source: `${path}/${defaultSource}`, width: defaultWidth, height: defaultHeight };
+  const imageProps = {
+    path: path,
+    source: `${path}/${defaultSource}`,
+    width: defaultWidth,
+    height: defaultHeight,
+  };
 
   switch (color) {
     case "COLOR_WHITE":

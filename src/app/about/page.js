@@ -1,4 +1,4 @@
-import logo from "public/alpaca.life.logo.png";
+import logo from "public/assets/images/alpaca.life.logo.png";
 import Image from "next/image";
 
 export default function Page() {
@@ -24,7 +24,7 @@ export default function Page() {
               <div className="flex justify-center">
                 <figure className="w-11/12 py-8">
                   <Image
-                    src="/Anita_visits_alpaca_Trygve.jpg"
+                    src="/assets/images/Anita_visits_alpaca_Trygve.jpg"
                     alt="Anita visits alpaca Trygve and friends at Alpakkahagen, Norway"
                     width={567}
                     height={756}
