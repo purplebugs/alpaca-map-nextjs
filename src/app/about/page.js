@@ -1,4 +1,4 @@
-import logo from "public/alpaca.life.logo.png";
+import logo from "public/assets/images/alpaca.life.logo.png";
 import Image from "next/image";
 
 export default function Page() {
