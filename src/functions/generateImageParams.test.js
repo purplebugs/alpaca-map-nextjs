@@ -2,7 +2,7 @@ import { assert, describe, test } from "vitest";
 import { generateImageParams } from "@/functions/generateImageParams";
 
 describe("generateImageParams()", () => {
-  const path = "/alpaca_images";
+  const path = "/assets/alpaca_images";
   const defaultSource = "default_alpaca.jpeg";
   const defaultWidth = 1024;
   const defaultHeight = 1024;
@@ -12,9 +12,18 @@ describe("generateImageParams()", () => {
     const actual = generateImageParams();
 
     // ASSERT
-    const expected = { path: path, source: `${path}/${defaultSource}`, width: defaultWidth, height: defaultHeight };
+    const expected = {
+      path: path,
+      source: `${path}/${defaultSource}`,
+      width: defaultWidth,
+      height: defaultHeight,
+    };
 
-    assert.deepEqual(actual, expected, `Actual: ${actual} should be: ${expected}`);
+    assert.deepEqual(
+      actual,
+      expected,
+      `Actual: ${actual} should be: ${expected}`
+    );
   });
 
   test("generate image path based on input: color I_DO_NOT_EXIST", async () => {
@@ -28,7 +37,11 @@ describe("generateImageParams()", () => {
 
     const expected = `${path}/default_alpaca.jpeg`;
 
-    assert.strictEqual(actual, expected, `Actual: ${actual} should be: ${expected}`);
+    assert.strictEqual(
+      actual,
+      expected,
+      `Actual: ${actual} should be: ${expected}`
+    );
   });
 
   test("generate image path based on input: color COLOR_WHITE", async () => {
@@ -42,7 +55,11 @@ describe("generateImageParams()", () => {
 
     const expected = `${path}/white_alpaca.jpeg`;
 
-    assert.strictEqual(actual, expected, `Actual: ${actual} should be: ${expected}`);
+    assert.strictEqual(
+      actual,
+      expected,
+      `Actual: ${actual} should be: ${expected}`
+    );
   });
 
   test("generate image path based on input: color COLOR_TRUE_BLACK", async () => {
@@ -56,7 +73,11 @@ describe("generateImageParams()", () => {
 
     const expected = `${path}/true_black_alpaca.jpeg`;
 
-    assert.strictEqual(actual, expected, `Actual: ${actual} should be: ${expected}`);
+    assert.strictEqual(
+      actual,
+      expected,
+      `Actual: ${actual} should be: ${expected}`
+    );
   });
 
   test("generate image path based on input: color COLOR_MEDIUM_FAWN", async () => {
@@ -70,7 +91,11 @@ describe("generateImageParams()", () => {
 
     const expected = `${path}/medium_fawn_alpaca.jpeg`;
 
-    assert.strictEqual(actual, expected, `Actual: ${actual} should be: ${expected}`);
+    assert.strictEqual(
+      actual,
+      expected,
+      `Actual: ${actual} should be: ${expected}`
+    );
   });
 
   test("generate image path based on input: color COLOR_MEDIUM_BROWN", async () => {
@@ -84,7 +109,11 @@ describe("generateImageParams()", () => {
 
     const expected = `${path}/medium_brown_alpaca.jpeg`;
 
-    assert.strictEqual(actual, expected, `Actual: ${actual} should be: ${expected}`);
+    assert.strictEqual(
+      actual,
+      expected,
+      `Actual: ${actual} should be: ${expected}`
+    );
   });
 
   test("generate image path based on input: color COLOR_LIGHT_FAWN", async () => {
@@ -98,7 +127,11 @@ describe("generateImageParams()", () => {
 
     const expected = `${path}/light_fawn_alpaca.jpeg`;
 
-    assert.strictEqual(actual, expected, `Actual: ${actual} should be: ${expected}`);
+    assert.strictEqual(
+      actual,
+      expected,
+      `Actual: ${actual} should be: ${expected}`
+    );
   });
 
   test("generate image path based on input: color COLOR_BEIGE", async () => {
@@ -112,7 +145,11 @@ describe("generateImageParams()", () => {
 
     const expected = `${path}/beige_alpaca.jpeg`;
 
-    assert.strictEqual(actual, expected, `Actual: ${actual} should be: ${expected}`);
+    assert.strictEqual(
+      actual,
+      expected,
+      `Actual: ${actual} should be: ${expected}`
+    );
   });
 
   test("generate image path based on input: color COLOR_DARK_BROWN", async () => {
@@ -126,7 +163,11 @@ describe("generateImageParams()", () => {
 
     const expected = `${path}/dark_brown_alpaca.jpeg`;
 
-    assert.strictEqual(actual, expected, `Actual: ${actual} should be: ${expected}`);
+    assert.strictEqual(
+      actual,
+      expected,
+      `Actual: ${actual} should be: ${expected}`
+    );
   });
 
   test("generate image path based on input: color COLOR_LIGHT_BROWN", async () => {
@@ -138,9 +179,13 @@ describe("generateImageParams()", () => {
 
     // ASSERT
 
-    const expected = "/alpaca_images/light_brown_alpaca.jpeg";
+    const expected = "/assets/alpaca_images/light_brown_alpaca.jpeg";
 
-    assert.strictEqual(actual, expected, `Actual: ${actual} should be: ${expected}`);
+    assert.strictEqual(
+      actual,
+      expected,
+      `Actual: ${actual} should be: ${expected}`
+    );
   });
 
   test("generate image path based on input: color COLOR_BAY_BLACK", async () => {
@@ -152,8 +197,12 @@ describe("generateImageParams()", () => {
 
     // ASSERT
 
-    const expected = "/alpaca_images/bay_black_alpaca.jpeg";
+    const expected = "/assets/alpaca_images/bay_black_alpaca.jpeg";
 
-    assert.strictEqual(actual, expected, `Actual: ${actual} should be: ${expected}`);
+    assert.strictEqual(
+      actual,
+      expected,
+      `Actual: ${actual} should be: ${expected}`
+    );
   });
 });
