@@ -47,10 +47,13 @@ export default async function Page({ params }) {
         </h2>
       </header>
       <main>
-        <article id="alpaca" className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <article
+          id="alpaca"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4"
+        >
           <div
             data-testid="profile-graphic"
-            className="border border-2 border-black-almost"
+            className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg"
           >
             <Suspense fallback={<p>Loading alpacas...</p>}>
               <Image
@@ -63,11 +66,14 @@ export default async function Page({ params }) {
             </Suspense>
           </div>
 
-          <div className="bg-brown-400">
+          <div className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg">
             <h3 className="text-2xl font-bold leading-loose tracking-tight">
               Lives at
             </h3>
-            <div data-testid="farm-name">
+            <div
+              data-testid="farm-name"
+              className="flex flex-wrap flex-row gap-2"
+            >
               <div> {<FontAwesomeIcon icon={faCircleInfo} />}</div>
               <div>
                 <a
@@ -99,7 +105,7 @@ export default async function Page({ params }) {
             </address>
           </div>
 
-          <div className="bg-brown-200 md:col-span-2">
+          <div className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg md:col-span-2">
             <h3 className="text-2xl font-bold leading-loose tracking-tight">
               Alpaca Detail
             </h3>
