@@ -2,6 +2,7 @@ import { generateImageParams } from "@/functions/generateImageParams";
 import { AlpacaDetail } from "@/components/alpacaDetail.js";
 import { Suspense } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import db from "@/functions/db.js";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -67,42 +68,52 @@ export default async function Page({ params }) {
           </div>
 
           <div className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-bold leading-loose tracking-tight">
-              Lives at
-            </h3>
-            <div
-              data-testid="farm-name"
-              className="flex flex-wrap flex-row gap-2"
-            >
-              <div> {<FontAwesomeIcon icon={faCircleInfo} />}</div>
-              <div>
-                <a
-                  data-testid="farm-name-link"
-                  href={`/farm/${alpaca?.companyId}`}
-                >
-                  {alpaca?.keeperName}
-                </a>
-              </div>
-            </div>
-            <div data-testid="farm-public-private">
-              <div>
-                {alpaca?.public === true ? (
-                  <FontAwesomeIcon icon={faHouseFlag} />
-                ) : (
-                  <FontAwesomeIcon icon={faKey} />
-                )}
-              </div>
-              <div>
-                {alpaca?.public === true ? "Public Farm" : "Private Farm"}
-              </div>
-            </div>
+            <section class="space-y-4">
+              <h3 className="text-2xl font-bold leading-loose tracking-tight">
+                Lives at
+              </h3>
 
-            <address>
-              <div data-testid="farm-address-city">
-                <div>{<FontAwesomeIcon icon={faLocationDot} />}</div>
-                <div>City: {alpaca?.city}</div>
+              <div
+                data-testid="farm-name"
+                className="flex flex-wrap flex-row gap-2"
+              >
+                <div> {<FontAwesomeIcon icon={faCircleInfo} />}</div>
+                <div>
+                  <Link
+                    data-testid="farm-name-link"
+                    href={`/farm/${alpaca?.companyId}`}
+                    className="hover:underline hover:decoration-8"
+                  >
+                    {alpaca?.keeperName}
+                  </Link>
+                </div>
               </div>
-            </address>
+              <div
+                data-testid="farm-public-private"
+                className="flex flex-wrap flex-row gap-2"
+              >
+                <div>
+                  {alpaca?.public === true ? (
+                    <FontAwesomeIcon icon={faHouseFlag} />
+                  ) : (
+                    <FontAwesomeIcon icon={faKey} />
+                  )}
+                </div>
+                <div>
+                  {alpaca?.public === true ? "Public Farm" : "Private Farm"}
+                </div>
+              </div>
+
+              <address>
+                <div
+                  data-testid="farm-address-city"
+                  className="flex flex-wrap flex-row gap-2"
+                >
+                  <div>{<FontAwesomeIcon icon={faLocationDot} />}</div>
+                  <div>City: {alpaca?.city}</div>
+                </div>
+              </address>
+            </section>
           </div>
 
           <div className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg md:col-span-2">
