@@ -85,7 +85,7 @@ export default async function Page({ params }) {
                   <Link
                     data-testid="farm-name-link"
                     href={`/farm/${alpaca?.companyId}`}
-                    className="hover:underline hover:decoration-8"
+                    className="text-blue-dark underline hover:underline hover:decoration-8"
                   >
                     {alpaca?.keeperName}
                   </Link>

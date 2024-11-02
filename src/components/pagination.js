@@ -16,7 +16,7 @@ export const Pagination = ({ searchParams, items, section }) => {
               {index === 0 ? "" : " - "}
               <Link
                 href={`/search?${urlSearchParams.toString()}`}
-                className="hover:underline hover:decoration-8"
+                className="underline hover:underline hover:decoration-8"
               >
                 {page}
               </Link>
