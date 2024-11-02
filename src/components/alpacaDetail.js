@@ -1,3 +1,18 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCalendarDays,
+  faCircleInfo,
+  faCross,
+  faHeart,
+  faMicrochip,
+  faPalette,
+  faPaw,
+  faTag,
+  faVenusMars,
+} from "@fortawesome/free-solid-svg-icons";
+
+import { AlapacaDetailRow } from "./alpacaDetailRow";
+
 export const AlpacaDetail = ({ status, alpaca }) => {
   const color1 = alpaca?.color?.color1?.pretty;
   const color2 = alpaca?.color?.color2?.pretty;
@@ -5,122 +20,138 @@ export const AlpacaDetail = ({ status, alpaca }) => {
   const colorSolid = alpaca?.color?.colorSolid?.pretty;
 
   return (
-    <section
+    <div
       data-testid={`alpaca-detail-${status}`}
       id={`alpaca-id-${alpaca?.alpacaId}`}
+      className="space-y-4"
     >
-      <div>
-        <div>🦙</div>
-        <div>
-          <div>
-            <h4>Registered name</h4>
-            <div>{alpaca?.alpacaRegisteredName}</div>
-          </div>
+      {alpaca?.alpacaRegisteredName && (
+        <AlapacaDetailRow
+          name="Registered Name"
+          value={alpaca?.alpacaRegisteredName}
+          icon="🦙"
+        />
+      )}
 
-          <div>
-            <h4>Short name</h4>
-            <div>{alpaca?.alpacaShortName}</div>
-          </div>
+      {alpaca?.alpacaShortName && (
+        <AlapacaDetailRow
+          name="Short Name"
+          value={alpaca?.alpacaShortName}
+          icon="🦙"
+        />
+      )}
 
-          {alpaca?.gender && (
-            <div>
-              <h4>Gender</h4>
-              <div>{alpaca?.gender}</div>
-            </div>
-          )}
+      {alpaca?.gender && (
+        <AlapacaDetailRow
+          name="Gender"
+          value={alpaca?.gender}
+          icon={<FontAwesomeIcon icon={faVenusMars} />}
+        />
+      )}
 
-          {alpaca?.DOB?.pretty && (
-            <div>
-              <h4>DOB</h4>
-              <div>{alpaca?.DOB?.pretty}</div>
-            </div>
-          )}
+      {alpaca?.DOB?.pretty && (
+        <AlapacaDetailRow
+          name="DOB"
+          value={alpaca?.DOB?.pretty}
+          icon={<FontAwesomeIcon icon={faCalendarDays} />}
+        />
+      )}
 
-          {alpaca?.DOD?.pretty && (
-            <div>
-              <h4>DOD</h4>
-              <div>{alpaca?.DOD?.pretty}</div>
-            </div>
-          )}
+      {alpaca?.DOD?.pretty && (
+        <AlapacaDetailRow
+          name="DOD"
+          value={alpaca?.DOD?.pretty}
+          icon={<FontAwesomeIcon icon={faCross} />}
+        />
+      )}
 
-          {alpaca?.breed && (
-            <div>
-              <h4>Breed</h4>
-              <div>{alpaca?.breed}</div>
-            </div>
-          )}
+      {alpaca?.breed && (
+        <AlapacaDetailRow
+          name="Breed"
+          value={alpaca?.breed}
+          icon={<FontAwesomeIcon icon={faPaw} />}
+        />
+      )}
 
-          {alpaca?.status && (
-            <div>
-              <h4>Status</h4>
-              <div>{alpaca?.status}</div>
-            </div>
-          )}
+      {alpaca?.status && (
+        <AlapacaDetailRow
+          name="Status"
+          value={alpaca?.status}
+          icon={<FontAwesomeIcon icon={faHeart} />}
+        />
+      )}
 
-          {alpaca?.tagId && (
-            <div>
-              <h4>Tag Id</h4>
-              <div>{alpaca?.tagId}</div>
-            </div>
-          )}
+      {alpaca?.tagId && (
+        <AlapacaDetailRow
+          name="Tag Id"
+          value={alpaca?.tagId}
+          icon={<FontAwesomeIcon icon={faTag} />}
+        />
+      )}
 
-          {alpaca?.tagColor && (
-            <div>
-              <h4>Tag Colour</h4>
-              <div>{alpaca?.tagColor}</div>
-            </div>
-          )}
+      {alpaca?.tagColor && (
+        <AlapacaDetailRow
+          name="Tag Colour"
+          value={alpaca?.tagColor}
+          icon={<FontAwesomeIcon icon={faTag} />}
+        />
+      )}
 
-          {alpaca?.microchipNumber && (
-            <div>
-              <h4>Tag Microchip Number</h4>
-              <div>{alpaca?.microchipNumber}</div>
-            </div>
-          )}
+      {alpaca?.microchipNumber && (
+        <AlapacaDetailRow
+          name="Tag Microchip Number"
+          value={alpaca?.microchipNumber}
+          icon={<FontAwesomeIcon icon={faMicrochip} />}
+        />
+      )}
 
-          {alpaca?.microchipLOC && (
-            <div>
-              <h4>Tag Microchip LOC</h4>
-              <div>{alpaca?.microchipLOC}</div>
-            </div>
-          )}
+      {alpaca?.microchipLOC && (
+        <AlapacaDetailRow
+          name="Tag Microchip LOCL"
+          value={alpaca?.microchipLOC}
+          icon={<FontAwesomeIcon icon={faMicrochip} />}
+        />
+      )}
 
-          {color1 && (
-            <div>
-              <h4>Colour 1</h4>
-              <div>{color1}</div>
-            </div>
-          )}
+      {color1 && (
+        <AlapacaDetailRow
+          name="Colour 1"
+          value={color1}
+          icon={<FontAwesomeIcon icon={faPalette} />}
+        />
+      )}
 
-          {color2 && (
-            <div>
-              <h4>Colour 2</h4>
-              <div>{color2}</div>
-            </div>
-          )}
+      {color2 && (
+        <AlapacaDetailRow
+          name="Colour 2"
+          value={color2}
+          icon={<FontAwesomeIcon icon={faPalette} />}
+        />
+      )}
 
-          {color3 && (
-            <div>
-              <h4>Colour 3</h4>
-              <div>{color3}</div>
-            </div>
-          )}
+      {color3 && (
+        <AlapacaDetailRow
+          name="Colour 3"
+          value={color3}
+          icon={<FontAwesomeIcon icon={faPalette} />}
+        />
+      )}
 
-          {colorSolid && (
-            <div>
-              <h4>Colour Solid</h4>
-              <div>{colorSolid}</div>
-            </div>
-          )}
+      {colorSolid && (
+        <AlapacaDetailRow
+          name="Colour Solid"
+          value={colorSolid}
+          icon={<FontAwesomeIcon icon={faPalette} />}
+        />
+      )}
 
-          {alpaca?.descriptionAlpaca && (
-            <div>
-              <h4>Description</h4>
-              <div>{alpaca?.descriptionAlpaca}</div>
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
+      {alpaca?.descriptionAlpaca && (
+        <AlapacaDetailRow
+          name="Description"
+          value={alpaca?.descriptionAlpaca}
+          icon={<FontAwesomeIcon icon={faCircleInfo} />}
+        />
+      )}
+    </div>
   );
 };
