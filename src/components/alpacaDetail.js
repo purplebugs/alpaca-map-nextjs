@@ -1,16 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarDays,
+  faCircleInfo,
+  faCross,
   faHeart,
-  faMars,
-  faNeuter,
+  faMicrochip,
   faPalette,
   faPaw,
   faTag,
   faTags,
-  faVenus,
   faVenusMars,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { AlapacaDetailRow } from "./alpacaDetailRow";
 
 export const AlpacaDetail = ({ status, alpaca }) => {
   const color1 = alpaca?.color?.color1?.pretty;
@@ -24,152 +26,132 @@ export const AlpacaDetail = ({ status, alpaca }) => {
       id={`alpaca-id-${alpaca?.alpacaId}`}
       className="space-y-4"
     >
-      <div className="grid grid-cols-[2rem,auto]">
-        <div className="text-center">🦙</div>
-        <div className="text-left">
-          <h4>Registered name</h4>
-          <div>{alpaca?.alpacaRegisteredName}</div>
-        </div>
-      </div>
+      {alpaca?.alpacaRegisteredName && (
+        <AlapacaDetailRow
+          name="Registered Name"
+          value={alpaca?.alpacaRegisteredName}
+          icon="🦙"
+        />
+      )}
 
-      <div className="grid grid-cols-[2rem,auto]">
-        <div className="text-center">🦙</div>
-        <div className="text-left">
-          <h4>Short name</h4>
-          <div>{alpaca?.alpacaShortName}</div>
-        </div>
-      </div>
+      {alpaca?.alpacaShortName && (
+        <AlapacaDetailRow
+          name="Short Name"
+          value={alpaca?.alpacaShortName}
+          icon="🦙"
+        />
+      )}
 
       {alpaca?.gender && (
-        <div className="grid grid-cols-[2rem,auto]">
-          <div className="text-center">
-            <FontAwesomeIcon icon={faVenusMars} />
-          </div>
-          <div className="text-left">
-            <h4>Gender</h4>
-            <div>{alpaca?.gender}</div>
-          </div>
-        </div>
+        <AlapacaDetailRow
+          name="Gender"
+          value={alpaca?.gender}
+          icon={<FontAwesomeIcon icon={faVenusMars} />}
+        />
       )}
 
       {alpaca?.DOB?.pretty && (
-        <div className="grid grid-cols-[2rem,auto]">
-          <div className="text-center">
-            <FontAwesomeIcon icon={faCalendarDays} />
-          </div>
-          <div className="text-left">
-            <h4>DOB</h4>
-            <div>{alpaca?.DOB?.pretty}</div>
-          </div>{" "}
-        </div>
+        <AlapacaDetailRow
+          name="DOB"
+          value={alpaca?.DOB?.pretty}
+          icon={<FontAwesomeIcon icon={faCalendarDays} />}
+        />
       )}
 
       {alpaca?.DOD?.pretty && (
-        <div className="grid grid-cols-[2rem,auto]">
-          <div className="text-center">
-            <FontAwesomeIcon icon={faCalendarDays} />
-          </div>
-          <div className="text-left">
-            <h4>DOD</h4>
-            <div>{alpaca?.DOD?.pretty}</div>
-          </div>{" "}
-        </div>
+        <AlapacaDetailRow
+          name="DOD"
+          value={alpaca?.DOD?.pretty}
+          icon={<FontAwesomeIcon icon={faCross} />}
+        />
       )}
 
       {alpaca?.breed && (
-        <div className="grid grid-cols-[2rem,auto]">
-          <div className="text-center">
-            <FontAwesomeIcon icon={faPaw} />
-          </div>
-          <div className="text-left">
-            <h4>Breed</h4>
-            <div>{alpaca?.breed}</div>
-          </div>{" "}
-        </div>
+        <AlapacaDetailRow
+          name="Breed"
+          value={alpaca?.breed}
+          icon={<FontAwesomeIcon icon={faPaw} />}
+        />
       )}
 
       {alpaca?.status && (
-        <div className="grid grid-cols-[2rem,auto]">
-          <div className="text-center">
-            <FontAwesomeIcon icon={faHeart} />
-          </div>
-          <div className="text-left">
-            <h4>Status</h4>
-            <div>{alpaca?.status}</div>
-          </div>{" "}
-        </div>
+        <AlapacaDetailRow
+          name="Status"
+          value={alpaca?.breed}
+          icon={<FontAwesomeIcon icon={faHeart} />}
+        />
       )}
 
       {alpaca?.tagId && (
-        <div className="grid grid-cols-[2rem,auto]">
-          <div className="text-center">
-            <FontAwesomeIcon icon={faTag} />
-          </div>
-          <div className="text-left">
-            <h4>Tag Id</h4>
-            <div>{alpaca?.tagId}</div>
-          </div>{" "}
-        </div>
+        <AlapacaDetailRow
+          name="Tag Id"
+          value={alpaca?.tagId}
+          icon={<FontAwesomeIcon icon={faTag} />}
+        />
       )}
+
       {alpaca?.tagColor && (
-        <div className="grid grid-cols-[2rem,auto]">
-          <div className="text-center">
-            <FontAwesomeIcon icon={faTags} />
-          </div>
-          <div className="text-left">
-            <h4>Tag Colour</h4>
-            <div>{alpaca?.tagColor}</div>
-          </div>{" "}
-        </div>
+        <AlapacaDetailRow
+          name="Tag Colour"
+          value={alpaca?.tagColor}
+          icon={<FontAwesomeIcon icon={faTags} />}
+        />
       )}
 
       {alpaca?.microchipNumber && (
-        <div>
-          <h4>Tag Microchip Number</h4>
-          <div>{alpaca?.microchipNumber}</div>
-        </div>
+        <AlapacaDetailRow
+          name="Tag Microchip Number"
+          value={alpaca?.microchipNumber}
+          icon={<FontAwesomeIcon icon={faMicrochip} />}
+        />
       )}
 
       {alpaca?.microchipLOC && (
-        <div>
-          <h4>Tag Microchip LOC</h4>
-          <div>{alpaca?.microchipLOC}</div>
-        </div>
+        <AlapacaDetailRow
+          name="Tag Microchip LOCL"
+          value={alpaca?.microchipLOC}
+          icon={<FontAwesomeIcon icon={faMicrochip} />}
+        />
       )}
 
       {color1 && (
-        <div>
-          <h4>Colour 1</h4>
-          <div>{color1}</div>
-        </div>
+        <AlapacaDetailRow
+          name="Colour 1"
+          value={color1}
+          icon={<FontAwesomeIcon icon={faPalette} />}
+        />
       )}
 
       {color2 && (
-        <div>
-          <h4>Colour 2</h4>
-          <div>{color2}</div>
-        </div>
+        <AlapacaDetailRow
+          name="Colour 2"
+          value={color2}
+          icon={<FontAwesomeIcon icon={faPalette} />}
+        />
       )}
 
       {color3 && (
-        <div>
-          <h4>Colour 3</h4>
-          <div>{color3}</div>
-        </div>
+        <AlapacaDetailRow
+          name="Colour 3"
+          value={color3}
+          icon={<FontAwesomeIcon icon={faPalette} />}
+        />
       )}
 
       {colorSolid && (
-        <div>
-          <h4>Colour Solid</h4>
-          <div>{colorSolid}</div>
-        </div>
+        <AlapacaDetailRow
+          name="Colour Solid"
+          value={colorSolid}
+          icon={<FontAwesomeIcon icon={faPalette} />}
+        />
       )}
 
       {alpaca?.descriptionAlpaca && (
-        <div>
-          <h4>Description</h4>
-          <div>{alpaca?.descriptionAlpaca}</div>
-        </div>
+        <AlapacaDetailRow
+          name="Description"
+          value={alpaca?.descriptionAlpaca}
+          icon={<FontAwesomeIcon icon={faCircleInfo} />}
+        />
       )}
     </section>
   );
