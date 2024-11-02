@@ -125,7 +125,7 @@ export default async function Results({
                   <Link
                     href={`/farm/${item?.id}`}
                     data-testid={`list-results-locations-farm-id-${item?.id}`}
-                    className="hover:underline hover:decoration-8"
+                    className="underline hover:underline hover:decoration-8"
                   >
                     {RenderedItem(item?.name)}
                   </Link>{" "}
@@ -176,7 +176,7 @@ export default async function Results({
                   <Link
                     href={`/farm/${item.id}`}
                     data-testid={`list-results-companies-farm-id-${item.id}`}
-                    className="hover:underline hover:decoration-8"
+                    className="underline hover:underline hover:decoration-8"
                   >
                     {RenderedItem(item.name)}
                   </Link>
@@ -219,7 +219,7 @@ export default async function Results({
                   <Link
                     href={`/alpaca/${item?.alpacaId}`}
                     data-testid={`list-results-animals-animal-id-${item?.alpacaId}-short-name`}
-                    className="hover:underline hover:decoration-8"
+                    className="underline hover:underline hover:decoration-8"
                   >
                     {RenderedItem(item?.alpacaShortName)}
                   </Link>
@@ -229,7 +229,7 @@ export default async function Results({
                       <Link
                         href={`/alpaca/${item?.alpacaId}`}
                         data-testid={`list-results-animals-animal-id-${item?.alpacaId}-registered-name`}
-                        className="hover:underline hover:decoration-8"
+                        className="underline hover:underline hover:decoration-8"
                       >
                         {RenderedItem(item?.alpacaRegisteredName)}
                       </Link>
