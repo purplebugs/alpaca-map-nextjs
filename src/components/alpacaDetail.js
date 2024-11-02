@@ -77,7 +77,7 @@ export const AlpacaDetail = ({ status, alpaca }) => {
       {alpaca?.status && (
         <AlapacaDetailRow
           name="Status"
-          value={alpaca?.breed}
+          value={alpaca?.status}
           icon={<FontAwesomeIcon icon={faHeart} />}
         />
       )}

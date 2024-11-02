@@ -94,15 +94,7 @@ test.describe("Alpaca page", () => {
     );
 
     await expect(page.getByTestId("alpaca-detail-active")).toContainText(
-      /Registered nameALPAKKAHAGEN SØRUMS TRYGVE/
-    );
-    await expect(page.getByTestId("alpaca-detail-active")).toContainText(
-      /Short nameTRYGVE/
-    );
-
-    // Quick assert for the rest of the fields
-    await expect(page.getByTestId("alpaca-detail-active")).toContainText(
-      "Registered nameALPAKKAHAGEN SØRUMS TRYGVEShort nameTRYGVEGenderSEX_MALEDOB15 July 2018BreedBREED_HUACAYAStatusSTATUS_ACTIVETag Id1012Tag ColourTAGCOLOR_ORIGINColour 1Bay blackColour SolidWhite"
+      "🦙Registered NameALPAKKAHAGEN SØRUMS TRYGVE🦙Short NameTRYGVEGenderSEX_MALEDOB15 July 2018BreedBREED_HUACAYAStatusSTATUS_ACTIVETag Id1012Tag ColourTAGCOLOR_ORIGINColour 1Bay blackColour SolidWhite"
     );
   });
 });
@@ -197,16 +189,8 @@ test.describe("Farm page", () => {
 
     await expect(
       page.getByTestId("alpaca-detail-active").first()
-    ).toContainText(/Registered nameAMBERSUN SIGNE/);
-    await expect(
-      page.getByTestId("alpaca-detail-active").first()
-    ).toContainText(/Short nameAMBERSUN SIGNE/);
-
-    // Quick assert for the rest of the fields
-    await expect(
-      page.getByTestId("alpaca-detail-active").first()
     ).toContainText(
-      "Registered nameAMBERSUN SIGNEShort nameAMBERSUN SIGNEGenderSEX_FEMALEDOB03 September 2011BreedBREED_HUACAYAStatusSTATUS_ACTIVETag Id9002Colour 1WhiteColour SolidWhite"
+      "🦙Registered NameAMBERSUN SIGNE🦙Short NameAMBERSUN SIGNEGenderSEX_FEMALEDOB03 September 2011BreedBREED_HUACAYAStatusSTATUS_ACTIVETag Id9002Colour 1WhiteColour SolidWhite"
     );
   });
 });
