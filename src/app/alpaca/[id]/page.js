@@ -68,7 +68,7 @@ export default async function Page({ params }) {
           </div>
 
           <div className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg">
-            <section class="space-y-4">
+            <section className="space-y-4">
               <h3 className="text-2xl font-bold leading-loose tracking-tight">
                 Lives at
               </h3>
