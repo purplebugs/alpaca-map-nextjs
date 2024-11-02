@@ -20,11 +20,7 @@ export const AlpacaDetail = ({ status, alpaca }) => {
   const colorSolid = alpaca?.color?.colorSolid?.pretty;
 
   return (
-    <section
-      data-testid={`alpaca-detail-${status}`}
-      id={`alpaca-id-${alpaca?.alpacaId}`}
-      className="space-y-4"
-    >
+    <>
       {alpaca?.alpacaRegisteredName && (
         <AlapacaDetailRow
           name="Registered Name"
@@ -152,6 +148,6 @@ export const AlpacaDetail = ({ status, alpaca }) => {
           icon={<FontAwesomeIcon icon={faCircleInfo} />}
         />
       )}
-    </section>
+    </>
   );
 };

@@ -123,12 +123,18 @@ export default async function Page({ params }) {
           </div>
 
           <div className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg md:col-span-2">
-            <h3 className="text-2xl font-bold leading-loose tracking-tight">
-              Alpaca Detail
-            </h3>
-            <Suspense fallback={<p>Loading alpacas...</p>}>
-              <AlpacaDetail status={status} alpaca={alpaca} />
-            </Suspense>
+            <section
+              data-testid={`alpaca-detail-${status}`}
+              id={`alpaca-id-${alpaca?.alpacaId}`}
+              className="space-y-4"
+            >
+              <h3 className="text-2xl font-bold leading-loose tracking-tight">
+                Alpaca Detail
+              </h3>
+              <Suspense fallback={<p>Loading alpacas...</p>}>
+                <AlpacaDetail status={status} alpaca={alpaca} />
+              </Suspense>{" "}
+            </section>
           </div>
         </article>
       </main>
