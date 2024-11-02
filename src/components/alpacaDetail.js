@@ -8,7 +8,6 @@ import {
   faPalette,
   faPaw,
   faTag,
-  faTags,
   faVenusMars,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -94,7 +93,7 @@ export const AlpacaDetail = ({ status, alpaca }) => {
         <AlapacaDetailRow
           name="Tag Colour"
           value={alpaca?.tagColor}
-          icon={<FontAwesomeIcon icon={faTags} />}
+          icon={<FontAwesomeIcon icon={faTag} />}
         />
       )}
 
