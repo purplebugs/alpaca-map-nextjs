@@ -75,10 +75,13 @@ export default async function Page({ params }) {
 
               <div
                 data-testid="farm-name"
-                className="flex flex-wrap flex-row gap-2"
+                className="grid grid-cols-[2rem,auto]"
               >
-                <div> {<FontAwesomeIcon icon={faCircleInfo} />}</div>
-                <div>
+                <div className="text-center">
+                  {" "}
+                  {<FontAwesomeIcon icon={faCircleInfo} />}
+                </div>
+                <div className="text-left">
                   <Link
                     data-testid="farm-name-link"
                     href={`/farm/${alpaca?.companyId}`}
@@ -88,18 +91,19 @@ export default async function Page({ params }) {
                   </Link>
                 </div>
               </div>
+
               <div
                 data-testid="farm-public-private"
-                className="flex flex-wrap flex-row gap-2"
+                className="grid grid-cols-[2rem,auto]"
               >
-                <div>
+                <div className="text-center">
                   {alpaca?.public === true ? (
                     <FontAwesomeIcon icon={faHouseFlag} />
                   ) : (
                     <FontAwesomeIcon icon={faKey} />
                   )}
                 </div>
-                <div>
+                <div className="text-left">
                   {alpaca?.public === true ? "Public Farm" : "Private Farm"}
                 </div>
               </div>
@@ -107,10 +111,12 @@ export default async function Page({ params }) {
               <address>
                 <div
                   data-testid="farm-address-city"
-                  className="flex flex-wrap flex-row gap-2"
+                  className="grid grid-cols-[2rem,auto]"
                 >
-                  <div>{<FontAwesomeIcon icon={faLocationDot} />}</div>
-                  <div>City: {alpaca?.city}</div>
+                  <div className="text-center">
+                    {<FontAwesomeIcon icon={faLocationDot} />}
+                  </div>
+                  <div className="text-left">City: {alpaca?.city}</div>
                 </div>
               </address>
             </section>
