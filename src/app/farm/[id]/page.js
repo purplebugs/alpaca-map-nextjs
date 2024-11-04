@@ -152,46 +152,57 @@ export default async function Page({ params }) {
               <h3 className="text-2xl font-bold leading-loose tracking-tight">
                 Alpaca Overview
               </h3>
-              <div data-testid="alpaca-count">
-                <div>
-                  <div>🦙</div>
-                  <div>Alpacas: {farm.count?.alpacas?.status?.active}</div>
+              <div
+                data-testid="alpaca-count"
+                className="grid grid-cols-[2rem,auto]"
+              >
+                <div className="text-center">🦙</div>
+                <div className="text-left">
+                  Alpacas: {farm.count?.alpacas?.status?.active}
                 </div>
               </div>
-              <div data-testid="alpaca-gender">
-                <div>
-                  <div>{<FontAwesomeIcon icon={faVenusMars} />}</div>
-                  <div>
-                    <ul>
-                      {farm?.aggregations?.alpacas?.gender?.buckets.map(
-                        (bucket) => {
-                          return (
-                            <li key={bucket?.key}>
-                              {bucket?.key} - {bucket?.doc_count}
-                            </li>
-                          );
-                        }
-                      )}
-                    </ul>
-                  </div>
+
+              <div
+                data-testid="alpaca-gender"
+                className="grid grid-cols-[2rem,auto]"
+              >
+                <div className="text-center">
+                  {<FontAwesomeIcon icon={faVenusMars} />}
+                </div>
+                <div className="text-left">
+                  <ul>
+                    {farm?.aggregations?.alpacas?.gender?.buckets.map(
+                      (bucket) => {
+                        return (
+                          <li key={bucket?.key}>
+                            {bucket?.key} - {bucket?.doc_count}
+                          </li>
+                        );
+                      }
+                    )}
+                  </ul>
                 </div>
               </div>
-              <div data-testid="alpaca-colour">
-                <div>
-                  <div>{<FontAwesomeIcon icon={faPalette} />}</div>
-                  <div>
-                    <ul>
-                      {farm?.aggregations?.alpacas?.color1?.buckets.map(
-                        (bucket) => {
-                          return (
-                            <li key={bucket?.key}>
-                              {bucket?.key} - {bucket?.doc_count}
-                            </li>
-                          );
-                        }
-                      )}
-                    </ul>
-                  </div>
+
+              <div
+                data-testid="alpaca-colour"
+                className="grid grid-cols-[2rem,auto]"
+              >
+                <div className="text-center">
+                  {<FontAwesomeIcon icon={faPalette} />}
+                </div>
+                <div className="text-left">
+                  <ul>
+                    {farm?.aggregations?.alpacas?.color1?.buckets.map(
+                      (bucket) => {
+                        return (
+                          <li key={bucket?.key}>
+                            {bucket?.key} - {bucket?.doc_count}
+                          </li>
+                        );
+                      }
+                    )}
+                  </ul>
                 </div>
               </div>
             </div>
