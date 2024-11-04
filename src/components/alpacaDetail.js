@@ -144,14 +144,6 @@ export const AlpacaDetail = ({ status, alpaca }) => {
           icon={<FontAwesomeIcon icon={faPalette} />}
         />
       )}
-
-      {alpaca?.descriptionAlpaca && (
-        <AlapacaDetailRow
-          name="Description"
-          value={alpaca?.descriptionAlpaca}
-          icon={<FontAwesomeIcon icon={faCircleInfo} />}
-        />
-      )}
     </div>
   );
 };
