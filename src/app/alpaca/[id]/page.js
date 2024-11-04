@@ -52,7 +52,7 @@ export default async function Page({ params }) {
           id="alpaca"
           className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4"
         >
-          <div
+          <section
             data-testid="profile-graphic"
             className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg"
           >
@@ -65,10 +65,10 @@ export default async function Page({ params }) {
                 height={imageProps.height}
               />
             </Suspense>
-          </div>
+          </section>
 
-          <div className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg">
-            <section className="space-y-4">
+          <section className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg">
+            <div className="space-y-4">
               <h3 className="text-2xl font-bold leading-loose tracking-tight">
                 Lives at
               </h3>
@@ -119,19 +119,19 @@ export default async function Page({ params }) {
                   <div className="text-left">City: {alpaca?.city}</div>
                 </div>
               </address>
-            </section>
-          </div>
+            </div>
+          </section>
 
-          <div className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg md:col-span-2">
-            <section className="space-y-4">
+          <section className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg md:col-span-2">
+            <div className="space-y-4">
               <h3 className="text-2xl font-bold leading-loose tracking-tight">
                 Alpaca Detail
               </h3>
               <Suspense fallback={<p>Loading alpacas...</p>}>
                 <AlpacaDetail status={status} alpaca={alpaca} />
               </Suspense>{" "}
-            </section>
-          </div>
+            </div>
+          </section>
         </article>
       </main>
     </>
