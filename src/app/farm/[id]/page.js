@@ -170,36 +170,42 @@ export default async function Page({ params }) {
 
           <section className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg md:col-span-2">
             {alpacasActive?.length === 0 ? null : (
-              <div className="space-y-4">
+              <>
                 <h3 className="text-2xl font-bold leading-loose tracking-tight">
                   Alpacas
                 </h3>
-                <Suspense fallback={<p>Loading alpacas...</p>}>
-                  <AlpacasDetail status="active" alpacas={alpacasActive} />
-                </Suspense>
-              </div>
+                <div className="divide-y-2 divide-brown-200">
+                  <Suspense fallback={<p>Loading alpacas...</p>}>
+                    <AlpacasDetail status="active" alpacas={alpacasActive} />
+                  </Suspense>
+                </div>
+              </>
             )}
 
             {alpacasDead?.length === 0 ? null : (
-              <div className="space-y-4">
+              <>
                 <h3 className="text-2xl font-bold leading-loose tracking-tight">
                   Alpacas - Dead
                 </h3>
-                <Suspense fallback={<p>Loading alpacas...</p>}>
-                  <AlpacasDetail status="dead" alpacas={alpacasDead} />
-                </Suspense>
-              </div>
+                <div className="divide-y-2 divide-brown-200">
+                  <Suspense fallback={<p>Loading alpacas...</p>}>
+                    <AlpacasDetail status="dead" alpacas={alpacasDead} />
+                  </Suspense>
+                </div>
+              </>
             )}
 
             {alpacasExport?.length === 0 ? null : (
-              <div className="space-y-4">
+              <>
                 <h3 className="text-2xl font-bold leading-loose tracking-tight">
                   Alpacas - Export
                 </h3>
-                <Suspense fallback={<p>Loading alpacas...</p>}>
-                  <AlpacasDetail status="dead" alpacas={alpacasExport} />
-                </Suspense>
-              </div>
+                <div className="divide-y-2 divide-brown-200">
+                  <Suspense fallback={<p>Loading alpacas...</p>}>
+                    <AlpacasDetail status="dead" alpacas={alpacasExport} />
+                  </Suspense>{" "}
+                </div>
+              </>
             )}
           </section>
         </article>

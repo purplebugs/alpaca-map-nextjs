@@ -123,14 +123,14 @@ export default async function Page({ params }) {
           </section>
 
           <section className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg md:col-span-2">
-            <div className="space-y-4">
+            <>
               <h3 className="text-2xl font-bold leading-loose tracking-tight">
                 Alpaca Detail
               </h3>
               <Suspense fallback={<p>Loading alpacas...</p>}>
                 <AlpacaDetail status={status} alpaca={alpaca} />
               </Suspense>{" "}
-            </div>
+            </>
           </section>
         </article>
       </main>
