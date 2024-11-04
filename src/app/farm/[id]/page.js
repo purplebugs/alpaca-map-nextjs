@@ -12,6 +12,7 @@ import {
   faVenusMars,
 } from "@fortawesome/free-solid-svg-icons";
 
+import Link from "next/link";
 import db from "@/functions/db.js";
 import { AlpacasDetail } from "@/components/alpacasDetail.js";
 import { Suspense } from "react";
@@ -41,128 +42,156 @@ export default async function Page({ params }) {
           className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4"
         >
           <section className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg">
-            <h3>Farm Overview</h3>
-            <div data-testid="farm-public-private">
-              <div>
-                <div>
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold leading-loose tracking-tight">
+                Farm Overview
+              </h3>
+
+              <div
+                data-testid="farm-public-private"
+                className="grid grid-cols-[2rem,auto]"
+              >
+                <div className="text-center">
                   {farm?.public === true ? (
                     <FontAwesomeIcon icon={faHouseFlag} />
                   ) : (
                     <FontAwesomeIcon icon={faKey} />
                   )}
                 </div>
-                <div>
+                <div className="text-left">
                   {farm?.public === true ? "Public Farm" : "Private Farm"}
                 </div>
               </div>
-            </div>
 
-            {farm?.url && (
-              <address data-testid="farm-address-webpage">
-                <div>
-                  <div>
-                    <div>
+              {farm?.url && (
+                <address>
+                  <div
+                    data-testid="farm-address-webpage"
+                    className="grid grid-cols-[2rem,auto]"
+                  >
+                    <div className="text-center">
                       <FontAwesomeIcon icon={faGlobe} />
                     </div>
-                    <div>
-                      <a
+                    <div className="text-left">
+                      <Link
                         href={farm?.url?.full}
                         target="_blank"
                         rel="noreferrer"
                         data-testid="farm-webpage-link"
+                        className="text-blue-dark underline hover:underline hover:decoration-8"
                       >
                         {farm?.url?.pretty}{" "}
-                        <span>
-                          <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                        </span>
-                      </a>
+                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                      </Link>
                     </div>
                   </div>
+                </address>
+              )}
+
+              <address data-testid="farm-address" class="space-y-4">
+                <div
+                  data-testid="farm-address-city"
+                  className="grid grid-cols-[2rem,auto]"
+                >
+                  <div className="text-center">
+                    {<FontAwesomeIcon icon={faLocationDot} />}
+                  </div>
+                  <div className="text-left">City: {farm?.city}</div>
+                </div>
+
+                <div
+                  data-testid="farm-address-street"
+                  className="grid grid-cols-[2rem,auto]"
+                >
+                  <div className="text-center">
+                    {<FontAwesomeIcon icon={faRoad} />}
+                  </div>
+                  <div className="text-left">
+                    {" "}
+                    Address: {farm?.location?.google?.formatted_address}
+                  </div>
+                </div>
+
+                <div
+                  data-testid="farm-address-email"
+                  className="grid grid-cols-[2rem,auto]"
+                >
+                  <div className="text-center">
+                    {<FontAwesomeIcon icon={faEnvelope} />}
+                  </div>
+                  <div className="text-left"> Email: {farm?.email}</div>
                 </div>
               </address>
-            )}
 
-            <address data-testid="farm-address">
-              <div data-testid="farm-address-city">
-                <div>{<FontAwesomeIcon icon={faLocationDot} />}</div>
-                <div>City: {farm?.city}</div>
-              </div>
-              <div data-testid="farm-address-street">
-                <div>{<FontAwesomeIcon icon={faRoad} />}</div>
-                <div> Address: {farm?.location?.google?.formatted_address}</div>
-              </div>
-              <div data-testid="farm-address-email">
-                <div>{<FontAwesomeIcon icon={faEnvelope} />}</div>
-                <div> Email: {farm?.email}</div>
-              </div>
-            </address>
-
-            {farmDirections && (
-              <address data-testid="farm-directions">
-                <div>
-                  <div>
-                    <div>
+              {farmDirections && (
+                <address data-testid="farm-directions">
+                  <div className="grid grid-cols-[2rem,auto]">
+                    <div className="text-center">
                       <FontAwesomeIcon icon={faCar} />
                     </div>
-                    <div>
-                      <a
+                    <div className="text-left">
+                      <Link
                         href={farmDirections}
                         target="_blank"
                         rel="noreferrer"
                         data-testid="farm-directions-link"
+                        className="text-blue-dark underline hover:underline hover:decoration-8"
                       >
-                        Directions
-                        <span>
-                          <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                        </span>
-                      </a>
+                        Directions{" "}
+                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                      </Link>
                     </div>
                   </div>
-                </div>
-              </address>
-            )}
+                </address>
+              )}
+            </div>
           </section>
+
           <section className="p-4 border border-2 border-brown-100 rounded-xl shadow-lg">
-            <h3>Alpaca Overview</h3>
-            <div data-testid="alpaca-count">
-              <div>
-                <div>🦙</div>
-                <div>Alpacas: {farm.count?.alpacas?.status?.active}</div>
-              </div>
-            </div>
-            <div data-testid="alpaca-gender">
-              <div>
-                <div>{<FontAwesomeIcon icon={faVenusMars} />}</div>
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold leading-loose tracking-tight">
+                Alpaca Overview
+              </h3>
+              <div data-testid="alpaca-count">
                 <div>
-                  <ul>
-                    {farm?.aggregations?.alpacas?.gender?.buckets.map(
-                      (bucket) => {
-                        return (
-                          <li key={bucket?.key}>
-                            {bucket?.key} - {bucket?.doc_count}
-                          </li>
-                        );
-                      }
-                    )}
-                  </ul>
+                  <div>🦙</div>
+                  <div>Alpacas: {farm.count?.alpacas?.status?.active}</div>
                 </div>
               </div>
-            </div>
-            <div data-testid="alpaca-colour">
-              <div>
-                <div>{<FontAwesomeIcon icon={faPalette} />}</div>
+              <div data-testid="alpaca-gender">
                 <div>
-                  <ul>
-                    {farm?.aggregations?.alpacas?.color1?.buckets.map(
-                      (bucket) => {
-                        return (
-                          <li key={bucket?.key}>
-                            {bucket?.key} - {bucket?.doc_count}
-                          </li>
-                        );
-                      }
-                    )}
-                  </ul>
+                  <div>{<FontAwesomeIcon icon={faVenusMars} />}</div>
+                  <div>
+                    <ul>
+                      {farm?.aggregations?.alpacas?.gender?.buckets.map(
+                        (bucket) => {
+                          return (
+                            <li key={bucket?.key}>
+                              {bucket?.key} - {bucket?.doc_count}
+                            </li>
+                          );
+                        }
+                      )}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div data-testid="alpaca-colour">
+                <div>
+                  <div>{<FontAwesomeIcon icon={faPalette} />}</div>
+                  <div>
+                    <ul>
+                      {farm?.aggregations?.alpacas?.color1?.buckets.map(
+                        (bucket) => {
+                          return (
+                            <li key={bucket?.key}>
+                              {bucket?.key} - {bucket?.doc_count}
+                            </li>
+                          );
+                        }
+                      )}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
