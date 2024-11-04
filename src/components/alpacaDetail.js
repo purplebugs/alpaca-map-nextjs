@@ -23,7 +23,7 @@ export const AlpacaDetail = ({ status, alpaca }) => {
     <div
       data-testid={`alpaca-detail-${status}`}
       id={`alpaca-id-${alpaca?.alpacaId}`}
-      className="space-y-4"
+      className="py-8 space-y-4"
     >
       {alpaca?.alpacaRegisteredName && (
         <AlapacaDetailRow
