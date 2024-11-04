@@ -88,7 +88,7 @@ export default async function Page({ params }) {
                 </address>
               )}
 
-              <address data-testid="farm-address" class="space-y-4">
+              <address data-testid="farm-address" className="space-y-4">
                 <div
                   data-testid="farm-address-city"
                   className="grid grid-cols-[2rem,auto]"
