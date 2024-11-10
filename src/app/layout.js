@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Poppins } from "next/font/google";
 import "@/app/globals.css";
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
           <Nav />
         </footer>
       </body>
+      <GoogleAnalytics gaId="G-3D8PR2VEZS" />
     </html>
   );
 }
