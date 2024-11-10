@@ -24,8 +24,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${poppins.variable}`}>
       <body className="flex min-h-screen flex-col justify-start bg-white py-0 overflow-scroll">
         <Nav />
-        <div id="root" className="relative overflow-auto p-8 bg-brown-100">
-          <div className="min-w-md mx-auto max-w-4xl p-6 bg-white rounded-xl shadow-lg gap-x-4">
+        <div
+          id="root"
+          className="relative overflow-auto p-0 sm:p-8 bg-brown-100"
+        >
+          <div className="min-w-md mx-auto max-w-4xl p-4 sm:p-6 bg-white sm:rounded-xl shadow-lg gap-x-4">
             {children}
           </div>
         </div>
